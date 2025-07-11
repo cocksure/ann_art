@@ -29,7 +29,8 @@
       }
       /* Градиентный фон для секций */
       section {
-        background: linear-gradient(to bottom, #fdfbf8, #f4ece2);
+        background: linear-gradient(to bottom, #051912, #0e2c1f, #123f2c);
+        color: #f9f9f9;
       }
 
       /* Заголовки секций — текст с тенью и подчёркиванием */
@@ -142,14 +143,40 @@
       }
 
       .navbar {
-        background-color: white;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        background: linear-gradient(to right, #1b1a17, #2d2a26);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
         padding: 15px 0;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        transition: all 0.3s ease;
+        z-index: 999;
+      }
+      .navbar.sticky-top {
+        position: sticky;
+        top: 0;
+        background: linear-gradient(
+          to right,
+          #1b1a17,
+          #2d2a26
+        ); /* повтор для кроссбраузерности */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
       }
 
       .navbar-brand {
         font-weight: 700;
         font-size: 24px;
+      }
+
+      .navbar .nav-link {
+        color: #d4af37 !important; /* Золотистый */
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      .navbar .nav-link:hover,
+      .navbar .nav-link.active {
+        color: #b8860b !important; /* Более тёплый при наведении */
       }
 
       .hero {
@@ -204,6 +231,7 @@
         background-color: var(--light);
         border-radius: 5px;
         margin-bottom: 30px;
+        min-height: 270px;
       }
 
       .stats-number {
@@ -246,6 +274,9 @@
         color: white;
         padding: 20px;
       }
+      .project-overlay h5 {
+        color: #d4af37;
+      }
 
       .service-card {
         background-color: var(--light);
@@ -273,6 +304,10 @@
         padding: 30px 15px;
         margin-bottom: 30px;
         transition: transform 0.3s;
+        min-height: 380px;
+      }
+      .material-card p {
+        margin-top: auto;
       }
 
       .material-card:hover {
@@ -298,6 +333,10 @@
         height: 100%;
         object-fit: cover;
         transition: transform 0.5s;
+      }
+      .style-card h4 {
+        color: white;
+        transition: color 0.3s ease;
       }
 
       .style-card:hover img {
@@ -437,13 +476,28 @@
         object-fit: cover;
         border-radius: 5px;
       }
+
+      h2,
+      h4 {
+        color: #d4af37 !important;
+      }
+
+      p,
+      li {
+        color: rgba(30, 59, 42, 0.85);
+      }
     </style>
   </head>
   <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
       <div class="container">
-        <a class="navbar-brand display-font" href="#">ANNART</a>
+        <a
+          style="color: #d4af37 !important"
+          class="navbar-brand display-font"
+          href="#"
+          >ANNART</a
+        >
         <button
           class="navbar-toggler"
           type="button"
@@ -455,7 +509,9 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#home">Главная</a>
+              <a style="color: #d4af37 !important" class="nav-link" href="#home"
+                >Главная</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#about">О нас</a>
@@ -485,7 +541,7 @@
       <div class="container">
         <div class="hero-content slide-up">
           <h1 class="display-4 mb-4">Искусство, вдохновленное вами!</h1>
-          <p class="lead mb-5">
+          <p class="lead mb-5" style="color: #ddd">
             Полный цикл услуг: от разработки дизайна интерьеров и экстерьеров до
             ремонта «под ключ».
           </p>
@@ -502,12 +558,12 @@
         <h2 class="text-center section-title slide-up">О нас</h2>
         <div class="row mb-5 fade-in">
           <div class="col-lg-8 mx-auto text-center">
-            <p>
+            <p style="color: #ddd">
               Annart — команда профессионалов в области дизайна интерьеров и
               поставок строительных материалов. Мы создаём комфортные и
               эстетичные пространства для жизни и бизнеса.
             </p>
-            <p>
+            <p style="color: #ddd">
               Наша команда профессионалов с 25-летним опытом выполняет полный
               цикл работ: от проектирования и подбора материалов до чистовой
               отделки и финального декора.
@@ -552,7 +608,7 @@
 
         <div class="row mt-5">
           <div class="col-lg-8 mx-auto text-center fade-in">
-            <p>
+            <p style="color: whitesmoke">
               Наша миссия — воплощать ваши идеи в жизнь, создавая пространства,
               которые вдохновляют и удовлетворяют самые высокие стандарты
               качества. Работаем с вниманием к деталям, профессионализмом и
@@ -572,7 +628,7 @@
         </h2>
         <div class="row mb-5 fade-in">
           <div class="col-lg-8 mx-auto text-center">
-            <p>
+            <p style="color: #ddd">
               В Annart мы воплощаем в жизнь самые смелые идеи, создавая
               функциональные, стильные и уютные интерьеры. В нашей работе мы
               используем качественные материалы, современные технологии и
@@ -644,7 +700,7 @@
                   />
                   <div class="project-overlay">
                     <h5>Современный интерьер квартиры в Ташкенте</h5>
-                    <p>
+                    <p style="color: whitesmoke">
                       Этот проект — идеальное сочетание эстетики и
                       функциональности.
                     </p>
@@ -659,7 +715,7 @@
                   />
                   <div class="project-overlay">
                     <h5>Современный интерьер квартиры в Ташкенте</h5>
-                    <p>
+                    <p style="color: whitesmoke">
                       Этот проект — идеальное сочетание эстетики и
                       функциональности.
                     </p>
@@ -674,7 +730,7 @@
                   />
                   <div class="project-overlay">
                     <h5>Современный интерьер квартиры в Ташкенте</h5>
-                    <p>
+                    <p style="color: whitesmoke">
                       Этот проект — идеальное сочетание эстетики и
                       функциональности.
                     </p>
@@ -689,7 +745,7 @@
                   />
                   <div class="project-overlay">
                     <h5>Современный интерьер квартиры в Ташкенте</h5>
-                    <p>
+                    <p style="color: whitesmoke">
                       Этот проект — идеальное сочетание эстетики и
                       функциональности.
                     </p>
@@ -714,7 +770,7 @@
                   />
                   <div class="project-overlay">
                     <h5>Жилой проект 1</h5>
-                    <p>Описание жилого проекта.</p>
+                    <p style="color: whitesmoke">Описание жилого проекта.</p>
                   </div>
                 </div>
               </div>
@@ -726,7 +782,7 @@
                   />
                   <div class="project-overlay">
                     <h5>Жилой проект 2</h5>
-                    <p>Описание жилого проекта.</p>
+                    <p style="color: whitesmoke">Описание жилого проекта.</p>
                   </div>
                 </div>
               </div>
@@ -738,7 +794,7 @@
                   />
                   <div class="project-overlay">
                     <h5>Жилой проект 3</h5>
-                    <p>Описание жилого проекта.</p>
+                    <p style="color: whitesmoke">Описание жилого проекта.</p>
                   </div>
                 </div>
               </div>
@@ -750,7 +806,7 @@
                   />
                   <div class="project-overlay">
                     <h5>Жилой проект 4</h5>
-                    <p>Описание жилого проекта.</p>
+                    <p style="color: whitesmoke">Описание жилого проекта.</p>
                   </div>
                 </div>
               </div>
@@ -830,7 +886,7 @@
         </h2>
 
         <div class="row">
-          <div class="col-lg-4 slide-up">
+          <div class="col-lg-3 slide-up">
             <div class="service-card">
               <div class="service-number">[01]</div>
               <h4>Профессиональный ремонт под ключ</h4>
@@ -866,7 +922,7 @@
             </div>
           </div>
 
-          <div class="col-lg-4 slide-up">
+          <div class="col-lg-3 slide-up">
             <div class="service-card">
               <div class="service-number">[02]</div>
               <h4>Полный спектр строительных материалов</h4>
@@ -901,7 +957,8 @@
             </div>
           </div>
 
-          <div class="col-lg-4 slide-up">
+          <!-- Третья карточка -->
+          <div class="col-lg-3 slide-up">
             <div class="service-card">
               <div class="service-number">[03]</div>
               <h4>Комплексное послеремонтное обслуживание</h4>
@@ -928,26 +985,28 @@
                   Финишные декоративные работы – финальные штрихи для уюта.
                 </li>
               </ul>
+            </div>
+          </div>
 
-              <div class="mt-4">
-                <div class="service-number">[04]</div>
-                <h4>Гарантии и сервисное обслуживание</h4>
-                <p>
-                  Мы гарантируем качество выполненных работ и используемых
-                  материалов.
-                </p>
-                <ul>
-                  <li>Гарантия на ремонт и отделку</li>
-                  <li>Гарантия на строительные материалы</li>
-                  <li>Гарантия на установленную мебель и технику</li>
-                  <li>Гарантия на инженерные системы</li>
-                  <li>Гарантия на декоративные элементы</li>
-                  <li>
-                    Послеремонтное обслуживание – мы всегда на связи, если
-                    потребуется доработка или дополнительный сервис.
-                  </li>
-                </ul>
-              </div>
+          <div class="col-lg-3 slide-up">
+            <div class="service-card">
+              <div class="service-number">[04]</div>
+              <h4>Гарантии и сервисное обслуживание</h4>
+              <p>
+                Мы гарантируем качество выполненных работ и используемых
+                материалов.
+              </p>
+              <ul>
+                <li>Гарантия на ремонт и отделку</li>
+                <li>Гарантия на строительные материалы</li>
+                <li>Гарантия на установленную мебель и технику</li>
+                <li>Гарантия на инженерные системы</li>
+                <li>Гарантия на декоративные элементы</li>
+                <li>
+                  Послеремонтное обслуживание – мы всегда на связи, если
+                  потребуется доработка или дополнительный сервис.
+                </li>
+              </ul>
             </div>
           </div>
         </div>
@@ -992,14 +1051,14 @@
         <h2 class="text-center section-title slide-up">Продукция</h2>
         <div class="row mb-5 fade-in">
           <div class="col-lg-8 mx-auto text-center">
-            <p>
+            <p style="color: white">
               Поставляем только проверенные строительные и отделочные материалы
               от ведущих производителей.
             </p>
           </div>
         </div>
 
-        <div class="row">
+        <div class="row align-items-stretch">
           <!-- Итальянская плитка -->
           <div class="col-md-4 fade-in">
             <div class="material-card">
@@ -1101,7 +1160,7 @@
         <h2 class="text-center section-title slide-up">Стили интерьера</h2>
         <div class="row mb-5 fade-in">
           <div class="col-lg-8 mx-auto text-center">
-            <p>
+            <p style="color: white">
               Интерьер – это не просто пространство, а отражение вашего вкуса,
               образа жизни и характера. Правильно подобранный стиль помогает
               создать гармоничную, уютную и функциональную атмосферу.
@@ -1118,7 +1177,7 @@
               />
               <div class="style-overlay">
                 <h4>Лофт</h4>
-                <p>
+                <p style="color: white">
                   Индустриальная эстетика: открытые трубы, бетон, кирпич,
                   металл.
                 </p>
@@ -1133,7 +1192,9 @@
               />
               <div class="style-overlay">
                 <h4>Минимализм</h4>
-                <p>Простые формы, светлые оттенки, много воздуха.</p>
+                <p style="color: white">
+                  Простые формы, светлые оттенки, много воздуха.
+                </p>
               </div>
             </div>
           </div>
@@ -1145,7 +1206,9 @@
               />
               <div class="style-overlay">
                 <h4>Скандинавский стиль</h4>
-                <p>Светлые тона, натуральные материалы, уютные детали.</p>
+                <p style="color: white">
+                  Светлые тона, натуральные материалы, уютные детали.
+                </p>
               </div>
             </div>
           </div>
@@ -1157,7 +1220,9 @@
               />
               <div class="style-overlay">
                 <h4>Современный стиль</h4>
-                <p>Чёткие линии, лаконичность, функциональность.</p>
+                <p style="color: white">
+                  Чёткие линии, лаконичность, функциональность.
+                </p>
               </div>
             </div>
           </div>
@@ -1169,7 +1234,9 @@
               />
               <div class="style-overlay">
                 <h4>Классический стиль</h4>
-                <p>Элегантность, симметрия, дорогие материалы.</p>
+                <p style="color: white">
+                  Элегантность, симметрия, дорогие материалы.
+                </p>
               </div>
             </div>
           </div>
@@ -1181,7 +1248,9 @@
               />
               <div class="style-overlay">
                 <h4>Арт-деко</h4>
-                <p>Роскошь и геометрия: дорогие материалы, яркие акценты.</p>
+                <p style="color: white">
+                  Роскошь и геометрия: дорогие материалы, яркие акценты.
+                </p>
               </div>
             </div>
           </div>
@@ -1193,7 +1262,9 @@
               />
               <div class="style-overlay">
                 <h4>Хай-тек</h4>
-                <p>Инновационные материалы, технологии, строгие линии.</p>
+                <p style="color: white">
+                  Инновационные материалы, технологии, строгие линии.
+                </p>
               </div>
             </div>
           </div>
@@ -1205,7 +1276,7 @@
               />
               <div class="style-overlay">
                 <h4>Эко-стиль</h4>
-                <p>
+                <p style="color: white">
                   Природные материалы, зелёные акценты, много света и воздуха.
                 </p>
               </div>
@@ -1466,7 +1537,7 @@
         </h2>
         <div class="row mb-5 fade-in">
           <div class="col-lg-8 mx-auto text-center">
-            <p>
+            <p style="color: whitesmoke">
               Заполните форму, и мы свяжемся с вами в ближайшее время. Обсудим
               ваши пожелания, ответим на вопросы и предложим оптимальные решения
               для вашего интерьера.
@@ -1555,7 +1626,7 @@
         <div class="row">
           <div class="col-lg-4 mb-4">
             <h3 class="display-font mb-3">ANNART</h3>
-            <p>
+            <p style="color: #a67c52">
               Искусство, вдохновленное вами! Полный цикл услуг: от разработки
               дизайна интерьеров и экстерьеров до ремонта «под ключ».
             </p>
@@ -1607,7 +1678,9 @@
         </div>
         <div class="row pt-4">
           <div class="col-12 text-center">
-            <p class="mb-0">© 2025 ANNART. Все права защищены.</p>
+            <p class="mb-0" style="color: #a67c52">
+              © 2025 ANNART. Все права защищены.
+            </p>
           </div>
         </div>
       </div>
