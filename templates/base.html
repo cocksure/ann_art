@@ -20,7 +20,7 @@
 			href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap"
 			rel="stylesheet"
 	/>
-	
+
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
@@ -43,18 +43,26 @@
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav ms-auto">
-				<li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Главная</a></li>
-{#				<li class="nav-item">#}
-{#					<a class="nav-link" href="#about">О нас</a>#}
-{#				</li>#}
-				<li class="nav-item"><a href="{% url 'projects' %}" class="nav-link">Проекты</a></li>
-{#				<li class="nav-item">#}
-{#					<a class="nav-link" href="#services">Услуги</a>#}
-{#				</li>#}
-				<li class="nav-item"><a href="{% url 'products' %}" class="nav-link">Продукты</a></li>
-				<li class="nav-item"><a href="{% url 'styles' %}" class="nav-link">Стили</a></li>
-				<li class="nav-item"><a href="{% url 'contacts' %}" class="nav-link">Контакты</a></li>
-
+				<li class="nav-item">
+					<a href="{% url 'home' %}"
+					   class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}">Главная</a>
+				</li>
+				<li class="nav-item">
+					<a href="{% url 'styles' %}"
+					   class="nav-link {% if request.resolver_match.url_name == 'styles' %}active{% endif %}">Стили</a>
+				</li>
+				<li class="nav-item">
+					<a href="{% url 'products' %}"
+					   class="nav-link {% if request.resolver_match.url_name == 'products' %}active{% endif %}">Продукции</a>
+				</li>
+				<li class="nav-item">
+					<a href="{% url 'projects' %}"
+					   class="nav-link {% if request.resolver_match.url_name == 'projects' %}active{% endif %}">Проекты</a>
+				</li>
+				<li class="nav-item">
+					<a href="{% url 'contacts' %}"
+					   class="nav-link {% if request.resolver_match.url_name == 'contacts' %}active{% endif %}">Контакты</a>
+				</li>
 			</ul>
 		</div>
 	</div>
@@ -548,7 +556,7 @@ c
 				</p>
 				<div class="social-icons mt-3">
 					<a href="#"><i class="fab fa-facebook-f"></i></a>
-					<a href="#"><i class="fab fa-instagram"></i></a>
+					<a href="https://www.instagram.com/annart.uz/" target="_blank"><i class="fab fa-instagram"></i></a>
 					<a href="#"><i class="fab fa-telegram"></i></a>
 					<a href="#"><i class="fab fa-youtube"></i></a>
 				</div>

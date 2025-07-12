@@ -45,8 +45,14 @@ def contact_telegram(request):
     if request.method == 'POST':
         name = request.POST.get('name')
         phone = request.POST.get('phone')
+        message_text = request.POST.get('message')  # описание проекта
 
-        message = f"📩 Новое сообщение с сайта:\n\n👤 Имя: {name}\n📱 Телефон: {phone}"
+        message = (
+            "📩 Новое сообщение с сайта:\n\n"
+            f"👤 Имя: {name}\n"
+            f"📱 Телефон: {phone}\n"
+            f"📝 Сообщение: {message_text}"
+        )
 
         url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
         data = {
@@ -54,7 +60,8 @@ def contact_telegram(request):
             'text': message,
             'parse_mode': 'HTML'
         }
-        response = requests.post(url, data=data)
 
+        response = requests.post(url, data=data)
         return JsonResponse({'ok': True})
-    return JsonResponse({'error': ('Только POST-запрос разрешён')}, status=405)
+
+    return JsonResponse({'error': 'Только POST-запрос разрешён'}, status=405)

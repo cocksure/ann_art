@@ -17,8 +17,8 @@
 
 /* Градиентный фон для секций */
 section {
-  background: linear-gradient(90deg, #051912, #0e2c1f, #123f2c);
-  color: #f9f9f9;
+    background: linear-gradient(90deg, #051912, #0e2c1f, #123f2c);
+    color: #f9f9f9;
 }
 
 /* Заголовки секций — текст с тенью и подчёркиванием */
@@ -522,4 +522,10 @@ li {
     background-color: transparent !important;
     color: #f9f9f9; /* светлый текст */
     font-weight: 500;
+}
+
+.nav-link.active {
+    color: #edece4 !important;
+    font-weight: 600;
+    border-bottom: 2px solid #ffd700;
 }
