@@ -1,0 +1,525 @@
+:root {
+    --primary: #3a2e26;
+    --secondary: #e8d8c0;
+    --accent: #a67c52;
+    --dark: #1e1e1e;
+    --light: #f9f9f9;
+}
+
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Градиентный фон для секций */
+section {
+  background: linear-gradient(90deg, #051912, #0e2c1f, #123f2c);
+  color: #f9f9f9;
+}
+
+/* Заголовки секций — текст с тенью и подчёркиванием */
+.section-title {
+    font-weight: 700;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    color: var(--primary);
+    position: relative;
+    margin-bottom: 60px;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.section-title:after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 4px;
+    border-radius: 2px;
+    background: linear-gradient(to right, var(--accent), var(--primary));
+}
+
+/* Кнопка с градиентом */
+.btn-custom {
+    background: linear-gradient(45deg, var(--accent), var(--primary));
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 30px;
+    transition: all 0.4s ease;
+    letter-spacing: 1px;
+}
+
+.btn-custom:hover {
+    background: linear-gradient(45deg, var(--primary), var(--accent));
+    transform: translateY(-4px);
+}
+
+/* Улучшенные карточки материалов */
+.material-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+}
+
+.material-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* Карточки стилей — улучшенный overlay */
+.style-overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+    color: #fff;
+    padding: 25px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: background 0.4s ease;
+}
+
+.style-card:hover .style-overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+}
+
+/* Секция testimonials / services */
+.service-card,
+.testimonial-card {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    min-height: 450px;
+}
+
+.service-card:hover,
+.testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* Навигация — при прокрутке */
+.navbar.sticky-top {
+    background-color: white !important;
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid #eee;
+}
+
+body {
+    font-family: "Raleway", sans-serif;
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.display-font {
+    font-family: "Playfair Display", serif;
+}
+
+.navbar {
+    background: linear-gradient(to right, #1b1a17, #2d2a26);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    padding: 15px 0;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.navbar.sticky-top {
+    position: sticky;
+    top: 0;
+    background: linear-gradient(
+            to right,
+            #1b1a17,
+            #2d2a26
+    ); /* повтор для кроссбраузерности */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 24px;
+}
+
+.navbar .nav-link {
+    color: #d4af37 !important; /* Золотистый */
+    font-weight: 600;
+    font-size: large;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+    color: #b8860b !important; /* Более тёплый при наведении */
+}
+
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80");
+    background-size: cover;
+    background-position: center;
+    min-height: 80vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.section-title {
+    position: relative;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.section-title:after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: var(--accent);
+}
+
+.about-box {
+    background-color: var(--light);
+    padding: 30px;
+    border-radius: 5px;
+    height: 100%;
+    transition: transform 0.3s;
+}
+
+.about-box:hover {
+    transform: translateY(-10px);
+}
+
+.stats-box {
+    text-align: center;
+    padding: 30px 15px;
+    background-color: white; /* или var(--light), если это белый */
+    border-radius: 12px;
+    margin-bottom: 30px;
+    min-height: 260px;
+
+    box-shadow: 6px 6px 16px rgba(255, 215, 0, 0.07);
+
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.stats-box:hover {
+    /* ✨ Глубже при наведении */
+    box-shadow: 0 14px 30px rgba(255, 255, 255, 0.08),
+    0 6px 24px rgba(0, 0, 0, 0.4);
+
+    transform: translateY(-3px);
+}
+
+.stats-number {
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+.project-card {
+    margin-bottom: 30px;
+    border: none;
+    overflow: hidden;
+    position: relative;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+.project-card img {
+    transition: transform 0.5s;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+}
+
+.project-card:hover img {
+    transform: scale(1.1);
+}
+
+.project-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 20px;
+}
+
+.project-overlay h5 {
+    color: #d4af37;
+}
+
+.service-card {
+    background-color: var(--light);
+    padding: 30px;
+    border-radius: 5px;
+    height: 100%;
+    margin-bottom: 30px;
+    transition: transform 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-number {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 15px;
+}
+
+.material-card {
+    text-align: center;
+    padding: 30px 15px;
+    margin-bottom: 30px;
+    transition: transform 0.3s;
+    min-height: 380px;
+}
+
+.material-card p {
+    margin-top: auto;
+}
+
+.material-card:hover {
+    transform: translateY(-10px);
+}
+
+.material-icon {
+    font-size: 48px;
+    color: var(--accent);
+    margin-bottom: 15px;
+}
+
+.style-card {
+    position: relative;
+    margin-bottom: 30px;
+    overflow: hidden;
+    border-radius: 5px;
+    height: 300px;
+}
+
+.style-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.style-card h4 {
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.style-card:hover img {
+    transform: scale(1.1);
+}
+
+.style-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 20px;
+}
+
+.testimonial-card {
+    background-color: var(--light);
+    padding: 30px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+}
+
+.testimonial-author {
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.btn-custom {
+    background-color: var(--accent);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 0;
+    border: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s;
+}
+
+.btn-custom:hover {
+    background-color: var(--primary);
+    color: white;
+    transform: translateY(-3px);
+}
+
+.form-control {
+    border-radius: 0;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border-color: var(--accent);
+}
+
+footer {
+    background-color: var(--dark);
+    color: white;
+    padding: 50px 0 20px;
+}
+
+.footer-links a {
+    color: var(--secondary);
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 20px;
+    margin-right: 15px;
+}
+
+.social-icons a:hover {
+    color: var(--secondary);
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--accent);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+.back-to-top.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+/* Animation classes */
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.6s ease-in;
+}
+
+.fade-in.show {
+    opacity: 1;
+}
+
+.slide-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease-out;
+}
+
+.slide-up.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.material-image img {
+    width: 100%;
+    max-height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+h2,
+h4 {
+    font-weight: bold;
+    background: linear-gradient(90deg, #d4af37, #ecc779, #d4af37);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.1);
+}
+
+p,
+li {
+    color: rgba(30, 59, 42, 0.85);
+}
+
+.nav-pills .nav-link {
+    color: #e0f5ea; /* светлый текст */
+    margin: 0 8px;
+    padding: 10px 24px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-pills .nav-link:hover {
+    background-color: #236c4d;
+    color: #ffffff;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #2d8c65; /* активная — ярче */
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+.accordion-button {
+    background-color: transparent !important;
+    color: #f9f9f9; /* светлый текст */
+    font-weight: 500;
+}

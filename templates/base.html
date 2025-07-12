@@ -1,0 +1,762 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<title>ANNART - Дизайн интерьеров</title>
+	<!-- Bootstrap CSS -->
+	<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+	/>
+	<!-- Font Awesome -->
+	<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+	/>
+	<!-- Google Fonts -->
+	<link
+			href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap"
+			rel="stylesheet"
+	/>
+	
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light sticky-top">
+	<div class="container">
+		<a
+				style="color: #d4af37 !important"
+				class="navbar-brand display-font"
+				href="{% url 'home' %}"
+		>ANNART</a
+		>
+		<button
+				class="navbar-toggler"
+				type="button"
+				data-bs-toggle="collapse"
+				data-bs-target="#navbarNav"
+		>
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav ms-auto">
+				<li class="nav-item"><a href="{% url 'home' %}" class="nav-link">Главная</a></li>
+{#				<li class="nav-item">#}
+{#					<a class="nav-link" href="#about">О нас</a>#}
+{#				</li>#}
+				<li class="nav-item"><a href="{% url 'projects' %}" class="nav-link">Проекты</a></li>
+{#				<li class="nav-item">#}
+{#					<a class="nav-link" href="#services">Услуги</a>#}
+{#				</li>#}
+				<li class="nav-item"><a href="{% url 'products' %}" class="nav-link">Продукты</a></li>
+				<li class="nav-item"><a href="{% url 'styles' %}" class="nav-link">Стили</a></li>
+				<li class="nav-item"><a href="{% url 'contacts' %}" class="nav-link">Контакты</a></li>
+
+			</ul>
+		</div>
+	</div>
+</nav>
+
+{% block dashboard %}
+
+	<!-- Hero Section -->
+	<section id="home" class="hero">
+		<div class="container">
+			<div class="hero-content slide-up">
+				<h1 class="display-4 mb-4">Искусство, вдохновленное вами!</h1>
+				<p class="lead mb-5" style="color: #ddd">
+					Полный цикл услуг: от разработки дизайна интерьеров и экстерьеров до
+					ремонта «под ключ».
+				</p>
+				<a href="{% url 'projects' %}" class="btn btn-custom btn-lg"
+				>Посмотреть проекты</a
+				>
+			</div>
+		</div>
+	</section>
+
+	<!-- About Section -->
+	<section id="about" class="py-5 bg-light">
+		<div class="container py-5">
+			<h2 class="text-center section-title slide-up">О нас</h2>
+			<div class="row mb-5 fade-in">
+				<div class="col-lg-8 mx-auto text-center">
+					<p style="color: #ddd">
+						Annart — команда профессионалов в области дизайна интерьеров и
+						поставок строительных материалов. Мы создаём комфортные и
+						эстетичные пространства для жизни и бизнеса.
+					</p>
+					<p style="color: #ddd">
+						Наша команда профессионалов с 25-летним опытом выполняет полный
+						цикл работ: от проектирования и подбора материалов до чистовой
+						отделки и финального декора.
+					</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6 col-lg-3 fade-in">
+					<div class="stats-box">
+						<div class="stats-number">10+</div>
+						<p>лет опыта – создаём стильные интерьеры с 2014 года.</p>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 fade-in">
+					<div class="stats-box">
+						<div class="stats-number">300+</div>
+						<p>
+							реализованных проектов – квартиры, дома, офисы и коммерческие
+							пространства.
+						</p>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 fade-in">
+					<div class="stats-box">
+						<div class="stats-number">100%</div>
+						<p>
+							под ключ – от идеи до финального декора, включая поставку
+							материалов.
+						</p>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 fade-in">
+					<div class="stats-box">
+						<div class="stats-number">50+</div>
+						<p>
+							профессионалов – команда дизайнеров, архитекторов и строителей.
+						</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="row mt-5">
+				<div class="col-lg-8 mx-auto text-center fade-in">
+					<p style="color: whitesmoke">
+						Наша миссия — воплощать ваши идеи в жизнь, создавая пространства,
+						которые вдохновляют и удовлетворяют самые высокие стандарты
+						качества. Работаем с вниманием к деталям, профессионализмом и
+						ответственностью, чтобы каждая выполненная нами работа оставляла
+						только положительные впечатления.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Services Section -->
+	<section id="services" class="py-5 bg-light">
+		<div class="container py-5">
+			<h2 class="text-center section-title slide-up">
+				Услуги нашей компании
+			</h2>
+
+			<div class="row">
+				<div class="col-lg-3 slide-up">
+					<div class="service-card">
+						<!-- <div class="service-number">[01]</div> -->
+						<h4>Профессиональный ремонт под ключ</h4>
+						<hr style="color: black"/>
+						<p>
+							Мы берём на себя все этапы работ – от диагностики до финального
+							декора, чтобы вы получили готовый к проживанию интерьер без
+							хлопот
+						</p>
+						<ul>
+							<li>
+								Диагностика и оценка – анализ объекта, составление сметы.
+							</li>
+							<li>
+								Демонтажные работы – аккуратный разбор старых конструкций.
+							</li>
+							<li>
+								Черновые работы – выравнивание стен, полов, подготовка
+								поверхностей.
+							</li>
+							<li>
+								Основные строительные работы – возведение перегородок,
+								инженерные коммуникации.
+							</li>
+							<li>
+								Чистовая отделка – покраска, облицовка, установка покрытий.
+							</li>
+							<li>
+								Установка мебели и техники – расстановка, подключение
+								оборудования.
+							</li>
+							<li>Финальные работы – уборка, декор, сдача объекта.</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-lg-3 slide-up">
+					<div class="service-card">
+						<!-- <div class="service-number">[02]</div> -->
+						<h4>Полный спектр строительных материалов</h4>
+						<hr style="color: black"/>
+
+						<p>
+							Мы используем качественные и сертифицированные материалы ведущих
+							производителей.
+						</p>
+						<ul>
+							<li>
+								Структурные и каркасные материалы – бетон, кирпич,
+								гипсокартон.
+							</li>
+							<li>Изоляционные материалы – гидро- и теплоизоляция.</li>
+							<li>Материалы для пола – паркет, плитка, ламинат.</li>
+							<li>
+								Отделочные материалы – краски, декоративные покрытия, обои.
+							</li>
+							<li>
+								Материалы для сантехники – трубы, смесители, системы
+								водоснабжения.
+							</li>
+							<li>Электроматериалы – проводка, освещение, розетки.</li>
+							<li>
+								Материалы для климат-контроля – вентиляция, кондиционирование.
+							</li>
+							<li>Ландшафтные материалы – покрытия, элементы декора.</li>
+						</ul>
+						<p>
+							Мы работаем с продукцией из Италии, Германии и других
+							европейских стран, что гарантирует долговечность и качество.
+						</p>
+					</div>
+				</div>
+
+				<!-- Третья карточка -->
+				<div class="col-lg-3 slide-up">
+					<div class="service-card">
+						<!-- <div class="service-number">[03]</div> -->
+						<h4>Комплексное послеремонтное обслуживание</h4>
+						<hr style="color: black"/>
+
+						<p>
+							Ваш интерьер будет идеально чистым и полностью готовым к
+							эксплуатации.
+						</p>
+						<ul>
+							<li>
+								Генеральная уборка – устранение строительной пыли и мусора.
+							</li>
+							<li>
+								Очистка сантехники и коммуникаций – проверка работы систем.
+							</li>
+							<li>
+								Подготовка интерьера к заселению – наведение порядка,
+								расстановка элементов.
+							</li>
+							<li>
+								Финальное подключение инженерных систем – настройка техники.
+							</li>
+							<li>Проверка безопасности – контроль всех систем.</li>
+							<li>
+								Финишные декоративные работы – финальные штрихи для уюта.
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-lg-3 slide-up">
+					<div class="service-card">
+						<!-- <div class="service-number">[04]</div> -->
+						<h4>Гарантии и сервисное обслуживание</h4>
+						<hr style="color: black"/>
+
+						<p>
+							Мы гарантируем качество выполненных работ и используемых
+							материалов.
+						</p>
+						<ul>
+							<li>Гарантия на ремонт и отделку</li>
+							<li>Гарантия на строительные материалы</li>
+							<li>Гарантия на установленную мебель и технику</li>
+							<li>Гарантия на инженерные системы</li>
+							<li>Гарантия на декоративные элементы</li>
+							<li>
+								Послеремонтное обслуживание – мы всегда на связи, если
+								потребуется доработка или дополнительный сервис.
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="row mt-4">
+				<div class="col-lg-8 mx-auto fade-in">
+					<div class="bg-white p-4 text-center">
+						<h4>Ремонт и материалы в рассрочку</h4>
+						<p>
+							В компании Annart мы предлагаем нашим клиентам возможность
+							организовать рассрочку на ремонт, дизайн и строительные
+							материалы — на выгодных и прозрачных условиях.
+						</p>
+						<p>
+							Деньги выдаются наличными, вы можете использовать их по своему
+							усмотрению: оплатить ремонт, заказать мебель, приобрести любые
+							материалы.
+						</p>
+						<h5>Как это работает:</h5>
+						<p>
+							50% суммы вы выплачиваете сразу, 50% — в рассрочку через банк.
+							Наши надёжные партнёры: Хамкор Банк и Инфин Банк. Сумма
+							рассрочки — до $50 000. Срок — до 10 лет.
+						</p>
+						<p>
+							Обязательное условие — залог, как стандартное требование банков.
+							Но оформление происходит через нас, поэтому вы продолжаете ссуду
+							гораздо быстрее, без лишней бюрократии и с гарантией.
+						</p>
+						<a href="{% url 'contacts' %}" class="btn btn-custom mt-3"
+						>Хотите узнать, подойдёт ли вам рассрочка?</a
+						>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Testimonials Section -->
+	<section class="py-5">
+		<div class="container py-5">
+			<h2 class="text-center section-title slide-up">
+				Что о нас говорят клиенты
+			</h2>
+
+			<div class="row">
+				<div class="col-md-4 fade-in">
+					<div class="testimonial-card">
+						<p>
+							Обратились в Annart для создания интерьера нашей квартиры, и
+							результат превзошёл все ожидания! Команда учла все наши
+							пожелания, предложила стильные решения и подобрала качественные
+							материалы. Работы были выполнены точно в срок, без задержек и
+							лишних забот для нас. Особенно понравилось, что всё — от
+							дизайн-проекта до финального декора — было сделано под ключ.
+							Теперь наш дом выглядит стильно, современно и очень уютно.
+							Спасибо Annart за профессионализм и внимательное отношение к
+							деталям!
+						</p>
+						<div class="testimonial-author">[И.О.]</div>
+					</div>
+				</div>
+				<div class="col-md-4 fade-in">
+					<div class="testimonial-card">
+						<p>
+							Обратились в Annart для создания интерьера нашей квартиры, и
+							результат превзошёл все ожидания! Команда учла все наши
+							пожелания, предложила стильные решения и подобрала качественные
+							материалы. Работы были выполнены точно в срок, без задержек и
+							лишних забот для нас.
+						</p>
+						<div class="testimonial-author">[И.О.]</div>
+					</div>
+				</div>
+				<div class="col-md-4 fade-in">
+					<div class="testimonial-card">
+						<p>
+							Обратились в Annart для создания интерьера нашей квартиры, и
+							результат превзошёл все ожидания! Команда учла все наши
+							пожелания, предложила стильные решения и подобрала качественные
+							материалы. Работы были выполнены точно в срок, без задержек и
+							лишних забот для нас. Особенно понравилось, что всё — от
+							дизайн-проекта до финального декора — было сделано под ключ.
+							Теперь наш дом выглядит стильно, современно и очень уютно.
+							Спасибо Annart за профессионализм и внимательное отношение к
+							деталям!
+						</p>
+						<div class="testimonial-author">[И.О.]</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- FAQ Section -->
+	<section class="py-5 bg-light">
+		<div class="container py-5">
+			<h2 class="text-center section-title slide-up">
+				Часто задаваемые вопросы
+			</h2>
+
+			<div class="row">
+				<div class="col-lg-8 mx-auto fade-in">
+					<div class="accordion" id="faqAccordion">
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="headingOne">
+								<button
+										class="accordion-button"
+										type="button"
+										data-bs-toggle="collapse"
+										data-bs-target="#collapseOne"
+										aria-expanded="true"
+										aria-controls="collapseOne"
+								>
+									Вы делаете ремонт только по вашим проектам или можете
+									работать с уже готовым дизайном?
+								</button>
+							</h2>
+							<div
+									id="collapseOne"
+									class="accordion-collapse collapse show"
+									aria-labelledby="headingOne"
+									data-bs-parent="#faqAccordion"
+							>
+								<div class="accordion-body">
+									Мы можем реализовать ремонт как по нашему дизайн-проекту,
+									так и по вашему готовому. Если у вас уже есть проект, мы
+									проведём его детальный анализ и предложим оптимальные
+									решения для его реализации.
+								</div>
+							</div>
+						</div>
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="headingTwo">
+								<button
+										class="accordion-button collapsed"
+										type="button"
+										data-bs-toggle="collapse"
+										data-bs-target="#collapseTwo"
+										aria-expanded="false"
+										aria-controls="collapseTwo"
+								>
+									Можно ли заказать у вас только дизайн-проект без ремонта?
+								</button>
+							</h2>
+							<div
+									id="collapseTwo"
+									class="accordion-collapse collapse"
+									aria-labelledby="headingTwo"
+									data-bs-parent="#faqAccordion"
+							>
+								<div class="accordion-body">
+									Да, мы предоставляем услугу разработки дизайн-проекта
+									отдельно. Вы можете заказать у нас только проект, а
+									ремонтные работы выполнить самостоятельно или с привлечением
+									других подрядчиков.
+								</div>
+							</div>
+						</div>
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="headingThree">
+								<button
+										class="accordion-button collapsed"
+										type="button"
+										data-bs-toggle="collapse"
+										data-bs-target="#collapseThree"
+										aria-expanded="false"
+										aria-controls="collapseThree"
+								>
+									Сколько времени занимает ремонт под ключ?
+								</button>
+							</h2>
+							<div
+									id="collapseThree"
+									class="accordion-collapse collapse"
+									aria-labelledby="headingThree"
+									data-bs-parent="#faqAccordion"
+							>
+								<div class="accordion-body">
+									Сроки ремонта зависят от площади помещения, сложности работ
+									и выбранных материалов. В среднем, ремонт квартиры площадью
+									50-70 м² занимает 2-3 месяца, 80-100 м² — 3-4 месяца, более
+									100 м² — от 4 месяцев. Точные сроки определяются после
+									осмотра объекта и составления сметы.
+								</div>
+							</div>
+						</div>
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="headingFour">
+								<button
+										class="accordion-button collapsed"
+										type="button"
+										data-bs-toggle="collapse"
+										data-bs-target="#collapseFour"
+										aria-expanded="false"
+										aria-controls="collapseFour"
+								>
+									Вы даёте гарантию на ремонт и материалы?
+								</button>
+							</h2>
+							<div
+									id="collapseFour"
+									class="accordion-collapse collapse"
+									aria-labelledby="headingFour"
+									data-bs-parent="#faqAccordion"
+							>
+								<div class="accordion-body">
+									Да, мы предоставляем гарантию на все виды работ и
+									используемые материалы. Гарантия на ремонтные работы
+									составляет от 1 года, на материалы — согласно гарантии
+									производителя. Все гарантийные обязательства фиксируются в
+									договоре.
+								</div>
+							</div>
+						</div>
+						<div class="accordion-item">
+							<h2 class="accordion-header" id="headingFive">
+								<button
+										class="accordion-button collapsed"
+										type="button"
+										data-bs-toggle="collapse"
+										data-bs-target="#collapseFive"
+										aria-expanded="false"
+										aria-controls="collapseFive"
+								>
+									Можно ли заказать у вас только материалы без ремонта?
+								</button>
+							</h2>
+							<div
+									id="collapseFive"
+									class="accordion-collapse collapse"
+									aria-labelledby="headingFive"
+									data-bs-parent="#faqAccordion"
+							>
+								<div class="accordion-body">
+									Да, мы осуществляем отдельную продажу строительных и
+									отделочных материалов. Вы можете приобрести у нас любые
+									материалы из нашего каталога, даже если не заказываете у нас
+									ремонтные работы. Мы также предоставляем услуги доставки и
+									консультации по подбору материалов.
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock dashboard %}
+
+{% block content %}
+{% endblock content %}
+c
+
+<!-- Footer -->
+<footer>
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 mb-4">
+				<h3 class="display-font mb-3">ANNART</h3>
+				<p style="color: #a67c52">
+					Искусство, вдохновленное вами! Полный цикл услуг: от разработки
+					дизайна интерьеров и экстерьеров до ремонта «под ключ».
+				</p>
+				<div class="social-icons mt-3">
+					<a href="#"><i class="fab fa-facebook-f"></i></a>
+					<a href="#"><i class="fab fa-instagram"></i></a>
+					<a href="#"><i class="fab fa-telegram"></i></a>
+					<a href="#"><i class="fab fa-youtube"></i></a>
+				</div>
+			</div>
+			<div class="col-lg-2 col-md-4 mb-4">
+				<h5>Продукты</h5>
+				<div class="footer-links">
+					<a href="#">Итальянская плитка</a>
+					<a href="#">Немецкие краски</a>
+					<a href="#">Европейская сантехника</a>
+					<a href="#">Системы освещения</a>
+					<a href="#">Эксклюзивные материалы</a>
+				</div>
+			</div>
+			<div class="col-lg-2 col-md-4 mb-4">
+				<h5>Проекты</h5>
+				<div class="footer-links">
+					<a href="#">Коммерческие помещения</a>
+					<a href="#">Жилые помещения</a>
+					<a href="#">Другие проекты</a>
+					<a href="#">Все проекты</a>
+				</div>
+			</div>
+			<div class="col-lg-2 col-md-4 mb-4">
+				<h5>Стили</h5>
+				<div class="footer-links">
+					<a href="#">Лофт</a>
+					<a href="#">Минимализм</a>
+					<a href="#">Скандинавский</a>
+					<a href="#">Современный</a>
+					<a href="#">Классический</a>
+				</div>
+			</div>
+			<div class="col-lg-2 mb-4">
+				<h5>Контакты</h5>
+				<div class="footer-links">
+					<a href="#">О нас</a>
+					<a href="#">Услуги</a>
+					<a href="#">Контакты</a>
+					<a href="#">FAQ</a>
+				</div>
+			</div>
+		</div>
+		<div class="row pt-4">
+			<div class="col-12 text-center">
+				<p class="mb-0" style="color: #a67c52">
+					© 2025 ANNART. Все права защищены.
+				</p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<!-- Back to Top Button -->
+<a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+<!-- Success Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title">Ваша заявка принята!</h5>
+				<button
+						type="button"
+						class="btn-close"
+						data-bs-dismiss="modal"
+						aria-label="Close"
+				></button>
+			</div>
+			<div class="modal-body">
+				<p>Наш менеджер свяжется с вами в скором времени.</p>
+				<p>
+					*Если возникли проблемы или менеджер с вами не связался, вы можете
+					задать свои вопросы напрямую по номеру +998 99 999 99 99 или в
+					телеграм.
+				</p>
+			</div>
+			<div class="modal-footer">
+				<button
+						type="button"
+						class="btn btn-custom"
+						data-bs-dismiss="modal"
+				>
+					Закрыть
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Custom JS -->
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Back to Top Button
+        const backToTopButton = document.querySelector(".back-to-top");
+
+        window.addEventListener("scroll", () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add("active");
+            } else {
+                backToTopButton.classList.remove("active");
+            }
+        });
+
+        backToTopButton?.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.scrollTo({top: 0, behavior: "smooth"});
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+            anchor.addEventListener("click", function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute("href");
+                if (targetId === "#") return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({behavior: "smooth"});
+
+                    // Close mobile menu
+                    const navbarCollapse = document.querySelector(".navbar-collapse");
+                    if (navbarCollapse?.classList.contains("show")) {
+                        const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                        bsCollapse.hide();
+                    }
+                }
+            });
+        });
+
+        // Contact Form Submission
+        const contactForm = document.getElementById("contactForm");
+        const submitButton = contactForm?.querySelector(
+            'button[type="submit"]'
+        );
+
+        if (contactForm && submitButton) {
+            contactForm.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                const nameInput = document.getElementById("name");
+                const phoneInput = document.getElementById("phone");
+                const messageInput = document.getElementById("message");
+
+                if (!nameInput || !phoneInput || !messageInput) {
+                    alert("Форма не найдена. Проверьте ID полей.");
+                    return;
+                }
+
+                const name = nameInput.value.trim();
+                const phone = phoneInput.value.trim();
+                const message = messageInput.value.trim();
+
+                const formData = new FormData();
+                formData.append("name", name);
+                formData.append("phone", phone);
+                formData.append("message", message);
+
+                fetch("/api/contact/", {
+                    method: "POST",
+                    body: formData,
+                })
+                    .then((response) => {
+                        if (!response.ok) throw new Error("Ошибка отправки");
+                        return response.json();
+                    })
+                    .then((data) => {
+                        const successModal = new bootstrap.Modal(
+                            document.getElementById("successModal")
+                        );
+                        successModal.show();
+                        contactForm.reset();
+
+                        // Disable submit button temporarily
+                        submitButton.disabled = true;
+                        submitButton.textContent = "Ждите...";
+                        setTimeout(() => {
+                            submitButton.disabled = false;
+                            submitButton.textContent = "Связаться с нами";
+                        }, 30000);
+                    })
+                    .catch((error) => {
+                        console.error("Ошибка:", error);
+                        alert("Произошла ошибка. Попробуйте позже.");
+                    });
+            });
+        }
+
+        // Scroll animations
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll(".fade-in, .slide-up");
+
+            elements.forEach((element) => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+
+                if (elementPosition < screenPosition) {
+                    element.classList.add("show");
+                }
+            });
+        };
+
+        window.addEventListener("load", animateOnScroll);
+        window.addEventListener("scroll", animateOnScroll);
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,270 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Проекты — ANNART{% endblock %}
+
+
+{% block content %}
+
+	<!-- Projects Section -->
+	<section id="projects" class="py-4">
+		<div class="container py-4">
+			<h2 class="text-center section-title slide-up">
+				Реализованные проекты
+			</h2>
+			<div class="row mb-5 fade-in">
+				<div class="col-lg-8 mx-auto text-center">
+					<p style="color: #ddd">
+						В Annart мы воплощаем в жизнь самые смелые идеи, создавая
+						функциональные, стильные и уютные интерьеры. В нашей работе мы
+						используем качественные материалы, современные технологии и
+						индивидуальный подход к каждому клиенту.
+					</p>
+				</div>
+			</div>
+
+			<div class="row mb-4 fade-in">
+				<div class="col-12">
+					<ul
+							class="nav nav-pills justify-content-center"
+							id="project-tab"
+							role="tablist"
+					>
+						<li class="nav-item" role="presentation">
+							<button
+									class="nav-link active"
+									id="commercial-tab"
+									data-bs-toggle="pill"
+									data-bs-target="#commercial"
+									type="button"
+									role="tab"
+							>
+								Коммерческие помещения
+							</button>
+						</li>
+						<li class="nav-item" role="presentation">
+							<button
+									class="nav-link"
+									id="residential-tab"
+									data-bs-toggle="pill"
+									data-bs-target="#residential"
+									type="button"
+									role="tab"
+							>
+								Жилые помещения
+							</button>
+						</li>
+						<li class="nav-item" role="presentation">
+							<button
+									class="nav-link"
+									id="other-tab"
+									data-bs-toggle="pill"
+									data-bs-target="#other"
+									type="button"
+									role="tab"
+							>
+								Другое
+							</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="tab-content" id="project-tabContent">
+				<div
+						class="tab-pane fade show active"
+						id="commercial"
+						role="tabpanel"
+						aria-labelledby="commercial-tab"
+				>
+					<div class="row">
+						<div class="col-md-6 col-lg-3 slide-up">
+							<div class="project-card">
+								<img
+										src="https://images.unsplash.com/photo-1617806118233-18e1de247200?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+										alt="Проект"
+								/>
+								<div class="project-overlay">
+									<h5>Современный интерьер квартиры в Ташкенте</h5>
+									<p style="color: whitesmoke">
+										Этот проект — идеальное сочетание эстетики и
+										функциональности.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 col-lg-3 slide-up">
+							<div class="project-card">
+								<img
+										src="https://images.unsplash.com/photo-1617806118233-18e1de247200?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+										alt="Проект"
+								/>
+								<div class="project-overlay">
+									<h5>Современный интерьер квартиры в Ташкенте</h5>
+									<p style="color: whitesmoke">
+										Этот проект — идеальное сочетание эстетики и
+										функциональности.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 col-lg-3 slide-up">
+							<div class="project-card">
+								<img
+										src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+										alt="Проект"
+								/>
+								<div class="project-overlay">
+									<h5>Современный интерьер квартиры в Ташкенте</h5>
+									<p style="color: whitesmoke">
+										Этот проект — идеальное сочетание эстетики и
+										функциональности.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 col-lg-3 slide-up">
+							<div class="project-card">
+								<img
+										src="https://images.unsplash.com/photo-1617806118233-18e1de247200?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+										alt="Проект"
+								/>
+								<div class="project-overlay">
+									<h5>Современный интерьер квартиры в Ташкенте</h5>
+									<p style="color: whitesmoke">
+										Этот проект — идеальное сочетание эстетики и
+										функциональности.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div
+						class="tab-pane fade"
+						id="residential"
+						role="tabpanel"
+						aria-labelledby="residential-tab"
+				>
+					<div class="row">
+						<div class="col-md-6 col-lg-3 slide-up">
+							<div class="project-card">
+								<img
+										src="https://images.unsplash.com/photo-1617806118233-18e1de247200?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+										alt="Проект"
+								/>
+								<div class="project-overlay">
+									<h5>Жилой проект 1</h5>
+									<p style="color: whitesmoke">Описание жилого проекта.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 col-lg-3 slide-up">
+							<div class="project-card">
+								<img
+										src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+										alt="Проект"
+								/>
+								<div class="project-overlay">
+									<h5>Жилой проект 2</h5>
+									<p style="color: whitesmoke">Описание жилого проекта.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 col-lg-3 slide-up">
+							<div class="project-card">
+								<img
+										src="https://images.unsplash.com/photo-1617806118233-18e1de247200?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+										alt="Проект"
+								/>
+								<div class="project-overlay">
+									<h5>Жилой проект 3</h5>
+									<p style="color: whitesmoke">Описание жилого проекта.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 col-lg-3 slide-up">
+							<div class="project-card">
+								<img
+										src="https://images.unsplash.com/photo-1617806118233-18e1de247200?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+										alt="Проект"
+								/>
+								<div class="project-overlay">
+									<h5>Жилой проект 4</h5>
+									<p style="color: whitesmoke">Описание жилого проекта.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div
+						class="tab-pane fade"
+						id="other"
+						role="tabpanel"
+						aria-labelledby="other-tab"
+				>
+					<div class="row">
+						<div class="col-md-6 col-lg-3 slide-up">
+							<div class="project-card">
+								<img
+										src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+										alt="Проект"
+								/>
+								<div class="project-overlay">
+									<h5>Другой проект 1</h5>
+									<p>Описание проекта.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 col-lg-3 slide-up">
+							<div class="project-card">
+								<img
+										src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+										alt="Проект"
+								/>
+								<div class="project-overlay">
+									<h5>Другой проект 2</h5>
+									<p>Описание проекта.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 col-lg-3 slide-up">
+							<div class="project-card">
+								<img
+										src="https://images.unsplash.com/photo-1617806118233-18e1de247200?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+										alt="Проект"
+								/>
+								<div class="project-overlay">
+									<h5>Другой проект 3</h5>
+									<p>Описание проекта.</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-6 col-lg-3 slide-up">
+							<div class="project-card">
+								<img
+										src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+										alt="Проект"
+								/>
+								<div class="project-overlay">
+									<h5>Другой проект 4</h5>
+									<p>Описание проекта.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="text-center mt-4 fade-in">
+				<a href="#" class="btn btn-custom">Посмотреть все проекты</a>
+			</div>
+		</div>
+	</section>
+
+{% endblock content %}
+
+{% block dashboard %}
+{% endblock dashboard %}
