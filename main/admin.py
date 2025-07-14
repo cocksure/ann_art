@@ -1,36 +1,43 @@
 from django.contrib import admin
+
 from .models import (
     MaterialItem, StyleItem, ProjectItem,
-    ServiceItem, GuaranteeItem, InstallmentInfo
+    ServiceItem, GuaranteeItem, InstallmentInfo, MaterialCategory, Partners
 )
+
+
+@admin.register(MaterialCategory)
+class MaterialCategoryAdmin(admin.ModelAdmin):
+    list_display = ("name",)
+
 
 @admin.register(MaterialItem)
 class MaterialItemAdmin(admin.ModelAdmin):
-    list_display = ("title", "order")
+    list_display = ("title", "order", 'description')
     ordering = ("order",)
+    list_filter = ('category', )
+
 
 @admin.register(StyleItem)
 class StyleItemAdmin(admin.ModelAdmin):
-    list_display = ("title", "order")
+    list_display = ("title", 'id', "order")
     ordering = ("order",)
+    list_editable = ('order', )
+
 
 @admin.register(ProjectItem)
 class ProjectItemAdmin(admin.ModelAdmin):
     list_display = ("title", "order")
     ordering = ("order",)
 
+
 @admin.register(ServiceItem)
 class ServiceItemAdmin(admin.ModelAdmin):
     list_display = ("title", "order")
     ordering = ("order",)
 
-@admin.register(GuaranteeItem)
-class GuaranteeItemAdmin(admin.ModelAdmin):
-    list_display = ("title", "order")
+@admin.register(Partners)
+class PartnersAdmin(admin.ModelAdmin):
+    list_display = ("id", "name", 'image')
     ordering = ("order",)
 
-@admin.register(InstallmentInfo)
-class InstallmentInfoAdmin(admin.ModelAdmin):
-    def has_add_permission(self, request):
-        # Разрешить только 1 объект
-        return not InstallmentInfo.objects.exists()

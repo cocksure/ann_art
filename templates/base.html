@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<title>ANNART - Дизайн интерьеров</title>
+	<title>{% block title %}  ANNART - Дизайн интерьеров {% endblock %}</title>
 	<!-- Bootstrap CSS -->
 	<link
 			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -22,52 +22,56 @@
 	/>
 
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'css/service.css' %}">
+	{% block extra_css %}
+	{% endblock %}
 </head>
 <body>
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light sticky-top">
-	<div class="container">
-		<a
-				style="color: #d4af37 !important"
-				class="navbar-brand display-font"
-				href="{% url 'home' %}"
-		>ANNART</a
-		>
-		<button
-				class="navbar-toggler"
-				type="button"
-				data-bs-toggle="collapse"
-				data-bs-target="#navbarNav"
-		>
-			<span class="navbar-toggler-icon"></span>
-		</button>
-		<div class="collapse navbar-collapse" id="navbarNav">
-			<ul class="navbar-nav ms-auto">
-				<li class="nav-item">
-					<a href="{% url 'home' %}"
-					   class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}">Главная</a>
-				</li>
-				<li class="nav-item">
-					<a href="{% url 'styles' %}"
-					   class="nav-link {% if request.resolver_match.url_name == 'styles' %}active{% endif %}">Стили</a>
-				</li>
-				<li class="nav-item">
-					<a href="{% url 'products' %}"
-					   class="nav-link {% if request.resolver_match.url_name == 'products' %}active{% endif %}">Продукции</a>
-				</li>
-				<li class="nav-item">
-					<a href="{% url 'projects' %}"
-					   class="nav-link {% if request.resolver_match.url_name == 'projects' %}active{% endif %}">Проекты</a>
-				</li>
-				<li class="nav-item">
-					<a href="{% url 'contacts' %}"
-					   class="nav-link {% if request.resolver_match.url_name == 'contacts' %}active{% endif %}">Контакты</a>
-				</li>
-			</ul>
-		</div>
-	</div>
-</nav>
+    <div class="container">
+        <!-- Логотип с улучшениями -->
+        <a class="navbar-brand display-font" href="{% url 'home' %}">
+            <img src="{% static 'images/AnnartLogo.png' %}" alt="ANNART Logo" height="60px" class="logo-img">
+        </a>
 
+        <!-- Кнопка для мобильного меню -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Навигация -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item mx-2">
+                    <a href="{% url 'home' %}" class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}">
+                        <span class="nav-link-inner">Главная</span>
+                    </a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a href="{% url 'styles' %}" class="nav-link {% if request.resolver_match.url_name == 'styles' %}active{% endif %}">
+                        <span class="nav-link-inner">Стили</span>
+                    </a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a href="{% url 'products' %}" class="nav-link {% if request.resolver_match.url_name == 'products' %}active{% endif %}">
+                        <span class="nav-link-inner">Продукция</span>
+                    </a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a href="{% url 'projects' %}" class="nav-link {% if request.resolver_match.url_name == 'projects' %}active{% endif %}">
+                        <span class="nav-link-inner">Проекты</span>
+                    </a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a href="{% url 'contacts' %}" class="nav-link {% if request.resolver_match.url_name == 'contacts' %}active{% endif %}">
+                        <span class="nav-link-inner">Контакты</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 {% block dashboard %}
 
 	<!-- Hero Section -->
@@ -75,7 +79,7 @@
 		<div class="container">
 			<div class="hero-content slide-up">
 				<h1 class="display-4 mb-4">Искусство, вдохновленное вами!</h1>
-				<p class="lead mb-5" style="color: #ddd">
+				<p class="lead mb-5">
 					Полный цикл услуг: от разработки дизайна интерьеров и экстерьеров до
 					ремонта «под ключ».
 				</p>
@@ -87,17 +91,17 @@
 	</section>
 
 	<!-- About Section -->
-	<section id="about" class="py-5 bg-light">
-		<div class="container py-5">
+	<section id="about" class="py-3 ">
+		<div class="container py-3">
 			<h2 class="text-center section-title slide-up">О нас</h2>
 			<div class="row mb-5 fade-in">
 				<div class="col-lg-8 mx-auto text-center">
-					<p style="color: #ddd">
+					<p>
 						Annart — команда профессионалов в области дизайна интерьеров и
 						поставок строительных материалов. Мы создаём комфортные и
 						эстетичные пространства для жизни и бизнеса.
 					</p>
-					<p style="color: #ddd">
+					<p>
 						Наша команда профессионалов с 25-летним опытом выполняет полный
 						цикл работ: от проектирования и подбора материалов до чистовой
 						отделки и финального декора.
@@ -140,9 +144,9 @@
 				</div>
 			</div>
 
-			<div class="row mt-5">
+			<div class="row mt-3">
 				<div class="col-lg-8 mx-auto text-center fade-in">
-					<p style="color: whitesmoke">
+					<p>
 						Наша миссия — воплощать ваши идеи в жизнь, создавая пространства,
 						которые вдохновляют и удовлетворяют самые высокие стандарты
 						качества. Работаем с вниманием к деталям, профессионализмом и
@@ -155,160 +159,42 @@
 	</section>
 
 	<!-- Services Section -->
-	<section id="services" class="py-5 bg-light">
-		<div class="container py-5">
-			<h2 class="text-center section-title slide-up">
+	<section id="services" class="py-3">
+		<div class="container py-3">
+			<h2 class="text-center section-title slide-up mb-3">
 				Услуги нашей компании
 			</h2>
 
 			<div class="row">
-				<div class="col-lg-3 slide-up">
-					<div class="service-card">
-						<!-- <div class="service-number">[01]</div> -->
-						<h4>Профессиональный ремонт под ключ</h4>
-						<hr style="color: black"/>
-						<p>
-							Мы берём на себя все этапы работ – от диагностики до финального
-							декора, чтобы вы получили готовый к проживанию интерьер без
-							хлопот
-						</p>
-						<ul>
-							<li>
-								Диагностика и оценка – анализ объекта, составление сметы.
-							</li>
-							<li>
-								Демонтажные работы – аккуратный разбор старых конструкций.
-							</li>
-							<li>
-								Черновые работы – выравнивание стен, полов, подготовка
-								поверхностей.
-							</li>
-							<li>
-								Основные строительные работы – возведение перегородок,
-								инженерные коммуникации.
-							</li>
-							<li>
-								Чистовая отделка – покраска, облицовка, установка покрытий.
-							</li>
-							<li>
-								Установка мебели и техники – расстановка, подключение
-								оборудования.
-							</li>
-							<li>Финальные работы – уборка, декор, сдача объекта.</li>
-						</ul>
+				{% for service in services %}
+					<div class="col-lg-3 slide-up">
+						<div class="flip-card text-center">
+							<div class="flip-card-inner">
+								<div class="flip-card-front">
+									<h4>{{ service.title }}</h4>
+								</div>
+								<div class="flip-card-back">
+									<p>{{ service.description }}</p>
+								</div>
+							</div>
+						</div>
 					</div>
-				</div>
-
-				<div class="col-lg-3 slide-up">
-					<div class="service-card">
-						<!-- <div class="service-number">[02]</div> -->
-						<h4>Полный спектр строительных материалов</h4>
-						<hr style="color: black"/>
-
-						<p>
-							Мы используем качественные и сертифицированные материалы ведущих
-							производителей.
-						</p>
-						<ul>
-							<li>
-								Структурные и каркасные материалы – бетон, кирпич,
-								гипсокартон.
-							</li>
-							<li>Изоляционные материалы – гидро- и теплоизоляция.</li>
-							<li>Материалы для пола – паркет, плитка, ламинат.</li>
-							<li>
-								Отделочные материалы – краски, декоративные покрытия, обои.
-							</li>
-							<li>
-								Материалы для сантехники – трубы, смесители, системы
-								водоснабжения.
-							</li>
-							<li>Электроматериалы – проводка, освещение, розетки.</li>
-							<li>
-								Материалы для климат-контроля – вентиляция, кондиционирование.
-							</li>
-							<li>Ландшафтные материалы – покрытия, элементы декора.</li>
-						</ul>
-						<p>
-							Мы работаем с продукцией из Италии, Германии и других
-							европейских стран, что гарантирует долговечность и качество.
-						</p>
-					</div>
-				</div>
-
-				<!-- Третья карточка -->
-				<div class="col-lg-3 slide-up">
-					<div class="service-card">
-						<!-- <div class="service-number">[03]</div> -->
-						<h4>Комплексное послеремонтное обслуживание</h4>
-						<hr style="color: black"/>
-
-						<p>
-							Ваш интерьер будет идеально чистым и полностью готовым к
-							эксплуатации.
-						</p>
-						<ul>
-							<li>
-								Генеральная уборка – устранение строительной пыли и мусора.
-							</li>
-							<li>
-								Очистка сантехники и коммуникаций – проверка работы систем.
-							</li>
-							<li>
-								Подготовка интерьера к заселению – наведение порядка,
-								расстановка элементов.
-							</li>
-							<li>
-								Финальное подключение инженерных систем – настройка техники.
-							</li>
-							<li>Проверка безопасности – контроль всех систем.</li>
-							<li>
-								Финишные декоративные работы – финальные штрихи для уюта.
-							</li>
-						</ul>
-					</div>
-				</div>
-
-				<div class="col-lg-3 slide-up">
-					<div class="service-card">
-						<!-- <div class="service-number">[04]</div> -->
-						<h4>Гарантии и сервисное обслуживание</h4>
-						<hr style="color: black"/>
-
-						<p>
-							Мы гарантируем качество выполненных работ и используемых
-							материалов.
-						</p>
-						<ul>
-							<li>Гарантия на ремонт и отделку</li>
-							<li>Гарантия на строительные материалы</li>
-							<li>Гарантия на установленную мебель и технику</li>
-							<li>Гарантия на инженерные системы</li>
-							<li>Гарантия на декоративные элементы</li>
-							<li>
-								Послеремонтное обслуживание – мы всегда на связи, если
-								потребуется доработка или дополнительный сервис.
-							</li>
-						</ul>
-					</div>
-				</div>
+				{% endfor %}
 			</div>
 
 			<div class="row mt-4">
-				<div class="col-lg-8 mx-auto fade-in">
-					<div class="bg-white p-4 text-center">
-						<h4>Ремонт и материалы в рассрочку</h4>
+				<div class="col-lg-12 mx-auto fade-in">
+					<div class="credit-card p-4 text-center">
+						<h4>БОЛЬШОЙ ПРОЕКТ?</h4>
 						<p>
-							В компании Annart мы предлагаем нашим клиентам возможность
-							организовать рассрочку на ремонт, дизайн и строительные
-							материалы — на выгодных и прозрачных условиях.
+							Для масштабных проектов с крупным бюджетом мы предлагаем ремонт в рассрочку
 						</p>
 						<p>
 							Деньги выдаются наличными, вы можете использовать их по своему
 							усмотрению: оплатить ремонт, заказать мебель, приобрести любые
 							материалы.
 						</p>
-						<h5>Как это работает:</h5>
+						<h4>Как это работает:</h4>
 						<p>
 							50% суммы вы выплачиваете сразу, 50% — в рассрочку через банк.
 							Наши надёжные партнёры: Хамкор Банк и Инфин Банк. Сумма
@@ -319,7 +205,7 @@
 							Но оформление происходит через нас, поэтому вы продолжаете ссуду
 							гораздо быстрее, без лишней бюрократии и с гарантией.
 						</p>
-						<a href="{% url 'contacts' %}" class="btn btn-custom mt-3"
+						<a href="{% url 'contacts' %}" class="btn btn-custom mt-3 shadow"
 						>Хотите узнать, подойдёт ли вам рассрочка?</a
 						>
 					</div>
@@ -329,8 +215,8 @@
 	</section>
 
 	<!-- Testimonials Section -->
-	<section class="py-5">
-		<div class="container py-5">
+	<section class="py-3">
+		<div class="credit-card container py-3 p-4">
 			<h2 class="text-center section-title slide-up">
 				Что о нас говорят клиенты
 			</h2>
@@ -385,7 +271,7 @@
 	</section>
 
 	<!-- FAQ Section -->
-	<section class="py-5 bg-light">
+	<section class="py-3 ">
 		<div class="container py-5">
 			<h2 class="text-center section-title slide-up">
 				Часто задаваемые вопросы
@@ -538,11 +424,12 @@
 			</div>
 		</div>
 	</section>
+
 {% endblock dashboard %}
 
 {% block content %}
 {% endblock content %}
-c
+
 
 <!-- Footer -->
 <footer>
@@ -550,15 +437,15 @@ c
 		<div class="row">
 			<div class="col-lg-4 mb-4">
 				<h3 class="display-font mb-3">ANNART</h3>
-				<p style="color: #a67c52">
+				<p>
 					Искусство, вдохновленное вами! Полный цикл услуг: от разработки
 					дизайна интерьеров и экстерьеров до ремонта «под ключ».
 				</p>
 				<div class="social-icons mt-3">
 					<a href="#"><i class="fab fa-facebook-f"></i></a>
 					<a href="https://www.instagram.com/annart.uz/" target="_blank"><i class="fab fa-instagram"></i></a>
-					<a href="#"><i class="fab fa-telegram"></i></a>
-					<a href="#"><i class="fab fa-youtube"></i></a>
+					<a href="https://t.me/AnnArt_Luxury" target="_blank"><i class="fab fa-telegram"></i></a>
+					<a href="https://www.youtube.com/@AnnArtuz" target="_blank"><i class="fab fa-youtube"></i></a>
 				</div>
 			</div>
 			<div class="col-lg-2 col-md-4 mb-4">
@@ -582,12 +469,12 @@ c
 			</div>
 			<div class="col-lg-2 col-md-4 mb-4">
 				<h5>Стили</h5>
-				<div class="footer-links">
-					<a href="#">Лофт</a>
-					<a href="#">Минимализм</a>
-					<a href="#">Скандинавский</a>
-					<a href="#">Современный</a>
-					<a href="#">Классический</a>
+				<div class="footer-links ">
+					<a href="{% url 'style_detail' 16 %}">Лофт</a>
+					<a href="{% url 'style_detail' 20 %}">Минимализм</a>
+					<a href="{% url 'style_detail' 14 %}">Хайтек</a>
+					<a href="{% url 'style_detail' 19 %}">Современный</a>
+					<a href="{% url 'style_detail' 5 %}">Классический</a>
 				</div>
 			</div>
 			<div class="col-lg-2 mb-4">
@@ -595,7 +482,7 @@ c
 				<div class="footer-links">
 					<a href="#">О нас</a>
 					<a href="#">Услуги</a>
-					<a href="#">Контакты</a>
+					<a href="{% url 'contacts' %}">Контакты</a>
 					<a href="#">FAQ</a>
 				</div>
 			</div>
@@ -630,7 +517,7 @@ c
 				<p>Наш менеджер свяжется с вами в скором времени.</p>
 				<p>
 					*Если возникли проблемы или менеджер с вами не связался, вы можете
-					задать свои вопросы напрямую по номеру +998 99 999 99 99 или в
+					задать свои вопросы напрямую по номеру +998 97 110 10 00 или в
 					телеграм.
 				</p>
 			</div>
@@ -649,7 +536,7 @@ c
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<!-- Custom JS -->
+
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -766,5 +653,8 @@ c
         window.addEventListener("scroll", animateOnScroll);
     });
 </script>
+
+{% block extra_js %}
+{% endblock extra_js %}
 </body>
 </html>

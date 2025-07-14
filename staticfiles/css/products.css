@@ -1,0 +1,253 @@
+/* Material Cards - Improved Styles */
+.material-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(11, 59, 46, 0.15);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  height: 280px; /* Увеличил высоту для лучшего отображения */
+  cursor: pointer;
+  background: var(--emerald-medium);
+  margin: 0 auto;
+  max-width: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.material-image {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  flex-grow: 1;
+  /*object-fit: cover;*/
+}
+
+.material-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease, filter 0.4s ease;
+  will-change: transform;
+}
+
+.material-text-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px 15px;
+  text-align: center;
+  background: linear-gradient(to top, rgba(11, 59, 46, 0.95) 60%, transparent);
+  color: white;
+  z-index: 2;
+  transition: all 0.5s ease;
+  transform: translateY(0);
+  backdrop-filter: blur(4px);
+  height: auto;
+  max-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.material-text-content h5 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: white;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.material-text-content p {
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease, opacity 0.4s ease, margin-bottom 0.3s ease;
+}
+
+/* Hover Effects */
+.material-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 40px rgba(26, 188, 156, 0.25);
+}
+
+.material-card:hover .material-image img {
+  transform: scale(1.08);
+  filter: brightness(1.05);
+}
+
+.material-card:hover .material-text-content {
+  background: linear-gradient(to top, rgba(11, 59, 46, 0.98) 70%, transparent);
+  padding-bottom: 25px;
+}
+
+.material-card:hover .material-text-content h5 {
+  margin-bottom: 12px;
+}
+
+.material-card:hover .material-text-content p {
+  max-height: 100px;
+  opacity: 1;
+  margin-bottom: 8px;
+}
+
+/* Golden Border Effect */
+.material-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid transparent;
+  border-radius: 14px;
+  z-index: 1;
+  pointer-events: none;
+  transition: border-color 0.4s ease;
+}
+
+.material-card:hover::after {
+  border-color: rgba(212, 175, 55, 0.5);
+}
+
+
+.partner-logos-wrapper {
+  backdrop-filter: blur(6px);
+  padding: 10px 0;
+  border-radius: 12px;
+}
+
+.partner-logos {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  padding: 10px 16px;
+}
+
+.partner-logos::-webkit-scrollbar {
+  height: 6px;
+}
+
+.partner-logos::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 3px;
+}
+
+/* Стили логотипа */
+.partner-logo {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  background: white;
+  padding: 8px 12px;
+  transition: all 0.3s ease;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.partner-logo img {
+  max-height: 40px;
+  max-width: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.partner-logo:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transform: scale(1.15);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1199.98px) {
+  .material-card {
+    height: 240px;
+  }
+
+  .material-text-content {
+    padding: 15px 12px;
+  }
+
+  .material-text-content h5 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .material-card {
+    height: 220px;
+  }
+
+  .material-text-content p {
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .material-card {
+    height: 200px;
+    max-width: 280px;
+  }
+
+  .material-text-content {
+    padding: 12px 10px;
+  }
+
+  .material-text-content h5 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .material-card {
+    height: 180px;
+  }
+
+  .material-text-content p {
+    display: none; /* На маленьких экранах скрываем описание */
+  }
+
+  .material-card:hover .material-text-content {
+    padding-bottom: 15px;
+  }
+}
+
+/* Animation Classes */
+.slide-up {
+  animation: slideUp 0.6s ease-out forwards;
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

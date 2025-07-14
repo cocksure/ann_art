@@ -1,11 +1,12 @@
 import requests
 from django.http import JsonResponse
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
+from django.views.generic import ListView, DetailView
 
 from .models import (
     MaterialItem, StyleItem, ProjectItem,
-    ServiceItem, GuaranteeItem, InstallmentInfo
+    ServiceItem, GuaranteeItem, InstallmentInfo, MaterialCategory, Partners
 )
 
 
@@ -20,9 +21,38 @@ def home(request):
     })
 
 
-def styles(request):
-    return render(request, 'styles.html')
+class StyleItemView(ListView):
+    model = StyleItem
+    template_name = 'styles.html'
+    context_object_name = 'styles'
 
+
+class StyleItemDetailView(DetailView):
+    model = StyleItem
+    template_name = 'styles_detail.html'
+    context_object_name = 'style'
+
+
+class ServicesItemView(ListView):
+    model = StyleItem
+    template_name = 'base.html'
+    context_object_name = 'services'
+
+
+def material_category_list(request):
+    categories = MaterialCategory.objects.all().order_by('order')
+    return render(request, 'material_categories.html', {'material_categories': categories})
+
+
+def material_items_by_category(request, category_id):
+    category = get_object_or_404(MaterialCategory, id=category_id)
+    items = MaterialItem.objects.filter(category=category).order_by('order')
+    partners = Partners.objects.all()
+    return render(request, 'products.html', {
+        'category': category,
+        'items': items,
+        'partners': partners
+    })
 
 def products(request):
     return render(request, 'products.html')
