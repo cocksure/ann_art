@@ -5,7 +5,7 @@
   overflow: hidden;
   box-shadow: 0 8px 32px rgba(11, 59, 46, 0.15);
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  height: 280px; /* Увеличил высоту для лучшего отображения */
+  height: 280px;
   cursor: pointer;
   background: var(--emerald-medium);
   margin: 0 auto;
@@ -168,61 +168,6 @@
   transform: scale(1.15);
 }
 
-/* Responsive Adjustments */
-@media (max-width: 1199.98px) {
-  .material-card {
-    height: 240px;
-  }
-
-  .material-text-content {
-    padding: 15px 12px;
-  }
-
-  .material-text-content h5 {
-    font-size: 1.1rem;
-  }
-}
-
-@media (max-width: 991.98px) {
-  .material-card {
-    height: 220px;
-  }
-
-  .material-text-content p {
-    font-size: 0.85rem;
-  }
-}
-
-@media (max-width: 767.98px) {
-  .material-card {
-    height: 200px;
-    max-width: 280px;
-  }
-
-  .material-text-content {
-    padding: 12px 10px;
-  }
-
-  .material-text-content h5 {
-    font-size: 1rem;
-    margin-bottom: 8px;
-  }
-}
-
-@media (max-width: 575.98px) {
-  .material-card {
-    height: 180px;
-  }
-
-  .material-text-content p {
-    display: none; /* На маленьких экранах скрываем описание */
-  }
-
-  .material-card:hover .material-text-content {
-    padding-bottom: 15px;
-  }
-}
-
 /* Animation Classes */
 .slide-up {
   animation: slideUp 0.6s ease-out forwards;
@@ -249,5 +194,102 @@
   }
   to {
     opacity: 1;
+  }
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1199.98px) {
+  .material-card {
+    height: 240px;
+  }
+
+  .material-text-content {
+    padding: 15px 12px;
+  }
+
+  .material-text-content h5 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .material-card {
+    height: 220px;
+  }
+
+  .material-text-content p {
+    font-size: 0.85rem;
+  }
+}
+
+/* ===== Общие стили для мобилок ===== */
+@media (max-width: 767.98px) {
+  /* Контейнер с материалами - 2 карточки в ряд */
+  #materials .row.justify-content-center {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 0 8px;
+  }
+
+  /* Карточки товаров */
+  .material-card {
+    height: 180px;
+    max-width: 100% !important; /* Убираем фиксированную ширину */
+    margin: 0 auto;
+  }
+
+  /* Скрываем описание */
+  .material-text-content p {
+    display: none;
+  }
+
+  /* Заголовок карточки */
+  .material-text-content h5 {
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+  }
+
+  /* Логотипы партнеров - 2 строки с горизонтальной прокруткой */
+  .partner-logos-wrapper {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px 0;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .partner-logos {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    padding: 0 12px;
+  }
+
+  .partner-logo {
+    flex: 0 0 auto;
+    height: 40px;
+    width: auto;
+    padding: 0 8px;
+  }
+
+  .partner-logo img {
+    max-height: 30px;
+    max-width: 100px;
+  }
+}
+
+@media (max-width: 374px) {
+  /* Еще меньше карточки */
+  .material-card {
+    height: 160px;
+  }
+
+  /* Логотипы компаний */
+  .partner-logo {
+    height: 36px;
+  }
+
+  .partner-logo img {
+    max-height: 24px;
   }
 }

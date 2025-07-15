@@ -1,0 +1,584 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-15 13:52+0500\n"
+"PO-Revision-Date: 2023-11-15 14:30+0500\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: English <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: templates/base.html:7
+msgid "Дизайн интерьеров"
+msgstr "Interior Design"
+
+#: templates/base.html:40
+msgid "Toggle navigation"
+msgstr "Toggle navigation"
+
+#: templates/base.html:50
+msgid "Главная"
+msgstr "Home"
+
+#: templates/base.html:56 templates/base.html:382 templates/styles.html:4
+msgid "Стили"
+msgstr "Styles"
+
+#: templates/base.html:62
+msgid "Продукция"
+msgstr "Products"
+
+#: templates/base.html:68 templates/base.html:372 templates/projects.html:4
+msgid "Проекты"
+msgstr "Projects"
+
+#: templates/base.html:74 templates/base.html:393 templates/base.html:397
+#: templates/contacts.html:82
+msgid "Контакты"
+msgstr "Contacts"
+
+#: templates/base.html:87
+msgid "Искусство, вдохновленное вами!"
+msgstr "Art inspired by you!"
+
+#: templates/base.html:89
+msgid ""
+"Полный цикл услуг: от разработки дизайна интерьеров и экстерьеров до ремонта "
+"«под ключ»."
+msgstr ""
+"Full range of services: from interior and exterior design development to turnkey "
+"renovation."
+
+#: templates/base.html:92
+msgid "Посмотреть проекты"
+msgstr "View projects"
+
+#: templates/base.html:101 templates/base.html:395
+msgid "О нас"
+msgstr "About us"
+
+#: templates/base.html:106
+msgid ""
+"Annart — команда профессионалов в области дизайна интерьеров и поставок "
+"строительных материалов. Мы создаём комфортные и эстетичные пространства для "
+"жизни и бизнеса."
+msgstr ""
+"Annart is a team of professionals in interior design and construction materials "
+"supply. We create comfortable and aesthetic spaces for living and business."
+
+#: templates/base.html:109
+msgid ""
+"Наша команда профессионалов с 25-летним опытом выполняет полный цикл работ: "
+"от проектирования и подбора материалов до чистовой отделки и финального "
+"декора."
+msgstr ""
+"Our team of professionals with 25 years of experience provides full-cycle "
+"services: from design and material selection to finishing works and final decor."
+
+#: templates/base.html:118
+msgid "лет опыта – создаём стильные интерьеры с 2014 года."
+msgstr "years of experience - creating stylish interiors since 2014."
+
+#: templates/base.html:124
+msgid ""
+"реализованных проектов – квартиры, дома, офисы и коммерческие пространства."
+msgstr ""
+"completed projects - apartments, houses, offices and commercial spaces."
+
+#: templates/base.html:131
+msgid "под ключ – от идеи до финального декора, включая поставку материалов."
+msgstr ""
+"turnkey projects - from concept to final decor, including materials supply."
+
+#: templates/base.html:138
+msgid "профессионалов – команда дизайнеров, архитекторов и строителей."
+msgstr "professionals - team of designers, architects and builders."
+
+#: templates/base.html:146
+msgid ""
+"Наша миссия — воплощать ваши идеи в жизнь, создавая пространства, которые "
+"вдохновляют и удовлетворяют самые высокие стандарты качества. Работаем с "
+"вниманием к деталям, профессионализмом и ответственностью, чтобы каждая "
+"выполненная нами работа оставляла только положительные впечатления."
+msgstr ""
+"Our mission is to bring your ideas to life by creating spaces that inspire and "
+"meet the highest quality standards. We work with attention to detail, "
+"professionalism and responsibility so that every project we complete leaves "
+"only positive impressions."
+
+#: templates/base.html:157
+msgid "Услуги нашей компании"
+msgstr "Our company services"
+
+#: templates/base.html:180
+msgid "БОЛЬШОЙ ПРОЕКТ?"
+msgstr "LARGE PROJECT?"
+
+#: templates/base.html:182
+msgid ""
+"Для масштабных проектов с крупным бюджетом мы предлагаем ремонт в рассрочку"
+msgstr "For large-scale projects with big budgets we offer installment payment plans"
+
+#: templates/base.html:185
+msgid ""
+"Деньги выдаются наличными, вы можете использовать их по своему усмотрению: "
+"оплатить ремонт, заказать мебель, приобрести любые материалы."
+msgstr ""
+"Money is issued in cash, you can use it at your discretion: pay for repairs, "
+"order furniture, purchase any materials."
+
+#: templates/base.html:187
+msgid "Как это работает:"
+msgstr "How it works:"
+
+#: templates/base.html:189
+#, python-format
+msgid ""
+"50%% суммы вы выплачиваете сразу, 50%% — в рассрочку через банк. Наши "
+"надёжные партнёры: Хамкор Банк и Инфин Банк. Сумма рассрочки — до $50 000. "
+"Срок — до 10 лет."
+msgstr ""
+"50%% of the amount you pay immediately, 50%% - in installments through the bank. "
+"Our reliable partners: Hamkor Bank and Infin Bank. Installment amount - up to "
+"$50,000. Term - up to 10 years."
+
+#: templates/base.html:192
+msgid ""
+"Обязательное условие — залог, как стандартное требование банков. Но "
+"оформление происходит через нас, поэтому вы продолжаете ссуду гораздо "
+"быстрее, без лишней бюрократии и с гарантией."
+msgstr ""
+"A mandatory requirement is collateral, as a standard bank requirement. But the "
+"processing is done through us, so you get the loan much faster, without "
+"unnecessary bureaucracy and with a guarantee."
+
+#: templates/base.html:195
+msgid "Хотите узнать, подойдёт ли вам рассрочка?"
+msgstr "Want to know if installments are right for you?"
+
+#: templates/base.html:207 templates/base.html:273
+msgid "Что о нас говорят клиенты"
+msgstr "What our clients say about us"
+
+#: templates/base.html:214 templates/base.html:280
+msgid ""
+"\n"
+"\t\t\t\t\t\t\t\tОбратились в Annart для создания интерьера нашей квартиры, и "
+"результат превзошёл все\n"
+"\t\t\t\t\t\t\t\tожидания!\n"
+"\t\t\t\t\t\t\t\tКоманда учла все наши пожелания, предложила стильные решения "
+"и подобрала качественные\n"
+"\t\t\t\t\t\t\t\tматериалы.\n"
+"\t\t\t\t\t\t\t\tРаботы были выполнены точно в срок, без задержек и лишних "
+"забот для нас. Особенно\n"
+"\t\t\t\t\t\t\t\tпонравилось,\n"
+"\t\t\t\t\t\t\t\tчто всё — от дизайн-проекта до финального декора — было "
+"сделано под ключ. Теперь наш дом\n"
+"\t\t\t\t\t\t\t\tвыглядит\n"
+"\t\t\t\t\t\t\t\tстильно, современно и очень уютно. Спасибо Annart за "
+"профессионализм и внимательное\n"
+"\t\t\t\t\t\t\t\tотношение к деталям!\n"
+"\t\t\t\t\t\t\t"
+msgstr ""
+"\n"
+"\t\t\t\t\t\t\t\tWe turned to Annart to create the interior of our apartment, "
+"and the result exceeded all\n"
+"\t\t\t\t\t\t\t\texpectations!\n"
+"\t\t\t\t\t\t\t\tThe team took into account all our wishes, offered stylish "
+"solutions and selected high-quality\n"
+"\t\t\t\t\t\t\t\tmaterials.\n"
+"\t\t\t\t\t\t\t\tThe work was completed exactly on time, without delays and "
+"extra worries for us. We especially\n"
+"\t\t\t\t\t\t\t\tliked\n"
+"\t\t\t\t\t\t\t\tthat everything - from the design project to the final decor - "
+"was done turnkey. Now our home\n"
+"\t\t\t\t\t\t\t\tlooks\n"
+"\t\t\t\t\t\t\t\tstylish, modern and very cozy. Thank you Annart for your "
+"professionalism and attention\n"
+"\t\t\t\t\t\t\t\tto detail!\n"
+"\t\t\t\t\t\t\t"
+
+#: templates/base.html:234 templates/base.html:300
+msgid ""
+"\n"
+"\t\t\t\t\t\t\t\tОбратились в Annart для создания интерьера нашей квартиры, и "
+"результат превзошёл все\n"
+"\t\t\t\t\t\t\t\tожидания!\n"
+"\t\t\t\t\t\t\t\tКоманда учла все наши пожелания, предложила стильные решения "
+"и подобрала качественные\n"
+"\t\t\t\t\t\t\t\tматериалы.\n"
+"\t\t\t\t\t\t\t\tРаботы были выполнены точно в срок, без задержек и лишних "
+"забот для нас.\n"
+"\t\t\t\t\t\t\t"
+msgstr ""
+"\n"
+"\t\t\t\t\t\t\t\tWe turned to Annart to create the interior of our apartment, "
+"and the result exceeded all\n"
+"\t\t\t\t\t\t\t\texpectations!\n"
+"\t\t\t\t\t\t\t\tThe team took into account all our wishes, offered stylish "
+"solutions and selected high-quality\n"
+"\t\t\t\t\t\t\t\tmaterials.\n"
+"\t\t\t\t\t\t\t\tThe work was completed exactly on time, without delays and "
+"extra worries for us.\n"
+"\t\t\t\t\t\t\t"
+
+#: templates/base.html:249 templates/base.html:315
+msgid ""
+"\n"
+"\t\t\t\t\t\t\t\tОбратились в AnnArt для создания интерьера нашей квартиры, и "
+"результат превзошёл все\n"
+"\t\t\t\t\t\t\t\tожидания!\n"
+"\t\t\t\t\t\t\t\tКоманда учла все наши пожелания, предложила стильные решения "
+"и подобрала качественные\n"
+"\t\t\t\t\t\t\t\tматериалы.\n"
+"\t\t\t\t\t\t\t\tРаботы были выполнены точно в срок, без задержек и лишних "
+"забот для нас. Особенно\n"
+"\t\t\t\t\t\t\t\tпонравилось,\n"
+"\t\t\t\t\t\t\t\tчто всё — от дизайн-проекта до финального декора — было "
+"сделано под ключ. Теперь наш дом\n"
+"\t\t\t\t\t\t\t\tвыглядит\n"
+"\t\t\t\t\t\t\t\tстильно, современно и очень уютно. Спасибо AnnArt за "
+"профессионализм и внимательное\n"
+"\t\t\t\t\t\t\t\tотношение к деталям!\n"
+"\t\t\t\t\t\t\t"
+msgstr ""
+"\n"
+"\t\t\t\t\t\t\t\tWe turned to AnnArt to create the interior of our apartment, "
+"and the result exceeded all\n"
+"\t\t\t\t\t\t\t\texpectations!\n"
+"\t\t\t\t\t\t\t\tThe team took into account all our wishes, offered stylish "
+"solutions and selected high-quality\n"
+"\t\t\t\t\t\t\t\tmaterials.\n"
+"\t\t\t\t\t\t\t\tThe work was completed exactly on time, without delays and "
+"extra worries for us. We especially\n"
+"\t\t\t\t\t\t\t\tliked\n"
+"\t\t\t\t\t\t\t\tthat everything - from the design project to the final decor - "
+"was done turnkey. Now our home\n"
+"\t\t\t\t\t\t\t\tlooks\n"
+"\t\t\t\t\t\t\t\tstylish, modern and very cozy. Thank you AnnArt for your "
+"professionalism and attention\n"
+"\t\t\t\t\t\t\t\tto detail!\n"
+"\t\t\t\t\t\t\t"
+
+#: templates/base.html:347
+msgid ""
+"\n"
+"\t\t\t\t\t\tИскусство, вдохновленное вами! Полный цикл услуг: от разработки "
+"дизайна интерьеров и экстерьеров\n"
+"\t\t\t\t\t\tдо ремонта «под ключ».\n"
+"\t\t\t\t\t"
+msgstr ""
+"\n"
+"\t\t\t\t\t\tArt inspired by you! Full range of services: from interior and "
+"exterior design development\n"
+"\t\t\t\t\t\tto turnkey renovation.\n"
+"\t\t\t\t\t"
+
+#: templates/base.html:361 templates/products.html:4
+msgid "Продукты"
+msgstr "Products"
+
+#: templates/base.html:363
+msgid "Итальянская плитка"
+msgstr "Italian tiles"
+
+#: templates/base.html:364
+msgid "Немецкие краски"
+msgstr "German paints"
+
+#: templates/base.html:365
+msgid "Европейская сантехника"
+msgstr "European plumbing"
+
+#: templates/base.html:366
+msgid "Системы освещения"
+msgstr "Lighting systems"
+
+#: templates/base.html:367
+msgid "Эксклюзивные материалы"
+msgstr "Exclusive materials"
+
+#: templates/base.html:374
+msgid "Коммерческие помещения"
+msgstr "Commercial premises"
+
+#: templates/base.html:375
+msgid "Жилые помещения"
+msgstr "Residential premises"
+
+#: templates/base.html:376
+msgid "Другие проекты"
+msgstr "Other projects"
+
+#: templates/base.html:377
+msgid "Все проекты"
+msgstr "All projects"
+
+#: templates/base.html:384
+msgid "Лофт"
+msgstr "Loft"
+
+#: templates/base.html:385
+msgid "Минимализм"
+msgstr "Minimalism"
+
+#: templates/base.html:386
+msgid "Хайтек"
+msgstr "Hi-tech"
+
+#: templates/base.html:387
+msgid "Современный"
+msgstr "Modern"
+
+#: templates/base.html:388
+msgid "Классический"
+msgstr "Classic"
+
+#: templates/base.html:397
+msgid "Услуги"
+msgstr "Services"
+
+
+#: templates/base.html:406
+msgid "Все права защищены."
+msgstr "All rights reserved."
+
+#: templates/base.html:422
+msgid "Ваша заявка принята!"
+msgstr "Your application has been accepted!"
+
+#: templates/base.html:427 templates/base.html:445
+msgid "Закрыть"
+msgstr "Close"
+
+#: templates/base.html:431
+msgid "Наш менеджер свяжется с вами в скором времени."
+msgstr "Our manager will contact you shortly."
+
+#: templates/base.html:433
+msgid ""
+"\n"
+"\t\t\t\t\t*Если возникли проблемы или менеджер с вами не связался, вы "
+"можете\n"
+"\t\t\t\t\tзадать свои вопросы напрямую по номеру +998 97 110 10 00 или в "
+"телеграм.\n"
+"\t\t\t\t\t"
+msgstr ""
+"\n"
+"\t\t\t\t\t*If you have any problems or the manager hasn't contacted you, you "
+"can\n"
+"\t\t\t\t\task your questions directly by calling +998 97 110 10 00 or via "
+"Telegram.\n"
+"\t\t\t\t\t"
+
+#: templates/contacts.html:13
+msgid "Давайте обсудим ваш проект!"
+msgstr "Let's discuss your project!"
+
+#: templates/contacts.html:18
+msgid ""
+"\n"
+"\t\t\t\t\t\t\tЗаполните форму, и мы свяжемся с вами в ближайшее время. Обсудим\n"
+"\t\t\t\t\t\t\tваши пожелания, ответим на вопросы и предложим оптимальные решения\n"
+"\t\t\t\t\t\t\tдля вашего интерьера.\n"
+"\t\t\t\t\t\t"
+msgstr ""
+"\n"
+"\t\t\t\t\t\t\tFill out the form and we will contact you shortly. We'll discuss\n"
+"\t\t\t\t\t\t\tyour wishes, answer questions and offer optimal solutions\n"
+"\t\t\t\t\t\t\tfor your interior.\n"
+"\t\t\t\t\t\t"
+
+#: templates/contacts.html:36
+msgid "Ваше имя"
+msgstr "Your name"
+
+#: templates/contacts.html:41
+msgid "Только буквы, пробелы и дефисы"
+msgstr "Only letters, spaces and hyphens"
+
+#: templates/contacts.html:52
+msgid "Номер телефона"
+msgstr "Phone number"
+
+#: templates/contacts.html:56
+msgid "Введите только 9 цифр без +998"
+msgstr "Enter only 9 digits without +998"
+
+#: templates/contacts.html:69
+msgid "Опишите ваш проект"
+msgstr "Describe your project"
+
+#: templates/contacts.html:74
+msgid "Связаться с нами"
+msgstr "Contact us"
+
+#: templates/contacts.html:86
+msgid "Ташкент, Узбекистан"
+msgstr "Tashkent, Uzbekistan"
+
+#: templates/contacts.html:89
+msgid "Почему нас выбирают"
+msgstr "Why choose us"
+
+#: templates/contacts.html:91
+msgid "Комплексный подход от идеи до реализации"
+msgstr "Comprehensive approach from idea to implementation"
+
+#: templates/contacts.html:92
+msgid "Гарантия качества - только проверенные материалы"
+msgstr "Quality guarantee - only verified materials"
+
+#: templates/contacts.html:93
+msgid "Серьёзная команда опытных дизайнеров и строителей"
+msgstr "Strong team of experienced designers and builders"
+
+#: templates/contacts.html:94
+msgid "Соблюдение сроков - работаем быстро и без задержек"
+msgstr "Deadline compliance - we work quickly and without delays"
+
+#: templates/contacts.html:95
+msgid "Поддержка после сдачи - гарантия и сервисное обслуживание"
+msgstr "Post-delivery support - warranty and maintenance"
+
+#: templates/material_categories.html:17
+msgid "Категории материалов"
+msgstr "Material categories"
+
+#: templates/material_categories.html:30 templates/material_categories.html:55
+#: templates/products.html:40
+msgid "Нет изображения"
+msgstr "No image"
+
+#: templates/products.html:17
+#, python-format
+msgid "Партнёр %(partner.name)s"
+msgstr "Partner %(partner.name)s"
+
+#: templates/products.html:53
+msgid "Материалы в этой категории пока не добавлены."
+msgstr "Materials in this category have not been added yet."
+
+#: templates/products.html:67
+msgid "Все категории"
+msgstr "All categories"
+
+#: templates/projects.html:14
+msgid "Реализованные проекты"
+msgstr "Completed projects"
+
+#: templates/projects.html:25
+msgid "Коммерческие"
+msgstr "Commercial"
+
+#: templates/projects.html:31
+msgid "Жилые"
+msgstr "Residential"
+
+#: templates/projects.html:37 templates/projects.html:116
+msgid "Другое"
+msgstr "Other"
+
+#: templates/projects.html:55
+msgid "Коммерция"
+msgstr "Commerce"
+
+#: templates/projects.html:63 templates/projects.html:92
+#: templates/projects.html:124
+msgid "м²"
+msgstr "sq.m"
+
+#: templates/projects.html:84
+msgid "Жилое"
+msgstr "Residential"
+
+#: templates/projects.html:97 templates/projects.html:129
+#: templates/styles.html:41
+msgid "Подробнее"
+msgstr "Details"
+
+#: templates/styles.html:13
+msgid "Стили интерьера"
+msgstr "Interior styles"
+
+#: templates/styles.html:16
+msgid ""
+"\n"
+"\t\t\t\t\t\tИнтерьер – это не просто пространство, а отражение вашего вкуса,\n"
+"\t\t\t\t\t\tобраза жизни и характера. Правильно подобранный стиль помогает\n"
+"\t\t\t\t\t\tсоздать гармоничную, уютную и функциональную атмосферу.\n"
+"\t\t\t\t\t"
+msgstr ""
+"\n"
+"\t\t\t\t\t\tInterior is not just space, but a reflection of your taste,\n"
+"\t\t\t\t\t\tlifestyle and character. The right style helps\n"
+"\t\t\t\t\t\tcreate a harmonious, cozy and functional atmosphere.\n"
+"\t\t\t\t\t"
+
+#: templates/styles.html:28
+msgid "←"
+msgstr "←"
+
+#: templates/styles.html:51
+msgid "→"
+msgstr "→"
+
+#: templates/styles.html:61
+msgid "Как выбрать идеальный стиль?"
+msgstr "How to choose the perfect style?"
+
+#: templates/styles.html:63
+msgid ""
+"Ориентируйтесь на свои предпочтения – вам ближе уют или минимализм, роскошь "
+"или практичность?"
+msgstr ""
+"Focus on your preferences - do you prefer coziness or minimalism, luxury or "
+"practicality?"
+
+#: templates/styles.html:64
+msgid ""
+"Учитывайте пространство – для небольших квартир подходят минимализм и "
+"скандинавский стиль, для больших – классика или лофт."
+msgstr ""
+"Consider the space - minimalism and Scandinavian style suit small apartments, "
+"while classic or loft suit large ones."
+
+#: templates/styles.html:65
+msgid ""
+"Функциональность в приоритете – продумайте, как вы будете использовать "
+"каждую зону."
+msgstr ""
+"Functionality is a priority - think about how you will use each zone."
+
+#: templates/styles.html:66
+msgid ""
+"Комбинируйте – не бойтесь смешивать стили, чтобы создать уникальное "
+"пространство."
+msgstr ""
+"Combine - don't be afraid to mix styles to create a unique space."
+
+#: templates/styles.html:70
+msgid "Создадим интерьер в вашем стиле!"
+msgstr "We'll create an interior in your style!"
+
+#: templates/styles_detail.html:4
+msgid "Стиль интерьера"
+msgstr "Interior style"
+
+#: templates/styles_detail.html:15
+#, python-format
+msgid "Стиль %(style.title)s"
+msgstr "Style %(style.title)s"
+
+#: templates/styles_detail.html:34
+msgid "Вернуться к списку стилей"
+msgstr "Back to styles list"

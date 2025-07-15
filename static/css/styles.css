@@ -89,7 +89,6 @@
     transform: scale(1.05);
 }
 
-/* Остальные стили остаются без изменений */
 .scroll-arrow {
     position: absolute;
     top: 50%;

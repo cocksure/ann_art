@@ -7,6 +7,7 @@ from django.core.files.base import ContentFile
 from django.core.validators import FileExtensionValidator
 from django.db import models
 from django.utils.text import slugify
+from django.utils.translation import gettext_lazy as _
 
 
 def process_image(image, upload_path, quality=70, max_size=(1024, 1024)):
@@ -39,13 +40,26 @@ def process_image(image, upload_path, quality=70, max_size=(1024, 1024)):
 
 
 class MaterialCategory(models.Model):
-    name = models.CharField(max_length=100, unique=True)
-    description = models.TextField("Описание", null=True, blank=True)
-    order = models.PositiveIntegerField(default=0, verbose_name="Порядок отображения", null=True, blank=True)
+    name = models.CharField(
+        _('Название категории'),
+        max_length=100,
+        unique=True
+    )
+    description = models.TextField(
+        _('Описание'),
+        null=True,
+        blank=True
+    )
+    order = models.PositiveIntegerField(
+        _('Порядок отображения'),
+        default=0,
+        null=True,
+        blank=True
+    )
     image = models.ImageField(
-        upload_to="category_images/",
+        _('Фото категории'),
+        upload_to='category_images/',
         blank=True,
-        verbose_name="Фото категории",
         default='default_foto.png',
         validators=[FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png', 'webp', 'heic'])]
     )
@@ -74,17 +88,39 @@ class MaterialCategory(models.Model):
         return self.name
 
     class Meta:
-        ordering = ('order',)
-        verbose_name = "Категория"
-        verbose_name_plural = "Категории"
+        verbose_name = _('Категория материала')
+        verbose_name_plural = _('Категории материалов')
 
 
 class MaterialItem(models.Model):
-    category = models.ForeignKey(MaterialCategory, on_delete=models.CASCADE, default=None)
-    title = models.CharField("Заголовок", max_length=255, unique=True)
-    description = models.TextField("Описание", null=True, blank=True)
-    image = models.ImageField("Изображение", upload_to="materials/", null=True, blank=True)
-    order = models.PositiveIntegerField("Порядок", default=0, null=True, blank=True)
+    category = models.ForeignKey(
+        MaterialCategory,
+        on_delete=models.CASCADE,
+        verbose_name=_('Категория'),
+        default=None
+    )
+    title = models.CharField(
+        _('Заголовок'),
+        max_length=255,
+        unique=True
+    )
+    description = models.TextField(
+        _('Описание'),
+        null=True,
+        blank=True
+    )
+    image = models.ImageField(
+        _('Изображение'),
+        upload_to='materials/',
+        null=True,
+        blank=True
+    )
+    order = models.PositiveIntegerField(
+        _('Порядок'),
+        default=0,
+        null=True,
+        blank=True
+    )
 
     def save(self, *args, **kwargs):
         if self.image:
@@ -111,15 +147,26 @@ class MaterialItem(models.Model):
 
     class Meta:
         ordering = ('order',)
-        verbose_name = "Продукция"
-        verbose_name_plural = "Продукции"
+        verbose_name = _('Материал')
+        verbose_name_plural = _('Материалы')
 
 
 class StyleItem(models.Model):
-    title = models.CharField("Название стиля", max_length=255)
-    description = models.TextField("Описание")
-    image = models.ImageField("Изображение", upload_to="styles/")
-    order = models.PositiveIntegerField("Порядок", default=0)
+    title = models.CharField(
+        _('Название стиля'),
+        max_length=255
+    )
+    description = models.TextField(
+        _('Описание')
+    )
+    image = models.ImageField(
+        _('Изображение'),
+        upload_to='styles/'
+    )
+    order = models.PositiveIntegerField(
+        _('Порядок'),
+        default=0
+    )
 
     def save(self, *args, **kwargs):
         if self.image:
@@ -151,22 +198,35 @@ class StyleItem(models.Model):
 
 
 class ProjectItem(models.Model):
-    PROJECT_TYPES = (
-        ('commercial', 'Коммерческие помещения'),
-        ('residential', 'Жилые помещения'),
-        ('other', 'Другое'),
+    class ProjectType(models.TextChoices):
+        COMMERCIAL = 'commercial', _('Коммерческие помещения')
+        RESIDENTIAL = 'residential', _('Жилые помещения')
+        OTHER = 'other', _('Другое')
+
+    title = models.CharField(
+        _('Название проекта'),
+        max_length=255
     )
-
-    title = models.CharField("Название проекта", max_length=255)
-    description = models.TextField("Описание", blank=True, null=True)
-    image = models.ImageField("Изображение", upload_to="projects/")
-    order = models.PositiveIntegerField("Порядок", default=0, null=True, blank=True)
-
+    description = models.TextField(
+        _('Описание'),
+        blank=True,
+        null=True
+    )
+    image = models.ImageField(
+        _('Изображение'),
+        upload_to='projects/'
+    )
+    order = models.PositiveIntegerField(
+        _('Порядок'),
+        default=0,
+        null=True,
+        blank=True
+    )
     category = models.CharField(
-        "Тип проекта",
+        _('Тип проекта'),
         max_length=20,
-        choices=PROJECT_TYPES,
-        default='other',
+        choices=ProjectType.choices,
+        default=ProjectType.OTHER,
     )
 
     def save(self, *args, **kwargs):
@@ -193,24 +253,35 @@ class ProjectItem(models.Model):
         return self.title
 
     class Meta:
-        ordering = ('order',)
-        verbose_name = "Проект"
-        verbose_name_plural = "Проекты"
+        verbose_name = _('Проект')
+        verbose_name_plural = _('Проекты')
+        ordering = ['order']
 
 
 class ServiceItem(models.Model):
-    title = models.CharField("Название услуги", max_length=255)
-    description = models.TextField("Краткое описание")
-    details = models.TextField("Детали (HTML или Markdown)", blank=True)
-    order = models.PositiveIntegerField("Порядок", default=0)
+    title = models.CharField(
+        _('Название услуги'),
+        max_length=255
+    )
+    description = models.TextField(
+        _('Краткое описание')
+    )
+    details = models.TextField(
+        _('Детали (HTML или Markdown)'),
+        blank=True
+    )
+    order = models.PositiveIntegerField(
+        _('Порядок'),
+        default=0
+    )
+
+    class Meta:
+        verbose_name = _('Услуга')
+        verbose_name_plural = _('Услуги')
+        ordering = ['order', 'id']
 
     def __str__(self):
         return f"[{self.order:02}] {self.title}"
-
-    class Meta:
-        ordering = ('order',)
-        verbose_name = "Услуга"
-        verbose_name_plural = "Услуги"
 
 
 class GuaranteeItem(models.Model):

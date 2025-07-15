@@ -1,37 +1,41 @@
 from django.contrib import admin
-
+from modeltranslation.admin import TranslationAdmin
+from . import translation
 from .models import (
     MaterialItem, StyleItem, ProjectItem,
-    ServiceItem, GuaranteeItem, InstallmentInfo, MaterialCategory, Partners
+    ServiceItem, MaterialCategory, Partners
 )
 
 
 @admin.register(MaterialCategory)
-class MaterialCategoryAdmin(admin.ModelAdmin):
-    list_display = ("name", 'image')
+class MaterialCategoryAdmin(TranslationAdmin):
+    list_display = ("name", 'description', 'image')
     list_editable = ('image',)
+    group_fieldsets = True
 
 
 @admin.register(MaterialItem)
-class MaterialItemAdmin(admin.ModelAdmin):
+class MaterialItemAdmin(TranslationAdmin):
     list_display = ("title", "order", 'description', 'image')
     ordering = ("order",)
-    list_filter = ('category', )
-    list_editable = ( 'image', )
+    list_filter = ('category',)
+    list_editable = ('image',)
+    group_fieldsets = True
 
 
 @admin.register(StyleItem)
-class StyleItemAdmin(admin.ModelAdmin):
-    list_display = ("title", 'id', "order")
+class StyleItemAdmin(TranslationAdmin):
+    list_display = ("title", 'description')
     ordering = ("order",)
-    list_editable = ('order', )
+    group_fieldsets = True
 
 
 @admin.register(ProjectItem)
-class ProjectItemAdmin(admin.ModelAdmin):
-    list_display = ("title", "order", 'category', )
+class ProjectItemAdmin(TranslationAdmin):
+    list_display = ("title", "order", 'category',)
     ordering = ("order",)
-    list_filter = ('category', )
+    list_filter = ('category',)
+    group_fieldsets = True
 
 
 @admin.register(ServiceItem)
@@ -39,9 +43,8 @@ class ServiceItemAdmin(admin.ModelAdmin):
     list_display = ("title", "order")
     ordering = ("order",)
 
+
 @admin.register(Partners)
 class PartnersAdmin(admin.ModelAdmin):
     list_display = ("id", "name", 'image')
     ordering = ("order",)
-
-

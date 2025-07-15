@@ -1,135 +1,139 @@
 {% extends 'base.html' %}
-{% load static %}
+{% load static i18n %}
 
-{% block title %}Проекты — AnnArt{% endblock %}
+{% block title %}{% trans "Проекты" %} — AnnArt{% endblock %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'css/projects.css' %}">
+	<link rel="stylesheet" href="{% static 'css/projects.css' %}">
 {% endblock extra_css %}
 
 {% block content %}
-<section id="projects" class="py-5">
-    <div class="container py-4">
-        <div class="section-header text-center mb-5">
-            <h2 class="section-title slide-up">Реализованные проекты</h2>
-            <div class="section-divider mx-auto"></div>
-{#            <p class="section-subtitle text-light fade-in">#}
-{#                В AnnArt мы воплощаем в жизнь самые смелые идеи, создавая стильные и уютные интерьеры.#}
-{#            </p>#}
-        </div>
+	<section id="projects" class="py-5">
+		<div class="container py-4">
+			<div class="section-header text-center mb-5">
+				<h2 class="section-title slide-up">{% trans "Реализованные проекты" %}</h2>
+				<div class="section-divider mx-auto"></div>
+			</div>
 
-        <!-- Tabs Navigation -->
-        <div class="row mb-5 fade-in">
-            <div class="col-12">
-                <ul class="nav nav-pills justify-content-center" id="project-tab" role="tablist">
-                    <li class="nav-item mx-3" role="presentation">
-                        <button class="btn btn-custom active" id="commercial-tab" data-bs-toggle="pill" data-bs-target="#commercial" type="button" role="tab">
-                            <i class="fas fa-building me-2"></i>Коммерческие
-                        </button>
-                    </li>
-                    <li class="nav-item mx-3" role="presentation">
-                        <button class="btn btn-custom " id="residential-tab" data-bs-toggle="pill" data-bs-target="#residential" type="button" role="tab">
-                            <i class="fas fa-home me-2"></i>Жилые
-                        </button>
-                    </li>
-                    <li class="nav-item" role="presentation">
-                        <button class="btn btn-custom" id="other-tab" data-bs-toggle="pill" data-bs-target="#other" type="button" role="tab">
-                            <i class="fas fa-star me-2"></i>Другое
-                        </button>
-                    </li>
-                </ul>
-            </div>
-        </div>
+			<!-- Tabs Navigation -->
+			<div class="row mb-5 fade-in">
+				<div class="col-12">
+					<ul class="nav nav-pills justify-content-center" id="project-tab" role="tablist">
+						<li class="nav-item mx-3" role="presentation">
+							<button class="btn btn-custom active" id="commercial-tab" data-bs-toggle="pill"
+							        data-bs-target="#commercial" type="button" role="tab">
+								<i class="fas fa-building me-2"></i>{% trans "Коммерческие" %}
+							</button>
+						</li>
+						<li class="nav-item mx-3" role="presentation">
+							<button class="btn btn-custom" id="residential-tab" data-bs-toggle="pill"
+							        data-bs-target="#residential" type="button" role="tab">
+								<i class="fas fa-home me-2"></i>{% trans "Жилые" %}
+							</button>
+						</li>
+						<li class="nav-item" role="presentation">
+							<button class="btn btn-custom" id="other-tab" data-bs-toggle="pill" data-bs-target="#other"
+							        type="button" role="tab">
+								<i class="fas fa-star me-2"></i>{% trans "Другое" %}
+							</button>
+						</li>
+					</ul>
+				</div>
+			</div>
 
-        <!-- Tab Content -->
-        <div class="tab-content" id="project-tabContent">
-            <!-- Commercial Projects -->
-            <div class="tab-pane fade show active " id="commercial" role="tabpanel" aria-labelledby="commercial-tab">
-                <div class="row g-4">
-                    {% for project in commercial_projects %}
-                    <div class="col-md-6 col-lg-4 col-xl-3 slide-up">
-                        <div class="project-card">
-                            <div class="project-img-container">
-                                <img src="{{ project.image.url }}" alt="{{ project.title }}" class="project-img">
-                                <div class="project-badge">Коммерция</div>
-                            </div>
-                            <div class="project-overlay">
-                                <div class="project-content">
-                                    <h5 class="project-title">{{ project.title }}</h5>
-                                    <p class="project-description">{{ project.description|truncatechars:100 }}</p>
-                                    <div class="project-meta">
-                                        <span class="project-area"><i class="fas fa-ruler-combined me-1"></i> {{ project.area }} м²</span>
-                                        <span class="project-year"><i class="far fa-calendar-alt me-1"></i> {{ project.year }}</span>
-                                    </div>
+			<!-- Tab Content -->
+			<div class="tab-content" id="project-tabContent">
+				<!-- Commercial Projects -->
+				<div class="tab-pane fade show active" id="commercial" role="tabpanel" aria-labelledby="commercial-tab">
+					<div class="row g-4">
+						{% for project in commercial_projects %}
+							<div class="col-md-6 col-lg-4 col-xl-3 slide-up">
+								<div class="project-card">
+									<div class="project-img-container">
+										<img src="{{ project.image.url }}" alt="{{ project.title }}"
+										     class="project-img">
+										<div class="project-badge">{% trans "Коммерция" %}</div>
+									</div>
+									<div class="project-overlay">
+										<div class="project-content">
+											<h5 class="project-title">{{ project.title }}</h5>
+											<p class="project-description">{{ project.description|truncatechars:100 }}</p>
+											<div class="project-meta">
+												<span class="project-area"><i
+														class="fas fa-ruler-combined me-1"></i> {{ project.area }} {% trans "м²" %}</span>
+												<span class="project-year"><i
+														class="far fa-calendar-alt me-1"></i> {{ project.year }}</span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
 
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
+				<!-- Residential Projects -->
+				<div class="tab-pane fade" id="residential" role="tabpanel" aria-labelledby="residential-tab">
+					<div class="row g-4">
+						{% for project in residential_projects %}
+							<div class="col-md-6 col-lg-4 col-xl-3 slide-up">
+								<div class="project-card">
+									<div class="project-img-container">
+										<img src="{{ project.image.url }}" alt="{{ project.title }}"
+										     class="project-img">
+										<div class="project-badge">{% trans "Жилое" %}</div>
+									</div>
+									<div class="project-overlay">
+										<div class="project-content">
+											<h5 class="project-title">{{ project.title }}</h5>
+											<p class="project-description">{{ project.description|truncatechars:100 }}</p>
+											<div class="project-meta">
+												<span class="project-area"><i
+														class="fas fa-ruler-combined me-1"></i> {{ project.area }} {% trans "м²" %}</span>
+												<span class="project-year"><i
+														class="far fa-calendar-alt me-1"></i> {{ project.year }}</span>
+											</div>
 
-            <!-- Residential Projects -->
-            <div class="tab-pane fade" id="residential" role="tabpanel" aria-labelledby="residential-tab">
-                <div class="row g-4">
-                    {% for project in residential_projects %}
-                    <div class="col-md-6 col-lg-4 col-xl-3 slide-up">
-                        <div class="project-card">
-                            <div class="project-img-container">
-                                <img src="{{ project.image.url }}" alt="{{ project.title }}" class="project-img">
-                                <div class="project-badge">Жилое</div>
-                            </div>
-                            <div class="project-overlay">
-                                <div class="project-content">
-                                    <h5 class="project-title">{{ project.title }}</h5>
-                                    <p class="project-description">{{ project.description|truncatechars:100 }}</p>
-                                    <div class="project-meta">
-                                        <span class="project-area"><i class="fas fa-ruler-combined me-1"></i> {{ project.area }} м²</span>
-                                        <span class="project-year"><i class="far fa-calendar-alt me-1"></i> {{ project.year }}</span>
-                                    </div>
-                                    <a href="" class="btn btn-view-more">
-                                        Подробнее <i class="fas fa-arrow-right ms-2"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
+										</div>
+									</div>
+								</div>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
 
-            <!-- Other Projects -->
-            <div class="tab-pane fade" id="other" role="tabpanel" aria-labelledby="other-tab">
-                <div class="row g-4">
-                    {% for project in other_projects %}
-                    <div class="col-md-6 col-lg-4 col-xl-3 slide-up">
-                        <div class="project-card">
-                            <div class="project-img-container">
-                                <img src="{{ project.image.url }}" alt="{{ project.title }}" class="project-img">
-                                <div class="project-badge">Другое</div>
-                            </div>
-                            <div class="project-overlay">
-                                <div class="project-content">
-                                    <h5 class="project-title">{{ project.title }}</h5>
-                                    <p class="project-description">{{ project.description|truncatechars:100 }}</p>
-                                    <div class="project-meta">
-                                        <span class="project-area"><i class="fas fa-ruler-combined me-1"></i> {{ project.area }} м²</span>
-                                        <span class="project-year"><i class="far fa-calendar-alt me-1"></i> {{ project.year }}</span>
-                                    </div>
-                                    <a href="" class="btn btn-view-more">
-                                        Подробнее <i class="fas fa-arrow-right ms-2"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+				<!-- Other Projects -->
+				<div class="tab-pane fade" id="other" role="tabpanel" aria-labelledby="other-tab">
+					<div class="row g-4">
+						{% for project in other_projects %}
+							<div class="col-md-6 col-lg-4 col-xl-3 slide-up">
+								<div class="project-card">
+									<div class="project-img-container">
+										<img src="{{ project.image.url }}" alt="{{ project.title }}"
+										     class="project-img">
+										<div class="project-badge">{% trans "Другое" %}</div>
+									</div>
+									<div class="project-overlay">
+										<div class="project-content">
+											<h5 class="project-title">{{ project.title }}</h5>
+											<p class="project-description">{{ project.description|truncatechars:100 }}</p>
+											<div class="project-meta">
+												<span class="project-area"><i
+														class="fas fa-ruler-combined me-1"></i> {{ project.area }} {% trans "м²" %}</span>
+												<span class="project-year"><i
+														class="far fa-calendar-alt me-1"></i> {{ project.year }}</span>
+											</div>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 {% endblock %}
 
 {% block dashboard %}

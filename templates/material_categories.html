@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
-{% load static %}
+{% load i18n static %}
 
-{% block title %}Стили — AnnArt{% endblock %}
+
+{% block title %}{% trans Категории %} — AnnArt{% endblock %}
 
 
 {% block extra_css %}
@@ -9,63 +10,64 @@
 {% endblock extra_css %}
 
 {% block content %}
-	<section id="material-categories" class="py3">
-		<div class="">
-			<h2 class="text-center section-title slide-up mb-4 text-light">Категории материалов</h2>
 
-			{# Первая строка — 5 карточек #}
-			<div class="row justify-content-center">
-				{% for category in material_categories|slice:":5" %}
-					<div class="col-6 col-md-4 col-lg-2 mb-4 d-flex justify-content-center">
-						<a href="{% url 'material_items_by_category' category.pk %}" class="text-decoration-none w-100">
-							<div class="material-card">
-								<div class="material-image">
-									{% if category.image %}
-										<img src="{{ category.image.url }}" alt="{{ category.name }}">
-									{% else %}
-										<img src="{% static 'imgages/default_foto.jpg' %}" alt="Нет изображения">
-									{% endif %}
-								</div>
-								<div class="material-text-content">
-									<h5>{{ category.name }}</h5>
-									{% if category.description %}
-										<p>{{ category.description|truncatechars:80 }}</p>
-									{% endif %}
-								</div>
+<section id="material-categories" class="py3">
+	<div class="">
+		<h2 class="text-center section-title slide-up mb-4 text-light">
+			{% trans "Категории материалов" %}
+		</h2>
+
+		{# Первая строка — 5 карточек #}
+		<div class="row justify-content-center">
+			{% for category in material_categories|slice:":5" %}
+				<div class="col-6 col-md-4 col-lg-2 mb-4 d-flex justify-content-center">
+					<a href="{% url 'material_items_by_category' category.pk %}" class="text-decoration-none w-100">
+						<div class="material-card">
+							<div class="material-image">
+								{% if category.image %}
+									<img src="{{ category.image.url }}" alt="{{ category.name }}">
+								{% else %}
+									<img src="{% static 'images/default_foto.jpg' %}" alt="{% trans 'Нет изображения' %}">
+								{% endif %}
 							</div>
-						</a>
-					</div>
-				{% endfor %}
-			</div>
-
-			{# Вторая строка — 4 карточки по центру #}
-			<div class="row justify-content-center">
-				{% for category in material_categories|slice:"5:9" %}
-					<div class="col-6 col-md-4 col-lg-2 mb-4 d-flex justify-content-center">
-						<a href="{% url 'material_items_by_category' category.pk %}" class="text-decoration-none w-100">
-							<div class="material-card">
-								<div class="material-image">
-									{% if category.image %}
-										<img src="{{ category.image.url }}" alt="{{ category.name }}">
-									{% else %}
-										<img src="{% static 'img/default.jpg' %}" alt="Нет изображения">
-									{% endif %}
-								</div>
-								<div class="material-text-content">
-									<h5>{{ category.name }}</h5>
-									{% if category.description %}
-										<p>{{ category.description|truncatechars:80 }}</p>
-									{% endif %}
-								</div>
+							<div class="material-text-content">
+								<h5>{{ category.name }}</h5>
+								{% if category.description %}
+									<p>{{ category.description|truncatechars:80 }}</p>
+								{% endif %}
 							</div>
-						</a>
-					</div>
-				{% endfor %}
-			</div>
+						</div>
+					</a>
+				</div>
+			{% endfor %}
 		</div>
-		</div>
-	</section>
 
+		{# Вторая строка — 4 карточки по центру #}
+		<div class="row justify-content-center">
+			{% for category in material_categories|slice:"5:9" %}
+				<div class="col-6 col-md-4 col-lg-2 mb-4 d-flex justify-content-center">
+					<a href="{% url 'material_items_by_category' category.pk %}" class="text-decoration-none w-100">
+						<div class="material-card">
+							<div class="material-image">
+								{% if category.image %}
+									<img src="{{ category.image.url }}" alt="{{ category.name }}">
+								{% else %}
+									<img src="{% static 'images/default_foto.jpg' %}" alt="{% trans 'Нет изображения' %}">
+								{% endif %}
+							</div>
+							<div class="material-text-content">
+								<h5>{{ category.name }}</h5>
+								{% if category.description %}
+									<p>{{ category.description|truncatechars:80 }}</p>
+								{% endif %}
+							</div>
+						</div>
+					</a>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</section>
 {% endblock content %}
 
 {% block extra_js %}

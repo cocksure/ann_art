@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
-{% load static %}
+{% load static i18n %}
 
-{% block title %}{{ style.title }} — Стиль интерьера{% endblock %}
+{% block title %}{{ style.title }} — {% trans "Стиль интерьера" %}{% endblock %}
 
 {% block extra_css %}
 	<link rel="stylesheet" href="{% static 'css/styles.css' %}">
@@ -12,14 +12,14 @@
 		<div class="container-fluid">
 			<div class="row justify-content-center fade-in">
 				<div class="col-lg-10 text-center">
-					<h2 class="section-title slide-up">Стиль {{ style.title }}</h2>
+					<h2 class="section-title slide-up">{% blocktrans %}Стиль {{ style.title }}{% endblocktrans %}</h2>
 				</div>
 			</div>
 
 			<div class="row justify-content-center fade-in">
 				<div class="col-md-12 col-lg-12">
-					<div class="style-detail-card  rounded p-4 text-light ">
-						<div class="row border-bottom ">
+					<div class="style-detail-card rounded p-4 text-light">
+						<div class="row border-bottom">
 							<div class="mb-4 text-center col-lg-5">
 								<img src="{{ style.image.url }}" alt="{{ style.title }}"
 								     class="img-fluid rounded border" style="max-height: 450px; object-fit: cover;">
@@ -29,10 +29,9 @@
 							</div>
 						</div>
 
-
 						<div class="text-center mt-4">
 							<a href="{% url 'styles' %}" class="btn btn-custom btn-lg">
-								← Вернуться к списку стилей
+								← {% trans "Вернуться к списку стилей" %}
 							</a>
 						</div>
 					</div>
