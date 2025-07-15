@@ -1,5 +1,5 @@
 import requests
-from django.http import JsonResponse
+from django.http import JsonResponse, Http404
 from django.shortcuts import render, get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import ListView, DetailView
@@ -48,19 +48,32 @@ def material_items_by_category(request, category_id):
     category = get_object_or_404(MaterialCategory, id=category_id)
     items = MaterialItem.objects.filter(category=category).order_by('order')
     partners = Partners.objects.all()
+
+    all_categories = list(MaterialCategory.objects.order_by('order'))
+    current_index = next((i for i, cat in enumerate(all_categories) if cat.id == category.id), None)
+
+    prev_category = all_categories[current_index - 1] if current_index > 0 else None
+    next_category = all_categories[current_index + 1] if current_index < len(all_categories) - 1 else None
+
     return render(request, 'products.html', {
         'category': category,
         'items': items,
-        'partners': partners
+        'partners': partners,
+        'prev_category': prev_category,
+        'next_category': next_category,
     })
 
-def products(request):
-    return render(request, 'products.html')
 
+def projects_view(request):
+    commercial = ProjectItem.objects.filter(category='commercial').order_by('order')
+    residential = ProjectItem.objects.filter(category='residential').order_by('order')
+    other = ProjectItem.objects.filter(category='other').order_by('order')
 
-def projects(request):
-    return render(request, 'projects.html')
-
+    return render(request, 'projects.html', {
+        'commercial_projects': commercial,
+        'residential_projects': residential,
+        'other_projects': other,
+    })
 
 def contacts(request):
     return render(request, 'contacts.html')

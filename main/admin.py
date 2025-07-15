@@ -8,14 +8,16 @@ from .models import (
 
 @admin.register(MaterialCategory)
 class MaterialCategoryAdmin(admin.ModelAdmin):
-    list_display = ("name",)
+    list_display = ("name", 'image')
+    list_editable = ('image',)
 
 
 @admin.register(MaterialItem)
 class MaterialItemAdmin(admin.ModelAdmin):
-    list_display = ("title", "order", 'description')
+    list_display = ("title", "order", 'description', 'image')
     ordering = ("order",)
     list_filter = ('category', )
+    list_editable = ( 'image', )
 
 
 @admin.register(StyleItem)
@@ -27,8 +29,9 @@ class StyleItemAdmin(admin.ModelAdmin):
 
 @admin.register(ProjectItem)
 class ProjectItemAdmin(admin.ModelAdmin):
-    list_display = ("title", "order")
+    list_display = ("title", "order", 'category', )
     ordering = ("order",)
+    list_filter = ('category', )
 
 
 @admin.register(ServiceItem)
@@ -40,4 +43,5 @@ class ServiceItemAdmin(admin.ModelAdmin):
 class PartnersAdmin(admin.ModelAdmin):
     list_display = ("id", "name", 'image')
     ordering = ("order",)
+
 

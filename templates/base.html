@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<title>{% block title %}  ANNART - Дизайн интерьеров {% endblock %}</title>
+	<title>{% block title %}  AnnArt - Дизайн интерьеров {% endblock %}</title>
 	<!-- Bootstrap CSS -->
 	<link
 			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -29,48 +29,54 @@
 <body>
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light sticky-top">
-    <div class="container">
-        <!-- Логотип с улучшениями -->
-        <a class="navbar-brand display-font" href="{% url 'home' %}">
-            <img src="{% static 'images/AnnartLogo.png' %}" alt="ANNART Logo" height="60px" class="logo-img">
-        </a>
+	<div class="container">
+		<!-- Логотип с улучшениями -->
+		<a class="navbar-brand display-font" href="{% url 'home' %}">
+			<img src="{% static 'images/AnnartLogo.png' %}" alt="ANNART Logo" height="60px" class="logo-img">
+		</a>
 
-        <!-- Кнопка для мобильного меню -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+		<!-- Кнопка для мобильного меню -->
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+		        aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
 
-        <!-- Навигация -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item mx-2">
-                    <a href="{% url 'home' %}" class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}">
-                        <span class="nav-link-inner">Главная</span>
-                    </a>
-                </li>
-                <li class="nav-item mx-2">
-                    <a href="{% url 'styles' %}" class="nav-link {% if request.resolver_match.url_name == 'styles' %}active{% endif %}">
-                        <span class="nav-link-inner">Стили</span>
-                    </a>
-                </li>
-                <li class="nav-item mx-2">
-                    <a href="{% url 'products' %}" class="nav-link {% if request.resolver_match.url_name == 'products' %}active{% endif %}">
-                        <span class="nav-link-inner">Продукция</span>
-                    </a>
-                </li>
-                <li class="nav-item mx-2">
-                    <a href="{% url 'projects' %}" class="nav-link {% if request.resolver_match.url_name == 'projects' %}active{% endif %}">
-                        <span class="nav-link-inner">Проекты</span>
-                    </a>
-                </li>
-                <li class="nav-item mx-2">
-                    <a href="{% url 'contacts' %}" class="nav-link {% if request.resolver_match.url_name == 'contacts' %}active{% endif %}">
-                        <span class="nav-link-inner">Контакты</span>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
+		<!-- Навигация -->
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav ms-auto">
+				<li class="nav-item mx-2">
+					<a href="{% url 'home' %}"
+					   class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}">
+						<span class="nav-link-inner">Главная</span>
+					</a>
+				</li>
+				<li class="nav-item mx-2">
+					<a href="{% url 'styles' %}"
+					   class="nav-link {% if request.resolver_match.url_name == 'styles' %}active{% endif %}">
+						<span class="nav-link-inner">Стили</span>
+					</a>
+				</li>
+				<li class="nav-item mx-2">
+					<a href="{% url 'products' %}"
+					   class="nav-link {% if request.resolver_match.url_name == 'products' %}active{% endif %}">
+						<span class="nav-link-inner">Продукция</span>
+					</a>
+				</li>
+				<li class="nav-item mx-2">
+					<a href="{% url 'projects'  %}"
+					   class="nav-link {% if request.resolver_match.url_name == 'projects' %}active{% endif %}">
+						<span class="nav-link-inner">Проекты</span>
+					</a>
+				</li>
+				<li class="nav-item mx-2">
+					<a href="{% url 'contacts' %}"
+					   class="nav-link {% if request.resolver_match.url_name == 'contacts' %}active{% endif %}">
+						<span class="nav-link-inner">Контакты</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
 </nav>
 {% block dashboard %}
 
@@ -79,7 +85,7 @@
 		<div class="container">
 			<div class="hero-content slide-up">
 				<h1 class="display-4 mb-4">Искусство, вдохновленное вами!</h1>
-				<p class="lead mb-5">
+				<p class="lead mb-4 ">
 					Полный цикл услуг: от разработки дизайна интерьеров и экстерьеров до
 					ремонта «под ключ».
 				</p>
@@ -128,7 +134,7 @@
 				<div class="col-md-6 col-lg-3 fade-in">
 					<div class="stats-box">
 						<div class="stats-number">100%</div>
-						<p>
+						<p class="shadow">
 							под ключ – от идеи до финального декора, включая поставку
 							материалов.
 						</p>
@@ -253,14 +259,14 @@
 				<div class="col-md-4 fade-in">
 					<div class="testimonial-card">
 						<p>
-							Обратились в Annart для создания интерьера нашей квартиры, и
+							Обратились в AnnArt для создания интерьера нашей квартиры, и
 							результат превзошёл все ожидания! Команда учла все наши
 							пожелания, предложила стильные решения и подобрала качественные
 							материалы. Работы были выполнены точно в срок, без задержек и
 							лишних забот для нас. Особенно понравилось, что всё — от
 							дизайн-проекта до финального декора — было сделано под ключ.
 							Теперь наш дом выглядит стильно, современно и очень уютно.
-							Спасибо Annart за профессионализм и внимательное отношение к
+							Спасибо AnnArt за профессионализм и внимательное отношение к
 							деталям!
 						</p>
 						<div class="testimonial-author">[И.О.]</div>
@@ -436,7 +442,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-4 mb-4">
-				<h3 class="display-font mb-3">ANNART</h3>
+				<h3 class="display-font mb-3">AnnArt</h3>
 				<p>
 					Искусство, вдохновленное вами! Полный цикл услуг: от разработки
 					дизайна интерьеров и экстерьеров до ремонта «под ключ».
@@ -490,7 +496,7 @@
 		<div class="row pt-4">
 			<div class="col-12 text-center">
 				<p class="mb-0" style="color: #a67c52">
-					© 2025 ANNART. Все права защищены.
+					© 2025 AnnArt. Все права защищены.
 				</p>
 			</div>
 		</div>

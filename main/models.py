@@ -151,10 +151,23 @@ class StyleItem(models.Model):
 
 
 class ProjectItem(models.Model):
+    PROJECT_TYPES = (
+        ('commercial', 'Коммерческие помещения'),
+        ('residential', 'Жилые помещения'),
+        ('other', 'Другое'),
+    )
+
     title = models.CharField("Название проекта", max_length=255)
     description = models.TextField("Описание", blank=True, null=True)
     image = models.ImageField("Изображение", upload_to="projects/")
-    order = models.PositiveIntegerField("Порядок", default=0)
+    order = models.PositiveIntegerField("Порядок", default=0, null=True, blank=True)
+
+    category = models.CharField(
+        "Тип проекта",
+        max_length=20,
+        choices=PROJECT_TYPES,
+        default='other',
+    )
 
     def save(self, *args, **kwargs):
         if self.image:

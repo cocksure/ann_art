@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Продукты — ANNART{% endblock %}
+{% block title %}Продукты — AnnArt{% endblock %}
 
 {% block extra_css %}
 	<link rel="stylesheet" href="{% static 'css/products.css' %}">
@@ -55,6 +55,25 @@
 					</div>
 				{% endfor %}
 			</div>
+		</div>
+		<div class="text-center mt-3 d-flex justify-content-center flex-wrap gap-3">
+
+			{% if prev_category %}
+				<a href="{% url 'material_items_by_category' prev_category.id %}" class="btn btn-outline-light">
+					← {{ prev_category.name }}
+				</a>
+			{% endif %}
+
+			<a href="{% url 'products' %}" class="btn btn-custom btn-lg">
+				Все категории
+			</a>
+
+			{% if next_category %}
+				<a href="{% url 'material_items_by_category' next_category.id %}" class="btn btn-outline-light">
+					{{ next_category.name }} →
+				</a>
+			{% endif %}
+
 		</div>
 	</section>
 
