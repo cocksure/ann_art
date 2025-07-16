@@ -1,6 +1,7 @@
 from django.contrib import admin
 from modeltranslation.admin import TranslationAdmin
 from . import translation
+# "from . import translation " shu turishi shart
 from .models import (
     MaterialItem, StyleItem, ProjectItem,
     ServiceItem, MaterialCategory, Partners, MaterialImages, ProjectImages
@@ -40,7 +41,7 @@ class ProjectItemAdmin(TranslationAdmin):
 
 @admin.register(ServiceItem)
 class ServiceItemAdmin(admin.ModelAdmin):
-    list_display = ("title", 'description', "order")
+    list_display = ("id", "order")
     ordering = ("order",)
 
 

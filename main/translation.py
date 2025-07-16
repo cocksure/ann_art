@@ -1,6 +1,6 @@
 from modeltranslation.translator import register, TranslationOptions
 
-from .models import MaterialCategory, MaterialItem, StyleItem, ProjectItem
+from .models import MaterialCategory, MaterialItem, StyleItem, ProjectItem, ServiceItem
 
 
 @register(MaterialCategory)
@@ -20,4 +20,9 @@ class StyleItemTranslationOptions(TranslationOptions):
 
 @register(ProjectItem)
 class ProjectItemTranslationOptions(TranslationOptions):
+    fields = ('title', 'description')
+
+
+@register(ServiceItem)
+class ServiceItemTranslationOptions(TranslationOptions):
     fields = ('title', 'description')
