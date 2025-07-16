@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static i18n %}
+
+{% block title %}{{ project.title }} — AnnArt{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/material_detail.css' %}">
+    <link rel="stylesheet" href="{% static 'css/products.css' %}">
+{% endblock %}
+
+{% block content %}
+<section class="material-detail-section">
+    <div class="container">
+        <div class="row gx-4">
+            <!-- Левая колонка - изображения -->
+            <div class="col-lg-7 animate-fade-in" style="animation-delay: 0.1s;">
+                <div class="main-image-container">
+                    {% if project.image %}
+                        <img src="{{ project.image.url }}" alt="{{ project.title }}" class="img-fluid" id="mainImage">
+                    {% else %}
+                        <img src="{% static 'images/default-material.jpg' %}" alt="Default image" class="img-fluid" id="mainImage">
+                    {% endif %}
+
+                    {% if project.additional_images.all %}
+                        <div class="gallery-thumbnails">
+                            {% for img in project.additional_images.all %}
+                                <div class="thumbnail" onclick="changeMainImage('{{ img.image.url }}')">
+                                    <img src="{{ img.image.url }}" alt="Доп. изображение {{ forloop.counter }}">
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Правая колонка - информация -->
+            <div class="col-lg-5 animate-fade-in" style="animation-delay: 0.3s;">
+                <div class="material-info">
+                    <span class="category-badge">{{ project.category.title }}</span>
+                    <h1 class="material-title">{{ project.title }}</h1>
+
+                    {% if project.description %}
+                        <div class="material-description">
+                            {{ project.description|linebreaks }}
+                        </div>
+                    {% else %}
+                        <p class="empty-description">{% trans "Описание отсутствует." %}</p>
+                    {% endif %}
+
+                    <div class="mt-4">
+                        <a href="{% url 'projects' %}" class="btn btn-outline-secondary">
+                            <i class="fas fa-arrow-left me-2"></i>{% trans "Назад к проектам" %}
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    function changeMainImage(newSrc) {
+        document.getElementById('mainImage').src = newSrc;
+
+        const mainImage = document.getElementById('mainImage');
+        mainImage.style.opacity = 0;
+        setTimeout(() => {
+            mainImage.style.opacity = 1;
+            mainImage.style.transition = 'opacity 0.3s ease';
+        }, 10);
+    }
+</script>
+{% endblock %}
+
+{% block dashboard %}
+{% endblock dashboard %}

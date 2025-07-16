@@ -6,4 +6,3 @@ class MainConfig(AppConfig):
 
     def ready(self):
         import main.translation
-        print("✅ main.translation loaded from ready()")

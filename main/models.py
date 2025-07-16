@@ -92,6 +92,71 @@ class MaterialCategory(models.Model):
         verbose_name_plural = _('Категории материалов')
 
 
+class MaterialImages(models.Model):
+    name = models.CharField(
+        _('Название'),
+        max_length=100,
+        null=True, blank=True
+    )
+    image = models.ImageField(upload_to='materials/', verbose_name="Доп. Фотографии")
+
+    def __str__(self):
+        return self.name
+
+
+    def save(self, *args, **kwargs):
+        if self.image:
+            new_name, new_file = process_image(self.image, "style_images/")
+
+            if self.pk:
+                try:
+                    old_instance = self.__class__.objects.get(pk=self.pk)
+                    if (
+                            old_instance.image
+                            and old_instance.image != self.image
+                            and old_instance.image.name != settings.DEFAULT_IMAGE
+                    ):
+                        old_instance.image.delete(save=False)
+                except self.__class__.DoesNotExist:
+                    pass
+
+            self.image.save(new_name, new_file, save=False)
+
+        super().save(*args, **kwargs)
+
+
+class ProjectImages(models.Model):
+    name = models.CharField(
+        _('Название'),
+        max_length=100,
+        null=True, blank=True
+    )
+    image = models.ImageField(upload_to='projects/', verbose_name="Доп. Фотографии")
+
+    def __str__(self):
+        return self.name
+
+    def save(self, *args, **kwargs):
+        if self.image:
+            new_name, new_file = process_image(self.image, "style_images/")
+
+            if self.pk:
+                try:
+                    old_instance = self.__class__.objects.get(pk=self.pk)
+                    if (
+                            old_instance.image
+                            and old_instance.image != self.image
+                            and old_instance.image.name != settings.DEFAULT_IMAGE
+                    ):
+                        old_instance.image.delete(save=False)
+                except self.__class__.DoesNotExist:
+                    pass
+
+            self.image.save(new_name, new_file, save=False)
+
+        super().save(*args, **kwargs)
+
+
 class MaterialItem(models.Model):
     category = models.ForeignKey(
         MaterialCategory,
@@ -115,6 +180,8 @@ class MaterialItem(models.Model):
         null=True,
         blank=True
     )
+    additional_images = models.ManyToManyField(MaterialImages, blank=True)
+
     order = models.PositiveIntegerField(
         _('Порядок'),
         default=0,
@@ -216,6 +283,8 @@ class ProjectItem(models.Model):
         _('Изображение'),
         upload_to='projects/'
     )
+    additional_images = models.ManyToManyField(ProjectImages, blank=True, verbose_name=_("Доп. изображения"))
+
     order = models.PositiveIntegerField(
         _('Порядок'),
         default=0,
@@ -227,6 +296,11 @@ class ProjectItem(models.Model):
         max_length=20,
         choices=ProjectType.choices,
         default=ProjectType.OTHER,
+    )
+    square_meters = models.SmallIntegerField(
+        _('Площадь (м²)'),
+        null=True,
+        blank=True
     )
 
     def save(self, *args, **kwargs):

@@ -21,6 +21,3 @@ class StyleItemTranslationOptions(TranslationOptions):
 @register(ProjectItem)
 class ProjectItemTranslationOptions(TranslationOptions):
     fields = ('title', 'description')
-
-
-print("✅ Translation registered for MaterialItem")

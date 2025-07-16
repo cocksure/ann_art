@@ -60,9 +60,10 @@
 											<p class="project-description">{{ project.description|truncatechars:100 }}</p>
 											<div class="project-meta">
 												<span class="project-area"><i
-														class="fas fa-ruler-combined me-1"></i> {{ project.area }} {% trans "м²" %}</span>
-												<span class="project-year"><i
-														class="far fa-calendar-alt me-1"></i> {{ project.year }}</span>
+														class="fas fa-ruler-combined me-1"></i> {{ project.square_meters }} {% trans "м²" %}</span>
+												<a href="{% url 'project_detail' project.pk %}" class="btn btn-view-more">
+													{% trans "Подробнее" %} <i class="fas fa-arrow-right ms-2"></i>
+												</a>
 											</div>
 										</div>
 									</div>
@@ -89,9 +90,10 @@
 											<p class="project-description">{{ project.description|truncatechars:100 }}</p>
 											<div class="project-meta">
 												<span class="project-area"><i
-														class="fas fa-ruler-combined me-1"></i> {{ project.area }} {% trans "м²" %}</span>
-												<span class="project-year"><i
-														class="far fa-calendar-alt me-1"></i> {{ project.year }}</span>
+														class="fas fa-ruler-combined me-1"></i> {{ project.square_meters }} {% trans "м²" %}</span>
+												<a href="{% url 'project_detail' project.pk %}" class="btn btn-view-more">
+													{% trans "Подробнее" %} <i class="fas fa-arrow-right ms-2"></i>
+												</a>
 											</div>
 
 										</div>
@@ -119,9 +121,10 @@
 											<p class="project-description">{{ project.description|truncatechars:100 }}</p>
 											<div class="project-meta">
 												<span class="project-area"><i
-														class="fas fa-ruler-combined me-1"></i> {{ project.area }} {% trans "м²" %}</span>
-												<span class="project-year"><i
-														class="far fa-calendar-alt me-1"></i> {{ project.year }}</span>
+														class="fas fa-ruler-combined me-1"></i> {{ project.square_meters }} {% trans "м²" %}</span>
+												<a href="{% url 'project_detail' project.pk %}" class="btn btn-view-more">
+													{% trans "Подробнее" %} <i class="fas fa-arrow-right ms-2"></i>
+												</a>
 											</div>
 
 										</div>

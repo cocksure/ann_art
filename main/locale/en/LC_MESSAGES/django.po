@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-15 13:52+0500\n"
+"POT-Creation-Date: 2025-07-16 14:01+0500\n"
 "PO-Revision-Date: 2025-07-15 13:30+0500\n"
 "Last-Translator: Sanjar Mahmudov <your@email.com>\n"
 "Language-Team: English <en@local>\n"
@@ -17,102 +17,108 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: main/models.py:45
+#: main/models.py:44
 msgid "Название категории"
 msgstr "Category name"
 
-#: main/models.py:50 main/models.py:109 main/models.py:162 main/models.py:213
+#: main/models.py:49 main/models.py:136 main/models.py:190 main/models.py:241
 msgid "Описание"
 msgstr "Description"
 
-#: main/models.py:55
+#: main/models.py:54
 msgid "Порядок отображения"
 msgstr "Display order"
 
-#: main/models.py:61
+#: main/models.py:60
 msgid "Фото категории"
 msgstr "Category photo"
 
-#: main/models.py:92
+#: main/models.py:91
 msgid "Категория материала"
 msgstr "Material category"
 
-#: main/models.py:93
+#: main/models.py:92
 msgid "Категории материалов"
 msgstr "Material categories"
 
-#: main/models.py:100
+#: main/models.py:127
 msgid "Категория"
 msgstr "Category"
 
-#: main/models.py:104
+#: main/models.py:131
 msgid "Заголовок"
 msgstr "Title"
 
-#: main/models.py:114 main/models.py:165 main/models.py:218
+#: main/models.py:141 main/models.py:193 main/models.py:246
 msgid "Изображение"
 msgstr "Image"
 
-#: main/models.py:120 main/models.py:169 main/models.py:222 main/models.py:276
+#: main/models.py:149 main/models.py:197 main/models.py:252 main/models.py:306
 msgid "Порядок"
 msgstr "Order"
 
-#: main/models.py:152
+#: main/models.py:180
 msgid "Материал"
 msgstr "Material"
 
-#: main/models.py:153
+#: main/models.py:181
 msgid "Материалы"
 msgstr "Materials"
 
-#: main/models.py:158
+#: main/models.py:186
 msgid "Название стиля"
 msgstr "Style name"
 
-#: main/models.py:204
+#: main/models.py:232
 msgid "Коммерческие помещения"
 msgstr "Commercial spaces"
 
-#: main/models.py:205
+#: main/models.py:233
 msgid "Жилые помещения"
 msgstr "Residential spaces"
 
-#: main/models.py:206
+#: main/models.py:234
 msgid "Другое"
 msgstr "Other"
 
-#: main/models.py:209
+#: main/models.py:237
 msgid "Название проекта"
 msgstr "Project name"
 
-#: main/models.py:228
+#: main/models.py:249
+#, fuzzy
+#| msgid "Изображение"
+msgid "Доп. изображения"
+msgstr "Image"
+
+#: main/models.py:258
 msgid "Тип проекта"
 msgstr "Project type"
 
-#: main/models.py:258
+#: main/models.py:288
 msgid "Проект"
 msgstr "Project"
 
-#: main/models.py:259
+#: main/models.py:289
 msgid "Проекты"
 msgstr "Projects"
 
-#: main/models.py:265
+#: main/models.py:295
 msgid "Название услуги"
 msgstr "Service title"
 
-#: main/models.py:269
+#: main/models.py:299
 msgid "Краткое описание"
 msgstr "Short description"
 
-#: main/models.py:272
+#: main/models.py:302
 msgid "Детали (HTML или Markdown)"
 msgstr "Details (HTML or Markdown)"
 
-#: main/models.py:281
+#: main/models.py:311
 msgid "Услуга"
 msgstr "Service"
 
-#: main/models.py:282
+#: main/models.py:312
 msgid "Услуги"
 msgstr "Services"

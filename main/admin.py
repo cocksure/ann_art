@@ -3,7 +3,7 @@ from modeltranslation.admin import TranslationAdmin
 from . import translation
 from .models import (
     MaterialItem, StyleItem, ProjectItem,
-    ServiceItem, MaterialCategory, Partners
+    ServiceItem, MaterialCategory, Partners, MaterialImages, ProjectImages
 )
 
 
@@ -32,7 +32,7 @@ class StyleItemAdmin(TranslationAdmin):
 
 @admin.register(ProjectItem)
 class ProjectItemAdmin(TranslationAdmin):
-    list_display = ("title", "order", 'category',)
+    list_display = ("title", 'square_meters', "order", 'category',)
     ordering = ("order",)
     list_filter = ('category',)
     group_fieldsets = True
@@ -40,7 +40,7 @@ class ProjectItemAdmin(TranslationAdmin):
 
 @admin.register(ServiceItem)
 class ServiceItemAdmin(admin.ModelAdmin):
-    list_display = ("title", "order")
+    list_display = ("title", 'description', "order")
     ordering = ("order",)
 
 
@@ -48,3 +48,7 @@ class ServiceItemAdmin(admin.ModelAdmin):
 class PartnersAdmin(admin.ModelAdmin):
     list_display = ("id", "name", 'image')
     ordering = ("order",)
+    list_editable = ('name', 'image')
+
+admin.site.register(MaterialImages)
+admin.site.register(ProjectImages)

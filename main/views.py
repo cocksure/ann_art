@@ -1,5 +1,5 @@
 import requests
-from django.http import JsonResponse, Http404
+from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import ListView, DetailView
@@ -63,6 +63,11 @@ def material_items_by_category(request, category_id):
         'next_category': next_category,
     })
 
+def material_item_detail(request, pk):
+    item = get_object_or_404(MaterialItem, pk=pk)
+    return render(request, 'material_detail.html', {
+        'item': item,
+    })
 
 def projects_view(request):
     commercial = ProjectItem.objects.filter(category='commercial').order_by('order')
@@ -74,6 +79,11 @@ def projects_view(request):
         'residential_projects': residential,
         'other_projects': other,
     })
+
+def project_detail(request, pk):
+    project = get_object_or_404(ProjectItem, pk=pk)
+    return render(request, 'project_detail.html', {'project': project})
+
 
 def contacts(request):
     return render(request, 'contacts.html')
