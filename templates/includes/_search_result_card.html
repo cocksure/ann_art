@@ -1,0 +1,27 @@
+<a href="{{ item|get_item_url:section }}" class="text-decoration-none">
+    <div class="search-card h-100">
+        {% if item.image %}
+            <img src="{{ item.image.url }}" alt="{{ item.title }}" class="search-card-img">
+        {% elif section == 'materials' %}
+            <img src="{% static 'images/default-material.jpg' %}" alt="{{ item.title }}" class="search-card-img">
+        {% elif section == 'projects' %}
+            <img src="{% static 'images/default-project.jpg' %}" alt="{{ item.title }}" class="search-card-img">
+        {% else %}
+            <div class="search-card-img bg-light d-flex align-items-center justify-content-center">
+                <i class="fas fa-{{ section|get_section_icon }} fa-3x text-muted"></i>
+            </div>
+        {% endif %}
+        
+        <div class="search-card-body">
+            <h5 class="search-card-title">{{ item.title }}</h5>
+            {% if item.description %}
+                <p class="search-card-text">{{ item.description|truncatechars:100 }}</p>
+            {% endif %}
+            {% if section == 'materials' and item.category %}
+                <div class="search-card-category">
+                    <i class="fas fa-tag"></i> {{ item.category.name }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</a>

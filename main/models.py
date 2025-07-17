@@ -108,7 +108,6 @@ class MaterialImages(models.Model):
         verbose_name = _('Фото материала')
         verbose_name_plural = _('Фотографии материал')
 
-
     def save(self, *args, **kwargs):
         if self.image:
             new_name, new_file = process_image(self.image, "style_images/")
@@ -165,6 +164,7 @@ class ProjectImages(models.Model):
         ordering = ('-id',)
         verbose_name = _('Фото проекта')
         verbose_name_plural = _('Фотографии проекта')
+
 
 class MaterialItem(models.Model):
     category = models.ForeignKey(

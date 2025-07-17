@@ -3,70 +3,71 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-17 17:43+0500\n"
-"PO-Revision-Date: 2023-11-15 14:30+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: English <LL@li.org>\n"
-"Language: en\n"
+"Language-Team: Uzbek <LL@li.org>\n"
+"Language: uz\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: templates/base.html:7
 msgid "Дизайн интерьеров"
-msgstr "Interior Design"
+msgstr "Interyer dizayni"
 
 #: templates/base.html:41
 msgid "Toggle navigation"
-msgstr "Toggle navigation"
+msgstr "Navigatsiyani almashtirish"
 
 #: templates/base.html:51
 msgid "Главная"
-msgstr "Home"
+msgstr "Bosh sahifa"
 
 #: templates/base.html:57 templates/base.html:366
 #: templates/site_search_results.html:78 templates/styles.html:4
 msgid "Стили"
-msgstr "Styles"
+msgstr "Uslublar"
 
 #: templates/base.html:63
 msgid "Продукция"
-msgstr "Products"
+msgstr "Mahsulotlar"
 
 #: templates/base.html:69 templates/base.html:356 templates/projects.html:4
 #: templates/site_search_results.html:127
 msgid "Проекты"
-msgstr "Projects"
+msgstr "Loyihalar"
 
 #: templates/base.html:75 templates/base.html:377 templates/base.html:381
 #: templates/contacts.html:82
 msgid "Контакты"
-msgstr "Contacts"
+msgstr "Aloqa"
 
 #: templates/base.html:136
 msgid "Искусство, вдохновленное вами!"
-msgstr "Art inspired by you!"
+msgstr "Sizdan ilhomlangan san'at!"
 
 #: templates/base.html:138
 msgid ""
 "Полный цикл услуг: от разработки дизайна интерьеров и экстерьеров до ремонта "
 "«под ключ»."
 msgstr ""
-"Full range of services: from interior and exterior design development to "
-"turnkey renovation."
+"To'liq xizmatlar tsikli: interyer va eksteryer dizaynidan tortib to 'kalit "
+"tugmasi' ta'mirlashgacha."
 
 #: templates/base.html:141
 msgid "Посмотреть проекты"
-msgstr "View projects"
+msgstr "Loyihalarni ko'rish"
 
 #: templates/base.html:150 templates/base.html:379
 msgid "О нас"
-msgstr "About us"
+msgstr "Biz haqimizda"
 
 #: templates/base.html:155
 msgid ""
@@ -74,9 +75,9 @@ msgid ""
 "строительных материалов. Мы создаём комфортные и эстетичные пространства для "
 "жизни и бизнеса."
 msgstr ""
-"Annart is a team of professionals in interior design and construction "
-"materials supply. We create comfortable and aesthetic spaces for living and "
-"business."
+"Annart - interyer dizayni va qurilish materiallari yetkazib berish "
+"sohasidagi professionalar jamoasi. Biz hayot va biznes uchun qulay va "
+"estetik makonlar yaratamiz."
 
 #: templates/base.html:158
 msgid ""
@@ -84,28 +85,28 @@ msgid ""
 "от проектирования и подбора материалов до чистовой отделки и финального "
 "декора."
 msgstr ""
-"Our team of professionals with 25 years of experience provides full-cycle "
-"services: from design and material selection to finishing works and final "
-"decor."
+"25 yillik tajribaga ega bo'lgan professionalar jamoamiz materiallarni "
+"loyihalash va tanlashdan tortib to yakuniy pardozlash va dekoratsiyagacha "
+"bo'lgan to'liq ishlar tsiklini bajaradi."
 
 #: templates/base.html:167
 msgid "лет опыта – создаём стильные интерьеры с 2014 года."
-msgstr "years of experience - creating stylish interiors since 2014."
+msgstr "yillik tajriba - 2014 yildan beri zamonaviy interyerlar yaratamiz."
 
 #: templates/base.html:173
 msgid ""
 "реализованных проектов – квартиры, дома, офисы и коммерческие пространства."
-msgstr ""
-"completed projects - apartments, houses, offices and commercial spaces."
+msgstr "tayyor loyihalar - kvartiralar, uylar, ofislar va tijorat binolari."
 
 #: templates/base.html:180
 msgid "под ключ – от идеи до финального декора, включая поставку материалов."
 msgstr ""
-"turnkey projects - from concept to final decor, including materials supply."
+"'kalit tugmasi' - g'oyadan tortib to yakuniy dekoratsiyagacha, materiallarni "
+"yetkazib berishni o'z ichiga olgan holda."
 
 #: templates/base.html:187
 msgid "профессионалов – команда дизайнеров, архитекторов и строителей."
-msgstr "professionals - team of designers, architects and builders."
+msgstr "mutaxassislar - dizaynerlar, arxitektorlar va quruvchilar jamoasi."
 
 #: templates/base.html:195
 msgid ""
@@ -114,36 +115,38 @@ msgid ""
 "вниманием к деталям, профессионализмом и ответственностью, чтобы каждая "
 "выполненная нами работа оставляла только положительные впечатления."
 msgstr ""
-"Our mission is to bring your ideas to life by creating spaces that inspire "
-"and meet the highest quality standards. We work with attention to detail, "
-"professionalism and responsibility so that every project we complete leaves "
-"only positive impressions."
+"Bizning missiyamiz - sizning g'oyalaringizni amalga oshirish, "
+"ilhomlantiruvchi va eng yuqori sifat standartlarini qondiradigan makonlarni "
+"yaratish. Har bir bajarilgan ish faqat ijobiy taassurot qoldirishi uchun "
+"detallarga e'tibor, professionalizm va mas'uliyat bilan ishlaymiz."
 
 #: templates/base.html:206
 msgid "Услуги нашей компании"
-msgstr "Our company services"
+msgstr "Kompaniyamizning xizmatlari"
 
 #: templates/base.html:229
 msgid "БОЛЬШОЙ ПРОЕКТ?"
-msgstr "LARGE PROJECT?"
+msgstr "KATTA LOYIHAMI?"
 
 #: templates/base.html:231
 msgid ""
 "Для масштабных проектов с крупным бюджетом мы предлагаем ремонт в рассрочку"
 msgstr ""
-"For large-scale projects with big budgets we offer installment payment plans"
+"Katta byudjetli keng ko'lamli loyihalar uchun biz nasiya asosida "
+"ta'mirlashni taklif qilamiz"
 
 #: templates/base.html:234
 msgid ""
 "Деньги выдаются наличными, вы можете использовать их по своему усмотрению: "
 "оплатить ремонт, заказать мебель, приобрести любые материалы."
 msgstr ""
-"Money is issued in cash, you can use it at your discretion: pay for repairs, "
-"order furniture, purchase any materials."
+"Pul naqd pul shaklida beriladi, siz uni o'z xohishingizga ko'ra "
+"ishlatishingiz mumkin: ta'mirlash uchun to'lash, mebel buyurtma qilish, har "
+"qanday materiallarni sotib olish."
 
 #: templates/base.html:236
 msgid "Как это работает:"
-msgstr "How it works:"
+msgstr "Bu qanday ishlaydi:"
 
 #: templates/base.html:238
 #, python-format
@@ -152,9 +155,9 @@ msgid ""
 "надёжные партнёры: Хамкор Банк и Инфин Банк. Сумма рассрочки — до $50 000. "
 "Срок — до 10 лет."
 msgstr ""
-"50%% of the amount you pay immediately, 50%% - in installments through the "
-"bank. Our reliable partners: Hamkor Bank and Infin Bank. Installment amount "
-"- up to $50,000. Term - up to 10 years."
+"Summaning 50%% ni darhol to'laysiz, 50%% ni bank orqali nasiya asosida. "
+"Bizning ishonchli hamkorlarimiz: Hamkor Bank va Infin Bank. Nasiya summasi - "
+"$50 000 gacha. Muddat - 10 yilgacha."
 
 #: templates/base.html:241
 msgid ""
@@ -162,17 +165,17 @@ msgid ""
 "оформление происходит через нас, поэтому вы продолжаете ссуду гораздо "
 "быстрее, без лишней бюрократии и с гарантией."
 msgstr ""
-"A mandatory requirement is collateral, as a standard bank requirement. But "
-"the processing is done through us, so you get the loan much faster, without "
-"unnecessary bureaucracy and with a guarantee."
+"Majburiy shart - banklarning standart talabi bo'lgan garov. Ammo "
+"rasmiylashtirish biz orqali amalga oshiriladi, shuning uchun siz qarzni "
+"ancha tezroq, ortiqcha byurokratiyasiz va kafolat bilan olasiz."
 
 #: templates/base.html:244
 msgid "Хотите узнать, подойдёт ли вам рассрочка?"
-msgstr "Want to know if installments are right for you?"
+msgstr "Nasiya sizga mos kelishini bilishni xohlaysizmi?"
 
 #: templates/base.html:256
 msgid "Что о нас говорят клиенты"
-msgstr "What our clients say about us"
+msgstr "Mijozlar biz haqimizda nima deyishadi"
 
 #: templates/base.html:263
 msgid ""
@@ -195,21 +198,21 @@ msgid ""
 "\t\t\t\t\t\t\t"
 msgstr ""
 "\n"
-"\t\t\t\t\t\t\t\tWe turned to Annart to create the interior of our apartment, "
-"and the result exceeded all\n"
-"\t\t\t\t\t\t\t\texpectations!\n"
-"\t\t\t\t\t\t\t\tThe team took into account all our wishes, offered stylish "
-"solutions and selected high-quality\n"
-"\t\t\t\t\t\t\t\tmaterials.\n"
-"\t\t\t\t\t\t\t\tThe work was completed exactly on time, without delays and "
-"extra worries for us. We especially\n"
-"\t\t\t\t\t\t\t\tliked\n"
-"\t\t\t\t\t\t\t\tthat everything - from the design project to the final decor "
-"- was done turnkey. Now our home\n"
-"\t\t\t\t\t\t\t\tlooks\n"
-"\t\t\t\t\t\t\t\tstylish, modern and very cozy. Thank you Annart for your "
-"professionalism and attention\n"
-"\t\t\t\t\t\t\t\tto detail!\n"
+"\t\t\t\t\t\t\t\tAnnartga kvartiramiz interyerini yaratish uchun murojaat "
+"qildik va natija barcha\n"
+"\t\t\t\t\t\t\t\tkutganlarimizdan ham yaxshi bo'ldi!\n"
+"\t\t\t\t\t\t\t\tJamoa barcha istaklarimizni hisobga oldi, zamonaviy "
+"yechimlarni taklif qildi va sifatli\n"
+"\t\t\t\t\t\t\t\tmateriallarni tanladi.\n"
+"\t\t\t\t\t\t\t\tIshlar vaqtida, kechikishlarsiz va biz uchun qo'shimcha "
+"tashvishlarsiz bajarildi. Ayniqsa,\n"
+"\t\t\t\t\t\t\t\tyaxshi tarafi,\n"
+"\t\t\t\t\t\t\t\thamma narsa - dizayn loyihasidan tortib to yakuniy "
+"dekoratsiyagacha - 'kalit tugmasi' asosida\n"
+"\t\t\t\t\t\t\t\tqilingan edi. Endi uyimiz\n"
+"\t\t\t\t\t\t\t\tzamonaviy, qulay va juda shinam ko'rinadi. Annartga "
+"professionalizmi va detallarga\n"
+"\t\t\t\t\t\t\t\te'tiborli munosabati uchun rahmat!\n"
 "\t\t\t\t\t\t\t"
 
 #: templates/base.html:283
@@ -226,14 +229,14 @@ msgid ""
 "\t\t\t\t\t\t\t"
 msgstr ""
 "\n"
-"\t\t\t\t\t\t\t\tWe turned to Annart to create the interior of our apartment, "
-"and the result exceeded all\n"
-"\t\t\t\t\t\t\t\texpectations!\n"
-"\t\t\t\t\t\t\t\tThe team took into account all our wishes, offered stylish "
-"solutions and selected high-quality\n"
-"\t\t\t\t\t\t\t\tmaterials.\n"
-"\t\t\t\t\t\t\t\tThe work was completed exactly on time, without delays and "
-"extra worries for us.\n"
+"\t\t\t\t\t\t\t\tAnnartga kvartiramiz interyerini yaratish uchun murojaat "
+"qildik va natija barcha\n"
+"\t\t\t\t\t\t\t\tkutganlarimizdan ham yaxshi bo'ldi!\n"
+"\t\t\t\t\t\t\t\tJamoa barcha istaklarimizni hisobga oldi, zamonaviy "
+"yechimlarni taklif qildi va sifatli\n"
+"\t\t\t\t\t\t\t\tmateriallarni tanladi.\n"
+"\t\t\t\t\t\t\t\tIshlar vaqtida, kechikishlarsiz va biz uchun qo'shimcha "
+"tashvishlarsiz bajarildi.\n"
 "\t\t\t\t\t\t\t"
 
 #: templates/base.html:298
@@ -257,21 +260,21 @@ msgid ""
 "\t\t\t\t\t\t\t"
 msgstr ""
 "\n"
-"\t\t\t\t\t\t\t\tWe turned to AnnArt to create the interior of our apartment, "
-"and the result exceeded all\n"
-"\t\t\t\t\t\t\t\texpectations!\n"
-"\t\t\t\t\t\t\t\tThe team took into account all our wishes, offered stylish "
-"solutions and selected high-quality\n"
-"\t\t\t\t\t\t\t\tmaterials.\n"
-"\t\t\t\t\t\t\t\tThe work was completed exactly on time, without delays and "
-"extra worries for us. We especially\n"
-"\t\t\t\t\t\t\t\tliked\n"
-"\t\t\t\t\t\t\t\tthat everything - from the design project to the final decor "
-"- was done turnkey. Now our home\n"
-"\t\t\t\t\t\t\t\tlooks\n"
-"\t\t\t\t\t\t\t\tstylish, modern and very cozy. Thank you AnnArt for your "
-"professionalism and attention\n"
-"\t\t\t\t\t\t\t\tto detail!\n"
+"\t\t\t\t\t\t\t\tAnnArtga kvartiramiz interyerini yaratish uchun murojaat "
+"qildik va natija barcha\n"
+"\t\t\t\t\t\t\t\tkutganlarimizdan ham yaxshi bo'ldi!\n"
+"\t\t\t\t\t\t\t\tJamoa barcha istaklarimizni hisobga oldi, zamonaviy "
+"yechimlarni taklif qildi va sifatli\n"
+"\t\t\t\t\t\t\t\tmateriallarni tanladi.\n"
+"\t\t\t\t\t\t\t\tIshlar vaqtida, kechikishlarsiz va biz uchun qo'shimcha "
+"tashvishlarsiz bajarildi. Ayniqsa,\n"
+"\t\t\t\t\t\t\t\tyaxshi tarafi,\n"
+"\t\t\t\t\t\t\t\thamma narsa - dizayn loyihasidan tortib to yakuniy "
+"dekoratsiyagacha - 'kalit tugmasi' asosida\n"
+"\t\t\t\t\t\t\t\tqilingan edi. Endi uyimiz\n"
+"\t\t\t\t\t\t\t\tzamonaviy, qulay va juda shinam ko'rinadi. AnnArtga "
+"professionalizmi va detallarga\n"
+"\t\t\t\t\t\t\t\te'tiborli munosabati uchun rahmat!\n"
 "\t\t\t\t\t\t\t"
 
 #: templates/base.html:331
@@ -283,50 +286,50 @@ msgid ""
 "\t\t\t\t\t"
 msgstr ""
 "\n"
-"\t\t\t\t\t\tArt inspired by you! Full range of services: from interior and "
-"exterior design development\n"
-"\t\t\t\t\t\tto turnkey renovation.\n"
+"\t\t\t\t\t\tSizdan ilhomlangan san'at! To'liq xizmatlar tsikli: interyer va "
+"eksteryer dizaynidan tortib\n"
+"\t\t\t\t\t\tto 'kalit tugmasi' ta'mirlashgacha.\n"
 "\t\t\t\t\t"
 
 #: templates/base.html:345 templates/products.html:4
 msgid "Продукты"
-msgstr "Products"
+msgstr "Mahsulotlar"
 
 #: templates/base.html:347
 msgid "Итальянская плитка"
-msgstr "Italian tiles"
+msgstr "Italiya plitkasi"
 
 #: templates/base.html:348
 msgid "Немецкие краски"
-msgstr "German paints"
+msgstr "Nemis bo'yoqlari"
 
 #: templates/base.html:349
 msgid "Европейская сантехника"
-msgstr "European plumbing"
+msgstr "Yevropa santexnikasi"
 
 #: templates/base.html:350
 msgid "Системы освещения"
-msgstr "Lighting systems"
+msgstr "Yoritish tizimlari"
 
 #: templates/base.html:351
 msgid "Эксклюзивные материалы"
-msgstr "Exclusive materials"
+msgstr "Eksklyuziv materiallar"
 
 #: templates/base.html:358
 msgid "Коммерческие помещения"
-msgstr "Commercial premises"
+msgstr "Tijorat binolari"
 
 #: templates/base.html:359
 msgid "Жилые помещения"
-msgstr "Residential premises"
+msgstr "Turar-joy binolari"
 
 #: templates/base.html:360
 msgid "Другие проекты"
-msgstr "Other projects"
+msgstr "Boshqa loyihalar"
 
 #: templates/base.html:361
 msgid "Все проекты"
-msgstr "All projects"
+msgstr "Barcha loyihalar"
 
 #: templates/base.html:368
 msgid "Лофт"
@@ -334,54 +337,46 @@ msgstr "Loft"
 
 #: templates/base.html:369
 msgid "Минимализм"
-msgstr "Minimalism"
+msgstr "Minimalizm"
 
 #: templates/base.html:370
 msgid "Хайтек"
-msgstr "Hi-tech"
+msgstr "Haytek"
 
 #: templates/base.html:371
 msgid "Современный"
-msgstr "Modern"
+msgstr "Zamonaviy"
 
 #: templates/base.html:372
 msgid "Классический"
-msgstr "Classic"
+msgstr "Klassik"
 
 #: templates/base.html:380 templates/site_search_results.html:150
 msgid "Услуги"
-msgstr "Services"
+msgstr "Xizmatlar"
 
 #: templates/base.html:382
 msgid "FAQ"
-msgstr ""
+msgstr "Ko'p beriladigan savollar"
 
 #: templates/base.html:390
 msgid "Все права защищены."
-msgstr "All rights reserved."
+msgstr "Barcha huquqlar himoyalangan."
 
 #: templates/base.html:406
 msgid "Ваша заявка принята!"
-msgstr "Your application has been accepted!"
+msgstr "Arizangiz qabul qilindi!"
 
 #: templates/base.html:411 templates/base.html:429
 #: templates/materials_list.html:153
 msgid "Закрыть"
-msgstr "Close"
+msgstr "Yopish"
 
 #: templates/base.html:415
 msgid "Наш менеджер свяжется с вами в скором времени."
-msgstr "Our manager will contact you shortly."
+msgstr "Menejerimiz tez orada siz bilan bog'lanadi."
 
 #: templates/base.html:417
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "\t\t\t\t\t*Если возникли проблемы или менеджер с вами не связался, вы "
-#| "можете\n"
-#| "\t\t\t\t\tзадать свои вопросы напрямую по номеру +998 97 110 10 00 или в "
-#| "телеграм.\n"
-#| "\t\t\t\t\t"
 msgid ""
 "\n"
 "\t\t\t\t\t\t*Если возникли проблемы или менеджер с вами не связался, вы "
@@ -391,15 +386,15 @@ msgid ""
 "\t\t\t\t\t"
 msgstr ""
 "\n"
-"\t\t\t\t\t*If you have any problems or the manager hasn't contacted you, you "
-"can\n"
-"\t\t\t\t\task your questions directly by calling +998 97 110 10 00 or via "
-"Telegram.\n"
+"\t\t\t\t\t\t*Agar muammolar yuzaga kelsa yoki menejer siz bilan bog'lanmagan "
+"bo'lsa,\n"
+"\t\t\t\t\t\tsavollaringizni to'g'ridan-to'g'ri +998 97 110 10 00 raqamiga "
+"yoki telegram orqali berishingiz mumkin.\n"
 "\t\t\t\t\t"
 
 #: templates/contacts.html:13
 msgid "Давайте обсудим ваш проект!"
-msgstr "Let's discuss your project!"
+msgstr "Keling loyihangizni muhokama qilaylik!"
 
 #: templates/contacts.html:18
 msgid ""
@@ -412,84 +407,86 @@ msgid ""
 "\t\t\t\t\t\t"
 msgstr ""
 "\n"
-"\t\t\t\t\t\t\tFill out the form and we will contact you shortly. We'll "
-"discuss\n"
-"\t\t\t\t\t\t\tyour wishes, answer questions and offer optimal solutions\n"
-"\t\t\t\t\t\t\tfor your interior.\n"
+"\t\t\t\t\t\t\tShaklni to'ldiring va biz tez orada siz bilan bog'lanamiz. "
+"Istaklaringizni\n"
+"\t\t\t\t\t\t\tmuhokama qilamiz, savollaringizga javob beramiz va "
+"interyeringiz uchun\n"
+"\t\t\t\t\t\t\toptimal yechimlarni taklif qilamiz.\n"
 "\t\t\t\t\t\t"
 
 #: templates/contacts.html:36
 msgid "Ваше имя"
-msgstr "Your name"
+msgstr "Ismingiz"
 
 #: templates/contacts.html:41
 msgid "Только буквы, пробелы и дефисы"
-msgstr "Only letters, spaces and hyphens"
+msgstr "Faqat harflar, probellar va defislar"
 
 #: templates/contacts.html:52
 msgid "Номер телефона"
-msgstr "Phone number"
+msgstr "Telefon raqami"
 
 #: templates/contacts.html:56
 msgid "Введите только 9 цифр без +998"
-msgstr "Enter only 9 digits without +998"
+msgstr "Faqat +998 siz 9 ta raqam kiriting"
 
 #: templates/contacts.html:69
 msgid "Опишите ваш проект"
-msgstr "Describe your project"
+msgstr "Loyihangizni tasvirlab bering"
 
 #: templates/contacts.html:74
 msgid "Связаться с нами"
-msgstr "Contact us"
+msgstr "Biz bilan bog'lanish"
 
 #: templates/contacts.html:86
 msgid "Ташкент, Узбекистан"
-msgstr "Tashkent, Uzbekistan"
+msgstr "Toshkent, O'zbekiston"
 
 #: templates/contacts.html:89
 msgid "Почему нас выбирают"
-msgstr "Why choose us"
+msgstr "Nega bizni tanlashadi"
 
 #: templates/contacts.html:91
 msgid "Комплексный подход от идеи до реализации"
-msgstr "Comprehensive approach from idea to implementation"
+msgstr "G'oyadan tortib to amalga oshirishgacha bo'lgan kompleks yondashuv"
 
 #: templates/contacts.html:92
 msgid "Гарантия качества - только проверенные материалы"
-msgstr "Quality guarantee - only verified materials"
+msgstr "Sifat kafolati - faqat sinovdan o'tgan materiallar"
 
 #: templates/contacts.html:93
 msgid "Серьёзная команда опытных дизайнеров и строителей"
-msgstr "Strong team of experienced designers and builders"
+msgstr "Tajribali dizaynerlar va quruvchilardan iborat jiddiy jamoa"
 
 #: templates/contacts.html:94
 msgid "Соблюдение сроков - работаем быстро и без задержек"
-msgstr "Deadline compliance - we work quickly and without delays"
+msgstr "Muddatlarni qat'iy bajarish - tez va kechikishlarsiz ishlaymiz"
 
 #: templates/contacts.html:95
 msgid "Поддержка после сдачи - гарантия и сервисное обслуживание"
-msgstr "Post-delivery support - warranty and maintenance"
+msgstr ""
+"Topshirilgandan keyingi qo'llab-quvvatlash - kafolat va xizmat ko'rsatish"
 
 #: templates/material_categories.html:17
 msgid "Категории материалов"
-msgstr "Material categories"
+msgstr "Materiallar kategoriyalari"
 
 #: templates/material_categories.html:30 templates/material_categories.html:55
 #: templates/products.html:42
 msgid "Нет изображения"
-msgstr "No image"
+msgstr "Rasm yo'q"
 
 #: templates/material_detail.html:47 templates/project_detail.html:47
 msgid "Описание отсутствует."
-msgstr "Description is missing"
+msgstr "Tavsif mavjud emas."
 
 #: templates/material_detail.html:52
 msgid "Назад к категории"
-msgstr "Back to categories"
+msgstr "Kategoriyaga qaytish"
 
 #: templates/material_detail.html:64
 msgid "Другие материалы из категории"
-msgstr "Other materials from the category"
+msgstr "Kategoriyadagi boshqa materiallar"
 
 #: templates/materials_list.html:4 templates/site_search_results.html:101
 msgid "Материалы"
@@ -497,25 +494,23 @@ msgstr ""
 
 #: templates/materials_list.html:14
 msgid "Каталог материалов"
-msgstr "Material categories"
+msgstr "Materiallar kategoriyalari"
 
 #: templates/materials_list.html:77 templates/materials_list.html:126
-#, fuzzy
-#| msgid "Описание отсутствует."
 msgid "Описание отсутствует"
-msgstr "Description is missing"
+msgstr "Tavsif mavjud emas."
 
 #: templates/materials_list.html:81 templates/products.html:51
 #: templates/projects.html:65 templates/projects.html:95
 #: templates/projects.html:126 templates/styles.html:41
 msgid "Подробнее"
-msgstr "Details"
+msgstr "Batafsil"
 
 #: templates/materials_list.html:89
 #, fuzzy
 #| msgid "Другие материалы из категории"
 msgid "Материалы не найдены"
-msgstr "Other materials from the category"
+msgstr "Kategoriyadagi boshqa materiallar"
 
 #: templates/materials_list.html:125
 msgid "Описание"
@@ -525,76 +520,76 @@ msgstr ""
 #, fuzzy
 #| msgid "Все категории"
 msgid "Категория"
-msgstr "All categories"
+msgstr "Barcha kategoriyalar"
 
 #: templates/materials_list.html:137
 #, fuzzy
 #| msgid "Нет изображения"
 msgid "Дополнительные изображения"
-msgstr "No image"
+msgstr "Rasm yo'q"
 
 #: templates/products.html:18
 #, python-format
 msgid "Партнёр %(partner.name)s"
-msgstr "Partner %(partner.name)s"
+msgstr "Hamkor %(partner.name)s"
 
 #: templates/products.html:58
 msgid "Материалы в этой категории пока не добавлены."
-msgstr "Materials in this category have not been added yet."
+msgstr "Ushbu kategoriyada materiallar hali qo'shilmagan."
 
 #: templates/products.html:72
 msgid "Все категории"
-msgstr "All categories"
+msgstr "Barcha kategoriyalar"
 
 #: templates/project_detail.html:52
 msgid "Назад к проектам"
-msgstr "Back to categories"
+msgstr "Loyihalarga qaytish"
 
 #: templates/projects.html:14
 msgid "Реализованные проекты"
-msgstr "Completed projects"
+msgstr "Amalga oshirilgan loyihalar"
 
 #: templates/projects.html:25
 msgid "Коммерческие"
-msgstr "Commercial"
+msgstr "Tijorat"
 
 #: templates/projects.html:31
 msgid "Жилые"
-msgstr "Residential"
+msgstr "Turar-joy"
 
 #: templates/projects.html:37 templates/projects.html:116
 msgid "Другое"
-msgstr "Other"
+msgstr "Boshqa"
 
 #: templates/projects.html:55
 msgid "Коммерция"
-msgstr "Commerce"
+msgstr "Tijorat"
 
 #: templates/projects.html:63 templates/projects.html:93
 #: templates/projects.html:124
 msgid "м²"
-msgstr "sq.m"
+msgstr "m²"
 
 #: templates/projects.html:85
 msgid "Жилое"
-msgstr "Residential"
+msgstr "Turar-joy"
 
 #: templates/site_search_results.html:4 templates/site_search_results.html:66
 msgid "Результаты поиска"
-msgstr "Search results"
+msgstr "Qidiruv natijalari"
 
 #: templates/site_search_results.html:69
 msgid "Введите запрос в поисковое поле."
-msgstr "Enter your query in the search field."
+msgstr ""
 
 #: templates/site_search_results.html:72
 
 msgid "Ничего не найдено."
-msgstr "Other materials from the category"
+msgstr "Hech narsa topilmadi."
 
 #: templates/styles.html:13
 msgid "Стили интерьера"
-msgstr "Interior styles"
+msgstr "Interyer uslublari"
 
 #: templates/styles.html:16
 msgid ""
@@ -606,9 +601,12 @@ msgid ""
 "\t\t\t\t\t"
 msgstr ""
 "\n"
-"\t\t\t\t\t\tInterior is not just space, but a reflection of your taste,\n"
-"\t\t\t\t\t\tlifestyle and character. The right style helps\n"
-"\t\t\t\t\t\tcreate a harmonious, cozy and functional atmosphere.\n"
+"\t\t\t\t\t\tInteryer - bu shunchaki bo'sh joy emas, balki sizning "
+"mazakingizning,\n"
+"\t\t\t\t\t\thayot tarzingiz va xarakteringizning aksidir. To'g'ri tanlangan "
+"uslub\n"
+"\t\t\t\t\t\tharmoniyali, qulay va funktsional muhit yaratishga yordam "
+"beradi.\n"
 "\t\t\t\t\t"
 
 #: templates/styles.html:28
@@ -621,58 +619,56 @@ msgstr "→"
 
 #: templates/styles.html:61
 msgid "Как выбрать идеальный стиль?"
-msgstr "How to choose the perfect style?"
+msgstr "Mukammal uslubni qanday tanlash kerak?"
 
 #: templates/styles.html:63
 msgid ""
 "Ориентируйтесь на свои предпочтения – вам ближе уют или минимализм, роскошь "
 "или практичность?"
 msgstr ""
-"Focus on your preferences - do you prefer coziness or minimalism, luxury or "
-"practicality?"
+"O'zingizning afzalliklaringizga qarang - sizga qulaylik yoki minimalizm, "
+"hashamat yoki amaliylik yaqinroqmi?"
 
 #: templates/styles.html:64
 msgid ""
 "Учитывайте пространство – для небольших квартир подходят минимализм и "
 "скандинавский стиль, для больших – классика или лофт."
 msgstr ""
-"Consider the space - minimalism and Scandinavian style suit small "
-"apartments, while classic or loft suit large ones."
+"Makonni hisobga oling - kichik kvartiralar uchun minimalizm va skandinaviya "
+"uslubi, kattalari uchun klassika yoki loft mos keladi."
 
 #: templates/styles.html:65
 msgid ""
 "Функциональность в приоритете – продумайте, как вы будете использовать "
 "каждую зону."
-msgstr "Functionality is a priority - think about how you will use each zone."
+msgstr ""
+"Funksionallik ustuvor - har bir zonani qanday ishlatishingizni o'ylab "
+"ko'ring."
 
 #: templates/styles.html:66
 msgid ""
 "Комбинируйте – не бойтесь смешивать стили, чтобы создать уникальное "
 "пространство."
-msgstr "Combine - don't be afraid to mix styles to create a unique space."
+msgstr ""
+"Aralashtiring - noyob makon yaratish uchun uslublarni aralashtirishdan "
+"qo'rqmang."
 
 #: templates/styles.html:70
 msgid "Создадим интерьер в вашем стиле!"
-msgstr "We'll create an interior in your style!"
+msgstr "Sizning uslubingizda interyer yaratamiz!"
 
 #: templates/styles_detail.html:4
 msgid "Стиль интерьера"
-msgstr "Interior style"
+msgstr "Interyer uslubi"
 
 #: templates/styles_detail.html:15
-#, fuzzy
-#| msgid "Стили"
 msgid "Стиль "
-msgstr "Styles"
+msgstr "Uslub "
 
 #: templates/styles_detail.html:40
 msgid "Описание стиля пока отсутствует."
-msgstr ""
+msgstr "Uslub tavsifi hali mavjud emas."
 
 #: templates/styles_detail.html:49
 msgid "Вернуться к списку стилей"
-msgstr "Back to styles list"
-
-#, python-format
-#~ msgid "Стиль %(style.title)s"
-#~ msgstr "Style %(style.title)s"
+msgstr "Uslublar ro'yxatiga qaytish"

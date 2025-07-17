@@ -15,8 +15,11 @@ urlpatterns = [
     path('products/<int:category_id>/', views.material_items_by_category, name='material_items_by_category'),
     path('products/item/<int:pk>/', views.material_item_detail, name='material_detail'),
 
+    path('materials/', views.materials_list, name='materials_list'),
+
     path('projects/', views.projects_view, name='projects'),
     path('projects/<int:pk>', views.project_detail, name='project_detail'),
 
     path('contacts/', views.contacts, name='contacts'),
+    path('search/', views.site_search, name='site_search'),
 ]

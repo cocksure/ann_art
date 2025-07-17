@@ -3,89 +3,80 @@
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
+#, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-07-17 17:43+0500\n"
-"PO-Revision-Date: 2025-07-15 13:30+0500\n"
-"Last-Translator: Sanjar Mahmudov <your@email.com>\n"
-"Language-Team: English <en@local>\n"
-"Language: en\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: uz\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: main/models.py:44
 msgid "Название категории"
-msgstr "Category name"
+msgstr "Kategoriya nomi"
 
 #: main/models.py:49 main/models.py:182 main/models.py:236 main/models.py:287
 msgid "Описание"
-msgstr "Description"
+msgstr "Tavsif"
 
 #: main/models.py:54
 msgid "Порядок отображения"
-msgstr "Display order"
+msgstr "Ko'rinish tartibi"
 
 #: main/models.py:60
 msgid "Фото категории"
-msgstr "Category photo"
+msgstr "Kategoriya rasmi"
 
 #: main/models.py:91
 msgid "Категория материала"
-msgstr "Material category"
+msgstr "Material kategoriyasi"
 
 #: main/models.py:92
 msgid "Категории материалов"
-msgstr "Material categories"
+msgstr "Materiallar kategoriyalari"
 
 #: main/models.py:97 main/models.py:134
-#, fuzzy
-#| msgid "Название стиля"
 msgid "Название"
-msgstr "Style name"
+msgstr "Nomi"
 
 #: main/models.py:108
-#, fuzzy
-#| msgid "Категория материала"
 msgid "Фото материала"
-msgstr "Material category"
+msgstr "Material rasmi"
 
 #: main/models.py:109
-#, fuzzy
-#| msgid "Категории материалов"
 msgid "Фотографии материал"
-msgstr "Material categories"
+msgstr "Material rasmlari"
 
 #: main/models.py:165
-#, fuzzy
-#| msgid "Тип проекта"
 msgid "Фото проекта"
-msgstr "Project type"
+msgstr "Loyiha rasmi"
 
 #: main/models.py:166
-#, fuzzy
-#| msgid "Название проекта"
 msgid "Фотографии проекта"
-msgstr "Project name"
+msgstr "Loyiha rasmlari"
 
 #: main/models.py:173
 msgid "Категория"
-msgstr "Category"
+msgstr "Kategoriya"
 
 #: main/models.py:177
 msgid "Заголовок"
-msgstr "Title"
+msgstr "Sarlavha"
 
 #: main/models.py:187 main/models.py:239 main/models.py:292
 msgid "Изображение"
-msgstr "Image"
+msgstr "Rasm"
 
 #: main/models.py:195 main/models.py:243 main/models.py:298 main/models.py:357
 msgid "Порядок"
-msgstr "Order"
+msgstr "Tartib"
 
 #: main/models.py:226
 msgid "Материал"
@@ -93,69 +84,67 @@ msgstr "Material"
 
 #: main/models.py:227 main/views.py:98
 msgid "Материалы"
-msgstr "Materials"
+msgstr "Materiallar"
 
 #: main/models.py:232
 msgid "Название стиля"
-msgstr "Style name"
+msgstr "Uslub nomi"
 
 #: main/models.py:278
 msgid "Коммерческие помещения"
-msgstr "Commercial spaces"
+msgstr "Savdo binolari"
 
 #: main/models.py:279
 msgid "Жилые помещения"
-msgstr "Residential spaces"
+msgstr "Turar joy binolari"
 
 #: main/models.py:280
 msgid "Другое"
-msgstr "Other"
+msgstr "Boshqa"
 
 #: main/models.py:283
 msgid "Название проекта"
-msgstr "Project name"
+msgstr "Loyiha nomi"
 
 #: main/models.py:295
-#, fuzzy
-#| msgid "Изображение"
 msgid "Доп. изображения"
-msgstr "Image"
+msgstr "Qo'shimcha rasmlar"
 
 #: main/models.py:304
 msgid "Тип проекта"
-msgstr "Project type"
+msgstr "Loyiha turi"
 
 #: main/models.py:310
 msgid "Площадь (м²)"
-msgstr ""
+msgstr "Maydoni (m²)"
 
 #: main/models.py:339
 msgid "Проект"
-msgstr "Project"
+msgstr "Loyiha"
 
 #: main/models.py:340 main/views.py:95
 msgid "Проекты"
-msgstr "Projects"
+msgstr "Loyihalar"
 
 #: main/models.py:346
 msgid "Название услуги"
-msgstr "Service title"
+msgstr "Xizmat nomi"
 
 #: main/models.py:350
 msgid "Краткое описание"
-msgstr "Short description"
+msgstr "Qisqacha tavsif"
 
 #: main/models.py:353
 msgid "Детали (HTML или Markdown)"
-msgstr "Details (HTML or Markdown)"
+msgstr "Tafsilotlar (HTML yoki Markdown)"
 
 #: main/models.py:362
 msgid "Услуга"
-msgstr "Service"
+msgstr "Xizmat"
 
 #: main/models.py:363 main/views.py:96
 msgid "Услуги"
-msgstr "Services"
+msgstr "Xizmatlar"
 
 #: main/views.py:97
 msgid "Стили"

@@ -1,0 +1,7 @@
+<form action="{% url 'site_search' %}" method="get" class="d-flex search-form ">
+    <input type="text" name="q" class="form-control mt-2 search-input"
+           placeholder="Поиск..." value="{{ request.GET.q|default:'' }}">
+    <button type="submit" class="btn text-light">
+        <i class="fas fa-search"></i>
+    </button>
+</form>
