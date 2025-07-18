@@ -4,170 +4,184 @@
 {% block title %}{% trans "Материалы" %} — AnnArt{% endblock %}
 
 {% block extra_css %}
-	<link rel="stylesheet" href="{% static 'css/materials.css' %}">
+<link rel="stylesheet" href="{% static 'css/materials.css' %}">
 {% endblock extra_css %}
 
 {% block content %}
-	<section id="materials" class="py-3">
-		<div class="container-fluid py-3">
-			<div class="section-header text-center mb-3">
-				<h2 class="section-title slide-up text-light">{% trans "Каталог материалов" %}</h2>
-				<div class="section-divider mx-auto"></div>
-			</div>
+<section id="materials" class="py-3">
+  <div class="container-fluid py-3">
 
-			<!-- Tabs Navigation - Horizontal Scroll -->
-			<div class="row mb-5 fade-in">
-				<div class="col-12 px-0">
-					<div class="categories-scroll">
-						<ul class="nav nav-pills justify-content-center flex-nowrap" id="material-tab" role="tablist">
-							{% for category in categories %}
-								<li class="nav-item px-0" role="presentation">
-									<button class="nav-link btn-category {% if forloop.first %}active{% endif %}"
-									        id="tab-{{ category.id }}"
-									        data-bs-toggle="pill"
-									        data-bs-target="#cat-{{ category.id }}"
-									        type="button" role="tab"
-									        aria-controls="cat-{{ category.id }}"
-									        aria-selected="{% if forloop.first %}true{% else %}false{% endif %}">
-										{% if category.image %}
-											<img src="{{ category.image.url }}" alt="{{ category.name }}"
-											     class="category-icon me-2">
-										{% endif %}
-										{{ category.name }}
-									</button>
-								</li>
-							{% endfor %}
-						</ul>
-					</div>
-				</div>
-			</div>
-
-			<!-- Tab Content -->
-			<div class="tab-content" id="material-tabContent">
-				{% for category in categories %}
-					<div class="tab-pane fade {% if forloop.first %}show active{% endif %}"
-					     id="cat-{{ category.id }}"
-					     role="tabpanel"
-					     aria-labelledby="tab-{{ category.id }}">
-
-						{% if category.description %}
-							<div class="category-description text-center mb-4">
-								<p>{{ category.description }}</p>
-							</div>
-						{% endif %}
-
-						<div class="row g-3">
-							{% for material in materials %}
-								{% if material.category == category %}
-									<div class="col-md-3 col-lg-4 col-xl-2 slide-up justify-content-center">
-										<div class="material-card ">
-											<div class="material-img-container">
-												{% if material.image %}
-													<img src="{{ material.image.url }}" alt="{{ material.title }}"
-													     class="material-img">
-												{% else %}
-													<img src="{% static 'images/default_material.png' %}"
-													     alt="{{ material.title }}" class="material-img">
-												{% endif %}
-												<div class="material-badge">{{ category.name }}</div>
-											</div>
-											<div class="material-content">
-												<h5 class="material-title">{{ material.title }}</h5>
-												<p class="material-description">
-													{{ material.description|truncatechars:60|default:_("Описание отсутствует") }}
-												</p>
-												<button class="btn btn-view-more" data-bs-toggle="modal"
-												        data-bs-target="#materialModal{{ material.id }}">
-													{% trans "Подробнее" %} <i class="fas fa-arrow-right ms-2"></i>
-												</button>
-											</div>
-										</div>
-									</div>
-								{% endif %}
-							{% empty %}
-								<div class="col-12 text-center py-5">
-									<p class="text-muted">{% trans "Материалы не найдены" %}</p>
-								</div>
-							{% endfor %}
-						</div>
-					</div>
-				{% endfor %}
-			</div>
-		</div>
-	</section>
-
-	<!-- Modals for each material -->
-	{% for material in materials %}
-<div class="modal fade" id="materialModal{{ material.id }}" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-xl">
-        <div class="modal-content">
-            <div class="modal-header bg-emerald-gradient text-white">
-                <h5 class="modal-title">{{ material.title }}</h5>
-                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <div class="row">
-                    <!-- Главное изображение -->
-                    <div class="col-lg-8 mb-4">
-                        <div class="main-image-container ratio ratio-16x9">
-                            {% if material.image %}
-                                <img id="mainImage{{ material.id }}" src="{{ material.image.url }}" 
-                                     alt="{{ material.title }}" class="img-fluid rounded">
-                            {% else %}
-                                <img id="mainImage{{ material.id }}" src="{% static 'images/default_material.png' %}" 
-                                     alt="{{ material.title }}" class="img-fluid rounded">
-                            {% endif %}
-                        </div>
-                    </div>
-                    
-                    <!-- Описание и метаданные -->
-                    <div class="col-lg-4">
-                        <h6 class="text-emerald-dark fw-bold">{% trans "Описание" %}</h6>
-                        <p class="mb-4">{{ material.description|default:_("Описание отсутствует") }}</p>
-
-                        <div class="material-meta bg-light p-3 rounded mb-4">
-                            <p class="mb-2"><i class="fas fa-tag me-2 text-emerald-medium"></i> 
-                                <strong>{% trans "Категория" %}:</strong> {{ material.category.name }}</p>
-                        </div>
-                    </div>
-                    
-                    <!-- Галерея дополнительных изображений -->
-                    {% if material.additional_images.all %}
-                    <div class="col-12 mt-4">
-                        <h6 class="text-emerald-dark fw-bold mb-3">{% trans "Дополнительные изображения" %}</h6>
-                        <div class="gallery-thumbnails d-flex flex-wrap gap-2">
-                            {% for img in material.additional_images.all %}
-                            <div class="thumbnail-container" 
-                                 onclick="changeMainImage('mainImage{{ material.id }}', '{{ img.image.url }}')">
-                                <img src="{{ img.image.url }}" alt="{{ material.title }}"
-                                     class="img-thumbnail gallery-thumbnail">
-                            </div>
-                            {% endfor %}
-                        </div>
-                    </div>
-                    {% endif %}
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-outline-emerald" data-bs-dismiss="modal">
-                    {% trans "Закрыть" %}
-                </button>
-            </div>
-        </div>
+    <!-- Партнёры -->
+    <div class="partner-logos-wrapper">
+      <div class="partner-logos">
+        {% for partner in partners %}
+          <div class="partner-logo">
+            <img src="{{ partner.image.url }}" alt="{% blocktrans %}Партнёр {{ partner.name }}{% endblocktrans %}">
+          </div>
+        {% endfor %}
+      </div>
     </div>
-</div>
+
+    <div class="section-header text-center mb-3">
+      <h2 class="section-title slide-up text-light">{% trans "Каталог материалов" %}</h2>
+      <div class="section-divider mx-auto"></div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="row mb-5 fade-in">
+      <div class="col-12 px-0">
+        <div class="categories-scroll">
+          <ul class="nav nav-pills justify-content-center flex-nowrap" id="material-tab" role="tablist">
+            {% for category in categories %}
+              {% with is_active=category.id|yesno:"true,false" %}
+              {% endwith %}
+              <li class="nav-item px-0" role="presentation">
+                <button
+                  class="nav-link btn-category {% if category.id == active_category_id %}active{% endif %}"
+                  id="tab-{{ category.id }}"
+                  data-bs-toggle="pill"
+                  data-bs-target="#cat-{{ category.id }}"
+                  type="button" role="tab"
+                  aria-controls="cat-{{ category.id }}"
+                  aria-selected="{% if category.id == active_category_id %}true{% else %}false{% endif %}">
+
+                  {{ category.name }}
+                </button>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab Content -->
+    <div class="tab-content" id="material-tabContent">
+      {% for category in categories %}
+        <div
+          class="tab-pane fade {% if category.id == active_category_id %}show active{% endif %}"
+          id="cat-{{ category.id }}"
+          role="tabpanel"
+          aria-labelledby="tab-{{ category.id }}">
+
+          {% if category.description %}
+            <div class="category-description text-center mb-4">
+              <p>{{ category.description }}</p>
+            </div>
+          {% endif %}
+
+          <div class="row g-3">
+            {% for material in materials %}
+              {% if material.category_id == category.id %}
+                <div class="col-6 col-md-3 col-lg-4 col-xl-2 slide-up justify-content-center">
+                  <div class="material-card">
+                    <div class="material-img-container">
+                      {% if material.image %}
+                        <img src="{{ material.image.url }}" alt="{{ material.title }}" class="material-img">
+                      {% else %}
+                        <img src="{% static 'images/default_material.png' %}" alt="{{ material.title }}" class="material-img">
+                      {% endif %}
+                      <div class="material-badge">{{ category.name }}</div>
+                    </div>
+                    <div class="material-content">
+                      <h5 class="material-title">{{ material.title }}</h5>
+                      <p class="material-description">
+                        {{ material.description|truncatechars:60|default:_("Описание отсутствует") }}
+                      </p>
+                      <button class="btn btn-view-more" data-bs-toggle="modal" data-bs-target="#materialModal{{ material.id }}">
+                        {% trans "Подробнее" %} <i class="fas fa-arrow-right ms-2"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              {% endif %}
+            {% empty %}
+              <div class="col-12 text-center py-5">
+                <p class="text-muted">{% trans "Материалы не найдены" %}</p>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Modals -->
+{% for material in materials %}
+  <div class="modal fade" id="materialModal{{ material.id }}" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header bg-emerald-gradient text-white">
+          <h5 class="modal-title">{{ material.title }}</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <!-- Главное изображение -->
+            <div class="col-lg-8 mb-4">
+              <div class="main-image-container ratio ratio-16x9">
+                {% if material.image %}
+                  <img id="mainImage{{ material.id }}" src="{{ material.image.url }}" alt="{{ material.title }}" class="img-fluid rounded">
+                {% else %}
+                  <img id="mainImage{{ material.id }}" src="{% static 'images/default_material.png' %}" alt="{{ material.title }}" class="img-fluid rounded">
+                {% endif %}
+              </div>
+            </div>
+
+            <!-- Описание -->
+            <div class="col-lg-4">
+              <h6 class="text-emerald-dark fw-bold">{% trans "Описание" %}</h6>
+              <p class="mb-4">{{ material.description|default:_("Описание отсутствует") }}</p>
+              <div class="material-meta bg-light p-3 rounded mb-4">
+                <p class="mb-2"><i class="fas fa-tag me-2 text-emerald-medium"></i>
+                  <strong>{% trans "Категория" %}:</strong> {{ material.category.name }}</p>
+              </div>
+            </div>
+
+            {% if material.additional_images.all %}
+              <div class="col-12 mt-4">
+                <h6 class="text-emerald-dark fw-bold mb-3">{% trans "Дополнительные изображения" %}</h6>
+                <div class="gallery-thumbnails d-flex flex-wrap gap-2">
+                  {% for img in material.additional_images.all %}
+                    <div class="thumbnail-container" onclick="changeMainImage('mainImage{{ material.id }}', '{{ img.image.url }}')">
+                      <img src="{{ img.image.url }}" alt="{{ material.title }}" class="img-thumbnail gallery-thumbnail">
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-emerald" data-bs-dismiss="modal">{% trans "Закрыть" %}</button>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endfor %}
 
-
-	
 {% endblock %}
 
 {% block extra_js %}
-	
 <script>
 function changeMainImage(mainImageId, newSrc) {
     document.getElementById(mainImageId).src = newSrc;
 }
+document.addEventListener('DOMContentLoaded', function() {
+    const params = new URLSearchParams(window.location.search);
+    const cat = params.get('category');
+    if (cat) {
+        const btn = document.getElementById('tab-' + cat);
+        if (btn) {
+            const bsTab = new bootstrap.Tab(btn);
+            bsTab.show();
+            const section = document.getElementById('materials');
+            if (section) {
+                section.scrollIntoView({behavior: 'smooth'});
+            }
+        }
+    }
+});
 </script>
 {% endblock extra_js %}
 

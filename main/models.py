@@ -88,6 +88,7 @@ class MaterialCategory(models.Model):
         return self.name
 
     class Meta:
+        ordering = ('order',)
         verbose_name = _('Категория материала')
         verbose_name_plural = _('Категории материалов')
 

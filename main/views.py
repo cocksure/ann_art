@@ -184,12 +184,21 @@ def contacts(request):
 
 
 def materials_list(request):
-    categories = MaterialCategory.objects.all().order_by('order').prefetch_related('materialitem_set')
+    categories = MaterialCategory.objects.all()
+    materials = MaterialItem.objects.select_related('category').all()
 
-    materials = MaterialItem.objects.all().order_by('order')
+    # параметр из URL
+    active_category_id = request.GET.get('category')
+    try:
+        active_category_id = int(active_category_id)
+    except (TypeError, ValueError):
+        # если не передали или невалидно → первая категория
+        active_category_id = categories.first().id if categories.exists() else None
 
     context = {
         'categories': categories,
         'materials': materials,
+        'partners': Partners.objects.all(),
+        'active_category_id': active_category_id,
     }
     return render(request, 'materials_list.html', context)

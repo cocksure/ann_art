@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-17 17:43+0500\n"
+"POT-Creation-Date: 2025-07-18 16:44+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,7 +22,7 @@ msgstr ""
 msgid "Название категории"
 msgstr "Kategoriya nomi"
 
-#: main/models.py:49 main/models.py:182 main/models.py:236 main/models.py:287
+#: main/models.py:49 main/models.py:183 main/models.py:237 main/models.py:288
 msgid "Описание"
 msgstr "Tavsif"
 
@@ -34,115 +34,115 @@ msgstr "Ko'rinish tartibi"
 msgid "Фото категории"
 msgstr "Kategoriya rasmi"
 
-#: main/models.py:91
+#: main/models.py:92
 msgid "Категория материала"
 msgstr "Material kategoriyasi"
 
-#: main/models.py:92
+#: main/models.py:93
 msgid "Категории материалов"
 msgstr "Materiallar kategoriyalari"
 
-#: main/models.py:97 main/models.py:134
+#: main/models.py:98 main/models.py:135
 msgid "Название"
 msgstr "Nomi"
 
-#: main/models.py:108
+#: main/models.py:109
 msgid "Фото материала"
 msgstr "Material rasmi"
 
-#: main/models.py:109
+#: main/models.py:110
 msgid "Фотографии материал"
 msgstr "Material rasmlari"
 
-#: main/models.py:165
+#: main/models.py:166
 msgid "Фото проекта"
 msgstr "Loyiha rasmi"
 
-#: main/models.py:166
+#: main/models.py:167
 msgid "Фотографии проекта"
 msgstr "Loyiha rasmlari"
 
-#: main/models.py:173
+#: main/models.py:174
 msgid "Категория"
 msgstr "Kategoriya"
 
-#: main/models.py:177
+#: main/models.py:178
 msgid "Заголовок"
 msgstr "Sarlavha"
 
-#: main/models.py:187 main/models.py:239 main/models.py:292
+#: main/models.py:188 main/models.py:240 main/models.py:293
 msgid "Изображение"
 msgstr "Rasm"
 
-#: main/models.py:195 main/models.py:243 main/models.py:298 main/models.py:357
+#: main/models.py:196 main/models.py:244 main/models.py:299 main/models.py:358
 msgid "Порядок"
 msgstr "Tartib"
 
-#: main/models.py:226
+#: main/models.py:227
 msgid "Материал"
 msgstr "Material"
 
-#: main/models.py:227 main/views.py:98
+#: main/models.py:228 main/views.py:98
 msgid "Материалы"
 msgstr "Materiallar"
 
-#: main/models.py:232
+#: main/models.py:233
 msgid "Название стиля"
 msgstr "Uslub nomi"
 
-#: main/models.py:278
+#: main/models.py:279
 msgid "Коммерческие помещения"
 msgstr "Savdo binolari"
 
-#: main/models.py:279
+#: main/models.py:280
 msgid "Жилые помещения"
 msgstr "Turar joy binolari"
 
-#: main/models.py:280
+#: main/models.py:281
 msgid "Другое"
 msgstr "Boshqa"
 
-#: main/models.py:283
+#: main/models.py:284
 msgid "Название проекта"
 msgstr "Loyiha nomi"
 
-#: main/models.py:295
+#: main/models.py:296
 msgid "Доп. изображения"
 msgstr "Qo'shimcha rasmlar"
 
-#: main/models.py:304
+#: main/models.py:305
 msgid "Тип проекта"
 msgstr "Loyiha turi"
 
-#: main/models.py:310
+#: main/models.py:311
 msgid "Площадь (м²)"
 msgstr "Maydoni (m²)"
 
-#: main/models.py:339
+#: main/models.py:340
 msgid "Проект"
 msgstr "Loyiha"
 
-#: main/models.py:340 main/views.py:95
+#: main/models.py:341 main/views.py:95
 msgid "Проекты"
 msgstr "Loyihalar"
 
-#: main/models.py:346
+#: main/models.py:347
 msgid "Название услуги"
 msgstr "Xizmat nomi"
 
-#: main/models.py:350
+#: main/models.py:351
 msgid "Краткое описание"
 msgstr "Qisqacha tavsif"
 
-#: main/models.py:353
+#: main/models.py:354
 msgid "Детали (HTML или Markdown)"
 msgstr "Tafsilotlar (HTML yoki Markdown)"
 
-#: main/models.py:362
+#: main/models.py:363
 msgid "Услуга"
 msgstr "Xizmat"
 
-#: main/models.py:363 main/views.py:96
+#: main/models.py:364 main/views.py:96
 msgid "Услуги"
 msgstr "Xizmatlar"
 

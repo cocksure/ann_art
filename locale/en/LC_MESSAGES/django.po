@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-17 17:43+0500\n"
+"POT-Creation-Date: 2025-07-18 16:44+0500\n"
 "PO-Revision-Date: 2023-11-15 14:30+0500\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: English <LL@li.org>\n"
@@ -29,7 +29,7 @@ msgstr "Toggle navigation"
 msgid "Главная"
 msgstr "Home"
 
-#: templates/base.html:57 templates/base.html:366
+#: templates/base.html:57 templates/base.html:375
 #: templates/site_search_results.html:78 templates/styles.html:4
 msgid "Стили"
 msgstr "Styles"
@@ -38,21 +38,21 @@ msgstr "Styles"
 msgid "Продукция"
 msgstr "Products"
 
-#: templates/base.html:69 templates/base.html:356 templates/projects.html:4
+#: templates/base.html:69 templates/base.html:365 templates/projects.html:4
 #: templates/site_search_results.html:127
 msgid "Проекты"
 msgstr "Projects"
 
-#: templates/base.html:75 templates/base.html:377 templates/base.html:381
+#: templates/base.html:75 templates/base.html:386 templates/base.html:390
 #: templates/contacts.html:82
 msgid "Контакты"
 msgstr "Contacts"
 
-#: templates/base.html:136
+#: templates/base.html:144
 msgid "Искусство, вдохновленное вами!"
 msgstr "Art inspired by you!"
 
-#: templates/base.html:138
+#: templates/base.html:146
 msgid ""
 "Полный цикл услуг: от разработки дизайна интерьеров и экстерьеров до ремонта "
 "«под ключ»."
@@ -60,15 +60,15 @@ msgstr ""
 "Full range of services: from interior and exterior design development to "
 "turnkey renovation."
 
-#: templates/base.html:141
+#: templates/base.html:149
 msgid "Посмотреть проекты"
 msgstr "View projects"
 
-#: templates/base.html:150 templates/base.html:379
+#: templates/base.html:158 templates/base.html:388
 msgid "О нас"
 msgstr "About us"
 
-#: templates/base.html:155
+#: templates/base.html:163
 msgid ""
 "Annart — команда профессионалов в области дизайна интерьеров и поставок "
 "строительных материалов. Мы создаём комфортные и эстетичные пространства для "
@@ -78,7 +78,7 @@ msgstr ""
 "materials supply. We create comfortable and aesthetic spaces for living and "
 "business."
 
-#: templates/base.html:158
+#: templates/base.html:166
 msgid ""
 "Наша команда профессионалов с 25-летним опытом выполняет полный цикл работ: "
 "от проектирования и подбора материалов до чистовой отделки и финального "
@@ -88,26 +88,26 @@ msgstr ""
 "services: from design and material selection to finishing works and final "
 "decor."
 
-#: templates/base.html:167
+#: templates/base.html:175
 msgid "лет опыта – создаём стильные интерьеры с 2014 года."
 msgstr "years of experience - creating stylish interiors since 2014."
 
-#: templates/base.html:173
+#: templates/base.html:181
 msgid ""
 "реализованных проектов – квартиры, дома, офисы и коммерческие пространства."
 msgstr ""
 "completed projects - apartments, houses, offices and commercial spaces."
 
-#: templates/base.html:180
+#: templates/base.html:188
 msgid "под ключ – от идеи до финального декора, включая поставку материалов."
 msgstr ""
 "turnkey projects - from concept to final decor, including materials supply."
 
-#: templates/base.html:187
+#: templates/base.html:195
 msgid "профессионалов – команда дизайнеров, архитекторов и строителей."
 msgstr "professionals - team of designers, architects and builders."
 
-#: templates/base.html:195
+#: templates/base.html:203
 msgid ""
 "Наша миссия — воплощать ваши идеи в жизнь, создавая пространства, которые "
 "вдохновляют и удовлетворяют самые высокие стандарты качества. Работаем с "
@@ -119,21 +119,21 @@ msgstr ""
 "professionalism and responsibility so that every project we complete leaves "
 "only positive impressions."
 
-#: templates/base.html:206
+#: templates/base.html:214
 msgid "Услуги нашей компании"
 msgstr "Our company services"
 
-#: templates/base.html:229
+#: templates/base.html:237
 msgid "БОЛЬШОЙ ПРОЕКТ?"
 msgstr "LARGE PROJECT?"
 
-#: templates/base.html:231
+#: templates/base.html:239
 msgid ""
 "Для масштабных проектов с крупным бюджетом мы предлагаем ремонт в рассрочку"
 msgstr ""
 "For large-scale projects with big budgets we offer installment payment plans"
 
-#: templates/base.html:234
+#: templates/base.html:242
 msgid ""
 "Деньги выдаются наличными, вы можете использовать их по своему усмотрению: "
 "оплатить ремонт, заказать мебель, приобрести любые материалы."
@@ -141,11 +141,11 @@ msgstr ""
 "Money is issued in cash, you can use it at your discretion: pay for repairs, "
 "order furniture, purchase any materials."
 
-#: templates/base.html:236
+#: templates/base.html:244
 msgid "Как это работает:"
 msgstr "How it works:"
 
-#: templates/base.html:238
+#: templates/base.html:246
 #, python-format
 msgid ""
 "50%% суммы вы выплачиваете сразу, 50%% — в рассрочку через банк. Наши "
@@ -156,7 +156,7 @@ msgstr ""
 "bank. Our reliable partners: Hamkor Bank and Infin Bank. Installment amount "
 "- up to $50,000. Term - up to 10 years."
 
-#: templates/base.html:241
+#: templates/base.html:249
 msgid ""
 "Обязательное условие — залог, как стандартное требование банков. Но "
 "оформление происходит через нас, поэтому вы продолжаете ссуду гораздо "
@@ -166,15 +166,15 @@ msgstr ""
 "the processing is done through us, so you get the loan much faster, without "
 "unnecessary bureaucracy and with a guarantee."
 
-#: templates/base.html:244
+#: templates/base.html:252
 msgid "Хотите узнать, подойдёт ли вам рассрочка?"
 msgstr "Want to know if installments are right for you?"
 
-#: templates/base.html:256
+#: templates/base.html:264
 msgid "Что о нас говорят клиенты"
 msgstr "What our clients say about us"
 
-#: templates/base.html:263
+#: templates/base.html:271
 msgid ""
 "\n"
 "\t\t\t\t\t\t\t\tОбратились в Annart для создания интерьера нашей квартиры, и "
@@ -212,7 +212,7 @@ msgstr ""
 "\t\t\t\t\t\t\t\tto detail!\n"
 "\t\t\t\t\t\t\t"
 
-#: templates/base.html:283
+#: templates/base.html:291
 msgid ""
 "\n"
 "\t\t\t\t\t\t\t\tОбратились в Annart для создания интерьера нашей квартиры, и "
@@ -236,7 +236,7 @@ msgstr ""
 "extra worries for us.\n"
 "\t\t\t\t\t\t\t"
 
-#: templates/base.html:298
+#: templates/base.html:306
 msgid ""
 "\n"
 "\t\t\t\t\t\t\t\tОбратились в AnnArt для создания интерьера нашей квартиры, и "
@@ -274,7 +274,7 @@ msgstr ""
 "\t\t\t\t\t\t\t\tto detail!\n"
 "\t\t\t\t\t\t\t"
 
-#: templates/base.html:331
+#: templates/base.html:339
 msgid ""
 "\n"
 "\t\t\t\t\t\tИскусство, вдохновленное вами! Полный цикл услуг: от разработки "
@@ -288,114 +288,83 @@ msgstr ""
 "\t\t\t\t\t\tto turnkey renovation.\n"
 "\t\t\t\t\t"
 
-#: templates/base.html:345 templates/products.html:4
+#: templates/base.html:353 templates/products.html:4
 msgid "Продукты"
 msgstr "Products"
 
-#: templates/base.html:347
-msgid "Итальянская плитка"
-msgstr "Italian tiles"
-
-#: templates/base.html:348
-msgid "Немецкие краски"
+#: templates/base.html:355
+msgid "Испанские кафели"
 msgstr "German paints"
 
-#: templates/base.html:349
-msgid "Европейская сантехника"
+#: templates/base.html:356
+
+msgid "Итальянские обои"
+msgstr "Italian tiles"
+
+#: templates/base.html:357
+
+msgid "Немецкая сантехника"
 msgstr "European plumbing"
 
-#: templates/base.html:350
-msgid "Системы освещения"
-msgstr "Lighting systems"
-
-#: templates/base.html:351
-msgid "Эксклюзивные материалы"
-msgstr "Exclusive materials"
-
 #: templates/base.html:358
+msgid "Иранские камни"
+msgstr "German paints"
+
+#: templates/base.html:359
+msgid "Швейцарские краски"
+msgstr "German paints"
+
+#: templates/base.html:360
+msgid "Корейские паркеты"
+msgstr "Other projects"
+
+#: templates/base.html:367
 msgid "Коммерческие помещения"
 msgstr "Commercial premises"
 
-#: templates/base.html:359
+#: templates/base.html:368
 msgid "Жилые помещения"
 msgstr "Residential premises"
 
-#: templates/base.html:360
+#: templates/base.html:369
 msgid "Другие проекты"
 msgstr "Other projects"
 
-#: templates/base.html:361
+#: templates/base.html:370
 msgid "Все проекты"
 msgstr "All projects"
 
-#: templates/base.html:368
+#: templates/base.html:377
 msgid "Лофт"
 msgstr "Loft"
 
-#: templates/base.html:369
+#: templates/base.html:378
 msgid "Минимализм"
 msgstr "Minimalism"
 
-#: templates/base.html:370
+#: templates/base.html:379
 msgid "Хайтек"
 msgstr "Hi-tech"
 
-#: templates/base.html:371
+#: templates/base.html:380
 msgid "Современный"
 msgstr "Modern"
 
-#: templates/base.html:372
+#: templates/base.html:381
 msgid "Классический"
 msgstr "Classic"
 
-#: templates/base.html:380 templates/site_search_results.html:150
+#: templates/base.html:389 templates/site_search_results.html:150
 msgid "Услуги"
 msgstr "Services"
 
-#: templates/base.html:382
+#: templates/base.html:391
 msgid "FAQ"
 msgstr ""
 
-#: templates/base.html:390
+#: templates/base.html:399
 msgid "Все права защищены."
 msgstr "All rights reserved."
-
-#: templates/base.html:406
-msgid "Ваша заявка принята!"
-msgstr "Your application has been accepted!"
-
-#: templates/base.html:411 templates/base.html:429
-#: templates/materials_list.html:153
-msgid "Закрыть"
-msgstr "Close"
-
-#: templates/base.html:415
-msgid "Наш менеджер свяжется с вами в скором времени."
-msgstr "Our manager will contact you shortly."
-
-#: templates/base.html:417
-#, fuzzy
-#| msgid ""
-#| "\n"
-#| "\t\t\t\t\t*Если возникли проблемы или менеджер с вами не связался, вы "
-#| "можете\n"
-#| "\t\t\t\t\tзадать свои вопросы напрямую по номеру +998 97 110 10 00 или в "
-#| "телеграм.\n"
-#| "\t\t\t\t\t"
-msgid ""
-"\n"
-"\t\t\t\t\t\t*Если возникли проблемы или менеджер с вами не связался, вы "
-"можете\n"
-"\t\t\t\t\t\tзадать свои вопросы напрямую по номеру +998 97 110 10 00 или в "
-"телеграм.\n"
-"\t\t\t\t\t"
-msgstr ""
-"\n"
-"\t\t\t\t\t*If you have any problems or the manager hasn't contacted you, you "
-"can\n"
-"\t\t\t\t\task your questions directly by calling +998 97 110 10 00 or via "
-"Telegram.\n"
-"\t\t\t\t\t"
 
 #: templates/contacts.html:13
 msgid "Давайте обсудим ваш проект!"
@@ -470,6 +439,43 @@ msgstr "Deadline compliance - we work quickly and without delays"
 msgid "Поддержка после сдачи - гарантия и сервисное обслуживание"
 msgstr "Post-delivery support - warranty and maintenance"
 
+#: templates/includes/success_modal.html:8
+msgid "Ваша заявка принята!"
+msgstr "Your application has been accepted!"
+
+#: templates/includes/success_modal.html:13
+#: templates/includes/success_modal.html:31 templates/materials_list.html:156
+msgid "Закрыть"
+msgstr "Close"
+
+#: templates/includes/success_modal.html:17
+msgid "Наш менеджер свяжется с вами в скором времени."
+msgstr "Our manager will contact you shortly."
+
+#: templates/includes/success_modal.html:19
+#, fuzzy
+#| msgid ""
+#| "\n"
+#| "\t\t\t\t\t*Если возникли проблемы или менеджер с вами не связался, вы "
+#| "можете\n"
+#| "\t\t\t\t\tзадать свои вопросы напрямую по номеру +998 97 110 10 00 или в "
+#| "телеграм.\n"
+#| "\t\t\t\t\t"
+msgid ""
+"\n"
+"\t\t\t\t\t\t*Если возникли проблемы или менеджер с вами не связался, вы "
+"можете\n"
+"\t\t\t\t\t\tзадать свои вопросы напрямую по номеру +998 97 110 10 00 или в "
+"телеграм.\n"
+"\t\t\t\t\t"
+msgstr ""
+"\n"
+"\t\t\t\t\t*If you have any problems or the manager hasn't contacted you, you "
+"can\n"
+"\t\t\t\t\task your questions directly by calling +998 97 110 10 00 or via "
+"Telegram.\n"
+"\t\t\t\t\t"
+
 #: templates/material_categories.html:17
 msgid "Категории материалов"
 msgstr "Material categories"
@@ -495,48 +501,40 @@ msgstr "Other materials from the category"
 msgid "Материалы"
 msgstr ""
 
-#: templates/materials_list.html:14
-msgid "Каталог материалов"
-msgstr "Material categories"
-
-#: templates/materials_list.html:77 templates/materials_list.html:126
-#, fuzzy
-#| msgid "Описание отсутствует."
-msgid "Описание отсутствует"
-msgstr "Description is missing"
-
-#: templates/materials_list.html:81 templates/products.html:51
-#: templates/projects.html:65 templates/projects.html:95
-#: templates/projects.html:126 templates/styles.html:41
-msgid "Подробнее"
-msgstr "Details"
-
-#: templates/materials_list.html:89
-#, fuzzy
-#| msgid "Другие материалы из категории"
-msgid "Материалы не найдены"
-msgstr "Other materials from the category"
-
-#: templates/materials_list.html:125
-msgid "Описание"
-msgstr ""
-
-#: templates/materials_list.html:130
-#, fuzzy
-#| msgid "Все категории"
-msgid "Категория"
-msgstr "All categories"
-
-#: templates/materials_list.html:137
-#, fuzzy
-#| msgid "Нет изображения"
-msgid "Дополнительные изображения"
-msgstr "No image"
-
-#: templates/products.html:18
+#: templates/materials_list.html:19 templates/products.html:18
 #, python-format
 msgid "Партнёр %(partner.name)s"
 msgstr "Partner %(partner.name)s"
+
+#: templates/materials_list.html:26
+msgid "Каталог материалов"
+msgstr "Material categories"
+
+#: templates/materials_list.html:88 templates/materials_list.html:134
+msgid "Описание отсутствует"
+msgstr "Description is missing"
+
+#: templates/materials_list.html:91 templates/products.html:51
+#: templates/projects.html:66 templates/projects.html:97
+#: templates/projects.html:129 templates/styles.html:41
+msgid "Подробнее"
+msgstr "Details"
+
+#: templates/materials_list.html:99
+msgid "Материалы не найдены"
+msgstr "Other materials from the category"
+
+#: templates/materials_list.html:133
+msgid "Описание"
+msgstr "Description"
+
+#: templates/materials_list.html:137
+msgid "Категория"
+msgstr "All categories"
+
+#: templates/materials_list.html:143
+msgid "Дополнительные изображения"
+msgstr "No image"
 
 #: templates/products.html:58
 msgid "Материалы в этой категории пока не добавлены."
@@ -562,7 +560,7 @@ msgstr "Commercial"
 msgid "Жилые"
 msgstr "Residential"
 
-#: templates/projects.html:37 templates/projects.html:116
+#: templates/projects.html:37 templates/projects.html:118
 msgid "Другое"
 msgstr "Other"
 
@@ -570,12 +568,12 @@ msgstr "Other"
 msgid "Коммерция"
 msgstr "Commerce"
 
-#: templates/projects.html:63 templates/projects.html:93
-#: templates/projects.html:124
+#: templates/projects.html:63 templates/projects.html:94
+#: templates/projects.html:126
 msgid "м²"
 msgstr "sq.m"
 
-#: templates/projects.html:85
+#: templates/projects.html:86
 msgid "Жилое"
 msgstr "Residential"
 
@@ -588,7 +586,6 @@ msgid "Введите запрос в поисковое поле."
 msgstr "Enter your query in the search field."
 
 #: templates/site_search_results.html:72
-
 msgid "Ничего не найдено."
 msgstr "Other materials from the category"
 
@@ -660,8 +657,6 @@ msgid "Стиль интерьера"
 msgstr "Interior style"
 
 #: templates/styles_detail.html:15
-#, fuzzy
-#| msgid "Стили"
 msgid "Стиль "
 msgstr "Styles"
 
@@ -672,6 +667,12 @@ msgstr ""
 #: templates/styles_detail.html:49
 msgid "Вернуться к списку стилей"
 msgstr "Back to styles list"
+
+#~ msgid "Системы освещения"
+#~ msgstr "Lighting systems"
+
+#~ msgid "Эксклюзивные материалы"
+#~ msgstr "Exclusive materials"
 
 #, python-format
 #~ msgid "Стиль %(style.title)s"

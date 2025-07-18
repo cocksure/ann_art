@@ -77,15 +77,16 @@
 				</li>
 
 				<li class="nav-item dropdown mx-2 no-hover">
-					<a class="nav-link dropdown-toggle no-hover" href="#" id="languageDropdown" role="button"
+					<a class="nav-link dropdown-toggle no-hover d-flex align-items-center" href="#"
+					   id="languageDropdown" role="button"
 					   data-bs-toggle="dropdown" aria-expanded="false">
 						{% get_current_language as LANGUAGE_CODE %}
 						{% if LANGUAGE_CODE == 'ru' %}
-							🇷🇺 Русский
+							{% include "includes/ru.svg.html" %} Русский
 						{% elif LANGUAGE_CODE == 'en' %}
-							🇬🇧 English
+							{% include "includes/en.svg.html" %} English
 						{% elif LANGUAGE_CODE == 'uz' %}
-							🇺🇿 O‘zbekcha
+							{% include "includes/uz.svg.html" %} O‘zbekcha
 						{% endif %}
 					</a>
 					<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
@@ -93,8 +94,9 @@
 							<form action="{% url 'set_language' %}" method="post" class="px-3 py-1">
 								{% csrf_token %}
 								<input type="hidden" name="next" value="{{ request.path }}">
-								<button class="dropdown-item lang-switch-btn" type="submit" name="language" value="ru">
-									🇷🇺 Русский
+								<button class="dropdown-item lang-switch-btn d-flex align-items-center" type="submit"
+								        name="language" value="ru">
+									{% include "includes/ru.svg.html" %} Русский
 								</button>
 							</form>
 						</li>
@@ -102,8 +104,9 @@
 							<form action="{% url 'set_language' %}" method="post" class="px-3 py-1">
 								{% csrf_token %}
 								<input type="hidden" name="next" value="{{ request.path }}">
-								<button class="dropdown-item lang-switch-btn" type="submit" name="language" value="uz">
-									🇺🇿 O‘zbekcha
+								<button class="dropdown-item lang-switch-btn d-flex align-items-center" type="submit"
+								        name="language" value="uz">
+									{% include "includes/uz.svg.html" %} O‘zbekcha
 								</button>
 							</form>
 						</li>
@@ -111,14 +114,16 @@
 							<form action="{% url 'set_language' %}" method="post" class="px-3 py-1">
 								{% csrf_token %}
 								<input type="hidden" name="next" value="{{ request.path }}">
-								<button class="dropdown-item lang-switch-btn" type="submit" name="language" value="en">
-									🇬🇧 English
+								<button class="dropdown-item lang-switch-btn d-flex align-items-center" type="submit"
+								        name="language" value="en">
+									{% include "includes/en.svg.html" %} English
 								</button>
 							</form>
 						</li>
 					</ul>
 				</li>
-							<li class="nav-item mx-2 d-flex align-items-center">
+
+				<li class="nav-item mx-2 d-flex align-items-center">
 					{% include 'includes/search_form.html' %}
 				</li>
 			</ul>
@@ -129,20 +134,23 @@
 
 {% block dashboard %}
 
-	<!-- Hero Section -->
-	<section id="home" class="hero">
-		<div class="container">
-			<div class="hero-content slide-up">
-				<h1 class="display-4 mb-4">{% trans "Искусство, вдохновленное вами!" %}</h1>
-				<p class="lead mb-4">
-					{% trans "Полный цикл услуг: от разработки дизайна интерьеров и экстерьеров до ремонта «под ключ»." %}
-				</p>
-				<a href="{% url 'projects' %}" class="btn btn-custom btn-lg">
-					{% trans "Посмотреть проекты" %}
-				</a>
-			</div>
-		</div>
-	</section>
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <video autoplay muted loop playsinline id="hero-video">
+        <source src="{% static 'videos/web_video2.mp4' %}" type="video/mp4">
+    </video>
+    <div class="container">
+        <div class="hero-content slide-up">
+            <h1 class="display-4 mb-4">{% trans "Искусство, вдохновленное вами!" %}</h1>
+            <p class="lead mb-4">
+                {% trans "Полный цикл услуг: от разработки дизайна интерьеров и экстерьеров до ремонта «под ключ»." %}
+            </p>
+            <a href="{% url 'projects' %}" class="btn btn-custom btn-lg">
+                {% trans "Посмотреть проекты" %}
+            </a>
+        </div>
+    </div>
+</section>
 
 	<!-- About Section -->
 	<section id="about" class="py-3">
@@ -344,21 +352,22 @@
 			<div class="col-lg-2 col-md-4 mb-4">
 				<h5>{% trans "Продукты" %}</h5>
 				<div class="footer-links">
-					<a href="#">{% trans "Итальянская плитка" %}</a>
-					<a href="#">{% trans "Немецкие краски" %}</a>
-					<a href="#">{% trans "Европейская сантехника" %}</a>
-					<a href="#">{% trans "Системы освещения" %}</a>
-					<a href="#">{% trans "Эксклюзивные материалы" %}</a>
+					<a href="{% url 'materials_list' %}?category=2">{% trans "Испанские кафели" %}</a>
+					<a href="{% url 'materials_list' %}?category=2">{% trans "Итальянские обои" %}</a>
+					<a href="{% url 'materials_list' %}?category=5">{% trans "Немецкая сантехника" %}</a>
+					<a href="{% url 'materials_list' %}?category=2">{% trans "Иранские камни" %}</a>
+					<a href="{% url 'materials_list' %}?category=2">{% trans "Швейцарские краски" %}</a>
+					<a href="{% url 'materials_list' %}?category=2">{% trans "Корейские паркеты" %}</a>
 				</div>
 			</div>
 
 			<div class="col-lg-2 col-md-4 mb-4">
 				<h5>{% trans "Проекты" %}</h5>
 				<div class="footer-links">
-					<a href="#">{% trans "Коммерческие помещения" %}</a>
-					<a href="#">{% trans "Жилые помещения" %}</a>
-					<a href="#">{% trans "Другие проекты" %}</a>
-					<a href="#">{% trans "Все проекты" %}</a>
+					<a href="{% url 'projects' %}?tab=commercial">{% trans "Коммерческие помещения" %}</a>
+					<a href="{% url 'projects' %}?tab=residential">{% trans "Жилые помещения" %}</a>
+					<a href="{% url 'projects' %}?tab=other">{% trans "Другие проекты" %}</a>
+					<a href="{% url 'projects' %}">{% trans "Все проекты" %}</a>
 				</div>
 			</div>
 
@@ -376,10 +385,10 @@
 			<div class="col-lg-2 mb-4">
 				<h5>{% trans "Контакты" %}</h5>
 				<div class="footer-links">
-					<a href="#">{% trans "О нас" %}</a>
-					<a href="#">{% trans "Услуги" %}</a>
+					<a href="{% url 'home' %}#about">{% trans "О нас" %}</a>
+					<a href="{% url 'home' %}#services">{% trans "Услуги" %}</a>
 					<a href="{% url 'contacts' %}">{% trans "Контакты" %}</a>
-					<a href="#">{% trans "FAQ" %}</a>
+					<a href="{% url 'home' %}#faq">{% trans "FAQ" %}</a>
 				</div>
 			</div>
 		</div>
@@ -399,39 +408,7 @@
 
 
 <!-- Success Modal -->
-<div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title">{% trans "Ваша заявка принята!" %}</h5>
-				<button
-						type="button"
-						class="btn-close"
-						data-bs-dismiss="modal"
-						aria-label="{% trans 'Закрыть' %}"
-				></button>
-			</div>
-			<div class="modal-body">
-				<p>{% trans "Наш менеджер свяжется с вами в скором времени." %}</p>
-				<p>
-					{% blocktrans %}
-						*Если возникли проблемы или менеджер с вами не связался, вы можете
-						задать свои вопросы напрямую по номеру +998 97 110 10 00 или в телеграм.
-					{% endblocktrans %}
-				</p>
-			</div>
-			<div class="modal-footer">
-				<button
-						type="button"
-						class="btn btn-custom"
-						data-bs-dismiss="modal"
-				>
-					{% trans "Закрыть" %}
-				</button>
-			</div>
-		</div>
-	</div>
-</div>
+{% include 'includes/success_modal.html' %}
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

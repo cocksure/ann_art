@@ -61,7 +61,8 @@
 											<div class="project-meta">
 												<span class="project-area"><i
 														class="fas fa-ruler-combined me-1"></i> {{ project.square_meters }} {% trans "м²" %}</span>
-												<a href="{% url 'project_detail' project.pk %}" class="btn btn-view-more">
+												<a href="{% url 'project_detail' project.pk %}"
+												   class="btn btn-view-more">
 													{% trans "Подробнее" %} <i class="fas fa-arrow-right ms-2"></i>
 												</a>
 											</div>
@@ -91,7 +92,8 @@
 											<div class="project-meta">
 												<span class="project-area"><i
 														class="fas fa-ruler-combined me-1"></i> {{ project.square_meters }} {% trans "м²" %}</span>
-												<a href="{% url 'project_detail' project.pk %}" class="btn btn-view-more">
+												<a href="{% url 'project_detail' project.pk %}"
+												   class="btn btn-view-more">
 													{% trans "Подробнее" %} <i class="fas fa-arrow-right ms-2"></i>
 												</a>
 											</div>
@@ -122,7 +124,8 @@
 											<div class="project-meta">
 												<span class="project-area"><i
 														class="fas fa-ruler-combined me-1"></i> {{ project.square_meters }} {% trans "м²" %}</span>
-												<a href="{% url 'project_detail' project.pk %}" class="btn btn-view-more">
+												<a href="{% url 'project_detail' project.pk %}"
+												   class="btn btn-view-more">
 													{% trans "Подробнее" %} <i class="fas fa-arrow-right ms-2"></i>
 												</a>
 											</div>
@@ -138,6 +141,24 @@
 		</div>
 	</section>
 {% endblock %}
+
+{% block extra_js %}
+	<script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const params = new URLSearchParams(window.location.search);
+            const tab = params.get('tab');
+            if (tab) {
+                const tabButton = document.querySelector(`#${tab}-tab`);
+                if (tabButton) {
+                    const bsTab = new bootstrap.Tab(tabButton);
+                    bsTab.show();
+                }
+                // Скролл к секции проектов
+                document.querySelector('#projects').scrollIntoView({behavior: 'smooth'});
+            }
+        });
+	</script>
+{% endblock extra_js %}
 
 {% block dashboard %}
 {% endblock dashboard %}

@@ -12,6 +12,10 @@
     --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 
 /* Основные стили */
 body {
@@ -173,23 +177,29 @@ h1, h2, h3, h4, h5, h6, .display-font {
     opacity: 0.8;
     transform: scale(1.05);
 }
-
 .hero {
-    background: url("https://images.pexels.com/photos/26886877/pexels-photo-26886877.jpeg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-blend-mode: multiply;
+    position: relative;
     min-height: 90vh;
     display: flex;
     align-items: center;
     text-align: center;
     color: var(--text-light);
-    position: relative;
     overflow: hidden;
     padding: 30px 0;
 }
 
+/* Видео как фон */
+#hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Сохраняем стиль hero-content */
 .hero-content {
     position: relative;
     z-index: 2;
@@ -201,25 +211,6 @@ h1, h2, h3, h4, h5, h6, .display-font {
     border-radius: 26px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-}
-
-.hero h1 {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    margin-bottom: 20px;
-    color: white;
-    line-height: 1.2;
-    font-weight: 700;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.hero p {
-    font-size: clamp(1rem, 2vw, 1.2rem);
-    margin-bottom: 30px;
-    color: rgba(255, 255, 255, 0.95);
-    line-height: 1.6;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 
@@ -512,6 +503,7 @@ footer:before {
 .btn-custom {
     border-radius: 20px;
     background: var(--gold-accent);
+    margin-top: 10px;
 }
 
 .btn-custom:hover {
@@ -551,7 +543,13 @@ footer:before {
 }
 
 
-
+.flag-icon {
+  vertical-align: middle;
+  margin-right: 5px;
+}
+.dropdown-item .flag-icon {
+  margin-right: 8px;
+}
 
 /* Адаптивность */
 @media (max-width: 991.98px) {

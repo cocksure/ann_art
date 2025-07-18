@@ -10,8 +10,8 @@ from .models import (
 
 @admin.register(MaterialCategory)
 class MaterialCategoryAdmin(TranslationAdmin):
-    list_display = ("name", 'description', 'image')
-    list_editable = ('image',)
+    list_display = ("name", 'id', 'order', 'description', 'image')
+    list_editable = ('order', )
     group_fieldsets = True
 
 
@@ -20,7 +20,7 @@ class MaterialItemAdmin(TranslationAdmin):
     list_display = ("title", "order", 'description', 'image')
     ordering = ("order",)
     list_filter = ('category',)
-    list_editable = ('image',)
+    list_editable = ('image', 'order', )
     group_fieldsets = True
 
 
@@ -41,7 +41,7 @@ class ProjectItemAdmin(TranslationAdmin):
 
 @admin.register(ServiceItem)
 class ServiceItemAdmin(admin.ModelAdmin):
-    list_display = ("id", "order")
+    list_display = ("id", 'title', "order")
     ordering = ("order",)
 
 
