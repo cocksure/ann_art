@@ -21,3 +21,8 @@ ENV/
 # Backup files
 *.bak
 *.swp
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
