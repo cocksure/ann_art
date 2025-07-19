@@ -2,16 +2,15 @@ from django.conf import settings
 from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.contrib import admin
+from django.contrib.sitemaps.views import sitemap
 from django.urls import path, include
 from django.views.i18n import set_language
-from django.contrib.sitemaps.views import sitemap
 
-from main.sitemaps import ProjectItemSitemap, MaterialItemSitemap, ServiceItemSitemap, StyleItemSitemap
+from main.sitemaps import StaticPagesSitemap, ProjectItemSitemap, StyleItemSitemap
 
 sitemaps = {
+    'static': StaticPagesSitemap,
     'projects': ProjectItemSitemap,
-    'materials': MaterialItemSitemap,
-    'services': ServiceItemSitemap,
     'styles': StyleItemSitemap,
 }
 

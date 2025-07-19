@@ -11,8 +11,6 @@ urlpatterns = [
     path('services/', views.ServicesItemView.as_view(), name='services'),
     path('styles/<int:pk>/', views.StyleItemDetailView.as_view(), name='style_detail'),
 
-    path('products/', views.material_category_list, name='products'),
-
     path('materials/', views.materials_list, name='materials_list'),
 
     path('projects/', views.projects_view, name='projects'),

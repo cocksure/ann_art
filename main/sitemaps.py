@@ -1,43 +1,39 @@
 from django.contrib.sitemaps import Sitemap
-from .models import ProjectItem, MaterialItem, ServiceItem, StyleItem
+from django.urls import reverse
+from .models import ProjectItem, StyleItem
+
+
+class StaticPagesSitemap(Sitemap):
+    changefreq = "monthly"
+    priority = 0.5
+    protocol = "https"
+
+    def items(self):
+        return ['home', 'projects', 'styles', 'materials_list', 'services', 'contacts']
+
+    def location(self, item):
+        return reverse(item)
 
 
 class ProjectItemSitemap(Sitemap):
     changefreq = "weekly"
     priority = 0.8
+    protocol = "https"
 
     def items(self):
         return ProjectItem.objects.all()
 
-    def lastmod(self, obj):
-        return obj.updated_at if hasattr(obj, 'updated_at') else None
-
-
-class MaterialItemSitemap(Sitemap):
-    changefreq = "weekly"
-    priority = 0.6
-
-    def items(self):
-        return MaterialItem.objects.all()
-
-    def lastmod(self, obj):
-        return obj.updated_at if hasattr(obj, 'updated_at') else None
-
-
-class ServiceItemSitemap(Sitemap):
-    changefreq = "monthly"
-    priority = 0.5
-
-    def items(self):
-        return ServiceItem.objects.all()
+    def location(self, obj):
+        return reverse('project_detail', args=[obj.pk])
 
 
 class StyleItemSitemap(Sitemap):
     changefreq = "weekly"
-    priority = 0.7
+    priority = 0.8
+    protocol = "https"
 
     def items(self):
         return StyleItem.objects.all()
 
-    def lastmod(self, obj):
-        return obj.updated_at if hasattr(obj, 'updated_at') else None
+    def location(self, obj):
+        return reverse('style_detail', args=[obj.pk])
