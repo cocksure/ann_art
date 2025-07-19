@@ -4,6 +4,12 @@
 <head>
 	<meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+	{% block meta_description %}
+		<meta name="description"
+		      content="AnnArt — студия дизайна интерьеров. Индивидуальные проекты, услуги и стили для вашего дома.">
+	{% endblock %}
+
 	<title>{% block title %}  AnnArt - {% trans "Дизайн интерьеров" %} {% endblock %}</title>
 	<!-- Bootstrap CSS -->
 	<link

@@ -12,8 +12,6 @@ urlpatterns = [
     path('styles/<int:pk>/', views.StyleItemDetailView.as_view(), name='style_detail'),
 
     path('products/', views.material_category_list, name='products'),
-    path('products/<int:category_id>/', views.material_items_by_category, name='material_items_by_category'),
-    path('products/item/<int:pk>/', views.material_item_detail, name='material_detail'),
 
     path('materials/', views.materials_list, name='materials_list'),
 
