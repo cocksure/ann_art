@@ -11,7 +11,7 @@ SECRET_KEY = env('SECRET_KEY')
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['annart.uz', 'www.annart.uz', 'localhost', '127.0.0.1']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sitemaps',
 
     'main.apps.MainConfig',
 ]
@@ -112,7 +113,6 @@ LOCALE_PATHS = [
 ]
 
 TIME_ZONE = 'Asia/Tashkent'
-
 
 DEFAULT_IMAGE = 'default_foto.png'
 

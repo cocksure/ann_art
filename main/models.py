@@ -6,6 +6,7 @@ from django.conf import settings
 from django.core.files.base import ContentFile
 from django.core.validators import FileExtensionValidator
 from django.db import models
+from django.urls import reverse
 from django.utils.text import slugify
 from django.utils.translation import gettext_lazy as _
 
@@ -199,6 +200,9 @@ class MaterialItem(models.Model):
         blank=True
     )
 
+    def get_absolute_url(self):
+        return reverse('materials_list')
+
     def save(self, *args, **kwargs):
         if self.image:
             new_name, new_file = process_image(self.image, "style_images/")
@@ -244,6 +248,9 @@ class StyleItem(models.Model):
         _('Порядок'),
         default=0
     )
+
+    def get_absolute_url(self):
+        return reverse('style_detail', kwargs={'pk': self.pk})
 
     def save(self, *args, **kwargs):
         if self.image:
@@ -313,6 +320,9 @@ class ProjectItem(models.Model):
         blank=True
     )
 
+    def get_absolute_url(self):
+        return reverse('project_detail', kwargs={'pk': self.pk})
+
     def save(self, *args, **kwargs):
         if self.image:
             new_name, new_file = process_image(self.image, "style_images/")
@@ -363,6 +373,9 @@ class ServiceItem(models.Model):
         verbose_name = _('Услуга')
         verbose_name_plural = _('Услуги')
         ordering = ['order', 'id']
+
+    def get_absolute_url(self):
+        return reverse('services')
 
     def __str__(self):
         return f"[{self.order:02}] {self.title}"
