@@ -4,8 +4,9 @@ from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from django.shortcuts import render
 from django.utils.translation import gettext as _
-from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.csrf import csrf_protect
 from django.views.generic import ListView, DetailView
+import time
 
 from .models import (
     MaterialItem, StyleItem, ProjectItem,
@@ -16,31 +17,58 @@ TELEGRAM_BOT_TOKEN = '7642436558:AAHGeHgE7wFrB7JVQpMBW172m6RLj_kV4UU'
 TELEGRAM_GROUP_ID = '-1002713293259'
 
 
-@csrf_exempt
+@csrf_protect
 def contact_telegram(request):
-    if request.method == 'POST':
-        name = request.POST.get('name')
-        phone = request.POST.get('phone')
-        message_text = request.POST.get('message')  # описание проекта
+    if request.method != 'POST':
+        return JsonResponse({'error': 'Только POST-запрос разрешён'}, status=405)
 
-        message = (
-            "📩 Новое сообщение с сайта:\n\n"
-            f"👤 Имя: {name}\n"
-            f"📱 Телефон: {phone}\n"
-            f"📝 Сообщение: {message_text}"
-        )
+    # Honeypot — если поле заполнено, скорее всего бот
+    if request.POST.get('company'):
+        return JsonResponse({'ok': True})  # тихо игнорируем
 
-        url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
-        data = {
-            'chat_id': TELEGRAM_GROUP_ID,
-            'text': message,
-            'parse_mode': 'HTML'
-        }
+    # Проверка времени заполнения
+    try:
+        form_ts = int(request.POST.get('form_ts', '0'))
+    except ValueError:
+        form_ts = 0
+    if form_ts and time.time() - form_ts < 2:
+        return JsonResponse({'error': 'Слишком быстро отправлено. Попробуйте снова.'}, status=400)
 
-        response = requests.post(url, data=data)
-        return JsonResponse({'ok': True})
+    # Получаем данные
+    name = (request.POST.get('name') or '').strip()
+    phone = (request.POST.get('phone') or '').strip()
+    message_text = (request.POST.get('message') or '').strip()
 
-    return JsonResponse({'error': 'Только POST-запрос разрешён'}, status=405)
+    # Валидация
+    if not name or len(name) > 25:
+        return JsonResponse({'error': 'Некорректное имя.'}, status=400)
+    if not phone.isdigit() or len(phone) != 9:
+        return JsonResponse({'error': 'Некорректный номер телефона.'}, status=400)
+    if len(message_text) > 1000:
+        message_text = message_text[:1000]
+
+    # Формируем сообщение
+    message = (
+        "📩 Новое сообщение с сайта:\n\n"
+        f"👤 Имя: {name}\n"
+        f"📱 Телефон: +998 {phone}\n"
+        f"📝 Сообщение: {message_text}"
+    )
+
+    # Отправка в Telegram
+    url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/sendMessage"
+    data = {
+        'chat_id': TELEGRAM_GROUP_ID,
+        'text': message,
+        'parse_mode': 'HTML'
+    }
+
+    try:
+        requests.post(url, data=data, timeout=5)
+    except Exception as e:
+        return JsonResponse({'error': 'Ошибка отправки. Попробуйте позже.'}, status=500)
+
+    return JsonResponse({'ok': True})
 
 
 def site_search(request):
