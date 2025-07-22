@@ -4,169 +4,212 @@
 {% block title %}{% trans "Результаты поиска" %}{% endblock %}
 
 {% block extra_css %}
-<style>
-    .search-section {
-        padding: 40px 0;
-    }
-    .search-title {
-        font-size: 1.8rem;
-        font-weight: 600;
-    }
-    .search-results {
-        margin-top: 20px;
-    }
-    .card {
-        border: 1px solid #eee;
-        border-radius: 12px;
-        overflow: hidden;
-        transition: transform 0.3s ease;
-        height: 100%;
-    }
-    .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    }
-    .card img {
-        width: 100%;
-        height: 160px;
-        object-fit: cover;
-    }
-    .card-body {
-        padding: 15px;
-        text-align: center;
-    }
-    .card-title {
-        font-size: 1rem;
-        font-weight: 600;
-        margin-bottom: 10px;
-    }
-    .card-category {
-        font-size: 0.85rem;
-        color: #777;
-    }
-    .section-header {
-        margin-top: 40px;
-        margin-bottom: 15px;
-        font-size: 1.4rem;
-        font-weight: 500;
-        border-bottom: 2px solid #eee;
-        padding-bottom: 8px;
-    }
-    .empty-results {
-        color: #777;
-        font-size: 1rem;
-        margin-top: 20px;
-    }
-</style>
+	<style>
+        .search-section {
+            padding: 40px 0;
+        }
+
+        .search-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        .search-results {
+            margin-top: 20px;
+        }
+
+        .card {
+            border: 1px solid #eee;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .card-category {
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        .section-header {
+            margin-top: 40px;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            font-weight: 500;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 8px;
+        }
+
+        .empty-results {
+            color: #777;
+            font-size: 1rem;
+            margin-top: 20px;
+        }
+	</style>
 {% endblock %}
 
 {% block content %}
-<section class="search-section">
-    <div class="container">
-        <h2 class="search-title text-light">{% trans "Результаты поиска" %}: "{{ query }}" ({{ total }})</h2>
 
-        {% if not query %}
-            <p class="empty-results">{% trans "Введите запрос в поисковое поле." %}</p>
-        {% else %}
-            {% if total == 0 %}
-                <p class="empty-results">{% trans "Ничего не найдено." %}</p>
-            {% endif %}
+	<section class="search-section">
+		<div class="container">
+			<h2 class="search-title text-light">{% trans "Результаты поиска" %}: "{{ query }}" ({{ total }})</h2>
 
-            <div class="search-results">
-                <!-- ✅ Стили -->
-                {% if results.styles %}
-                    <h3 class="section-header text-light">{% trans "Стили" %}</h3>
-                    <div class="row g-3">
-                        {% for item in results.styles %}
-                            <div class="col-6 col-md-4 col-lg-3">
-                                <a href="{% url 'style_detail' item.id %}" class="text-decoration-none text-dark">
-                                    <div class="card">
-                                        {% if item.image %}
-                                            <img src="{{ item.image.url }}" alt="{{ item.title }}">
-                                        {% else %}
-                                            <img src="{% static 'images/default-style.jpg' %}" alt="{{ item.title }}">
-                                        {% endif %}
-                                        <div class="card-body">
-                                            <h5 class="card-title">{{ item.title }}</h5>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        {% endfor %}
-                    </div>
-                {% endif %}
+			{% if not query %}
+				<p class="empty-results">{% trans "Введите запрос в поисковое поле." %}</p>
+			{% else %}
+				{% if total == 0 %}
+					<p class="empty-results">{% trans "Ничего не найдено." %}</p>
+				{% endif %}
 
-                <!-- ✅ Материалы -->
-                {% if results.materials %}
-                    <h3 class="section-header text-light">{% trans "Материалы" %}</h3>
-                    <div class="row g-3">
-                        {% for item in results.materials %}
-                            <div class="col-6 col-md-4 col-lg-3">
-                                <a href="{% url 'material_detail' item.id %}" class="text-decoration-none text-dark">
-                                    <div class="card">
-                                        {% if item.image %}
-                                            <img src="{{ item.image.url }}" alt="{{ item.title }}">
-                                        {% else %}
-                                            <img src="{% static 'images/default-material.jpg' %}" alt="{{ item.title }}">
-                                        {% endif %}
-                                        <div class="card-body">
-                                            <h5 class="card-title">{{ item.title }}</h5>
-                                            {% if item.category %}
-                                                <p class="card-category">{{ item.category.name }}</p>
-                                            {% endif %}
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        {% endfor %}
-                    </div>
-                {% endif %}
+				<div class="search-results">
+					<!-- ✅ Стили -->
+					{% if results.styles %}
+						<h3 class="section-header text-light">{% trans "Стили" %}</h3>
+						<div class="row g-3">
+							{% for item in results.styles %}
+								<div class="col-6 col-md-4 col-lg-3">
+									<a href="{% url 'style_detail' item.id %}" class="text-decoration-none text-dark">
+										<div class="card">
+											{% if item.image %}
+												<img src="{{ item.image.url }}" alt="{{ item.title }}">
+											{% else %}
+												<img src="{% static 'images/default-style.jpg' %}"
+												     alt="{{ item.title }}">
+											{% endif %}
+											<div class="card-body">
+												<h5 class="card-title">{{ item.title }}</h5>
+											</div>
+										</div>
+									</a>
+								</div>
+							{% endfor %}
+						</div>
+					{% endif %}
 
-                <!-- ✅ Проекты -->
-                {% if results.projects %}
-                    <h3 class="section-header text-light">{% trans "Проекты" %}</h3>
-                    <div class="row g-3">
-                        {% for item in results.projects %}
-                            <div class="col-6 col-md-4 col-lg-3">
-                                <a href="{% url 'project_detail' item.id %}" class="text-decoration-none text-dark">
-                                    <div class="card">
-                                        {% if item.image %}
-                                            <img src="{{ item.image.url }}" alt="{{ item.title }}">
-                                        {% else %}
-                                            <img src="{% static 'images/default-project.jpg' %}" alt="{{ item.title }}">
-                                        {% endif %}
-                                        <div class="card-body">
-                                            <h5 class="card-title">{{ item.title }}</h5>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        {% endfor %}
-                    </div>
-                {% endif %}
+					<!-- ✅ Материалы -->
+					{% if results.materials %}
+						<h3 class="section-header text-light">{% trans "Материалы" %}</h3>
+						<div class="row g-3">
+							{% for item in results.materials %}
+								<div class="col-6 col-md-4 col-lg-3">
+									<div class="card search-material-card" data-material-id="{{ item.id }}"
+									     style="cursor: pointer;">
+										{% if item.image %}
+											<img src="{{ item.image.url }}" class="card-img-top" alt="{{ item.title }}">
+										{% else %}
+											<img src="{% static 'images/default-material.jpg' %}" class="card-img-top"
+											     alt="{{ item.title }}">
+										{% endif %}
+										<div class="card-body">
+											<h5 class="card-title">{{ item.title }}</h5>
+											{% if item.category %}
+												<span class="badge bg-emerald-light text-dark">{{ item.category.name }}</span>
+											{% endif %}
+											<p class="card-text mt-2">
+												{{ item.description|truncatechars:60|default:_("Описание отсутствует") }}
+											</p>
+										</div>
+									</div>
+								</div>
+							{% endfor %}
+						</div>
+					{% endif %}
 
-                <!-- ✅ Услуги -->
-                {% if results.services %}
-                    <h3 class="section-header text-light">{% trans "Услуги" %}</h3>
-                    <div class="row g-3">
-                        {% for item in results.services %}
-                            <div class="col-6 col-md-4 col-lg-3">
-                                <div class="card">
-                                    {% if item.image %}
-                                        <img src="{{ item.image.url }}" alt="{{ item.title }}">
-                                    {% endif %}
-                                    <div class="card-body">
-                                        <h5 class="card-title">{{ item.title }}</h5>
-                                    </div>
-                                </div>
-                            </div>
-                        {% endfor %}
-                    </div>
-                {% endif %}
-            </div>
-        {% endif %}
-    </div>
-</section>
+					<!-- ✅ Проекты -->
+					{% if results.projects %}
+						<h3 class="section-header text-light">{% trans "Проекты" %}</h3>
+						<div class="row g-3">
+							{% for item in results.projects %}
+								<div class="col-6 col-md-4 col-lg-3">
+									<a href="{% url 'project_detail' item.id %}" class="text-decoration-none text-dark">
+										<div class="card">
+											{% if item.image %}
+												<img src="{{ item.image.url }}" alt="{{ item.title }}">
+											{% else %}
+												<img src="{% static 'images/default-project.jpg' %}"
+												     alt="{{ item.title }}">
+											{% endif %}
+											<div class="card-body">
+												<h5 class="card-title">{{ item.title }}</h5>
+											</div>
+										</div>
+									</a>
+								</div>
+							{% endfor %}
+						</div>
+					{% endif %}
+
+					<!-- ✅ Услуги -->
+					{% if results.services %}
+						<h3 class="section-header text-light">{% trans "Услуги" %}</h3>
+						<div class="row g-3">
+							{% for item in results.services %}
+								<div class="col-6 col-md-4 col-lg-3">
+									<div class="card">
+										{% if item.image %}
+											<img src="{{ item.image.url }}" alt="{{ item.title }}">
+										{% endif %}
+										<div class="card-body">
+											<h5 class="card-title">{{ item.title }}</h5>
+										</div>
+									</div>
+								</div>
+							{% endfor %}
+						</div>
+					{% endif %}
+				</div>
+			{% endif %}
+		</div>
+	</section>
+	
+	{% for material in results.materials %}
+    {% include 'includes/material_modal.html' with material=material %}
+{% endfor %}
 {% endblock %}
+
+{% block extra_js %}
+<script>
+// Функция для смены главного изображения (из вашего material_list.html)
+function changeMainImage(mainImageId, newSrc) {
+    document.getElementById(mainImageId).src = newSrc;
+}
+
+// Инициализация модалок при клике на карточку
+document.addEventListener('DOMContentLoaded', function() {
+    // Обработчик для карточек материалов в поиске
+    document.querySelectorAll('.search-material-card').forEach(card => {
+        card.addEventListener('click', function(e) {
+            e.preventDefault();
+            const materialId = this.getAttribute('data-material-id');
+            const modal = new bootstrap.Modal(document.getElementById('materialModal' + materialId));
+            modal.show();
+        });
+    });
+});
+</script>
+{% endblock %}
+
 {% block dashboard %}
 {% endblock dashboard %}

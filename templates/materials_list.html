@@ -116,91 +116,54 @@
 	</section>
 
 	<!-- Modals -->
-	{% for material in materials %}
-		<div class="modal fade" id="materialModal{{ material.id }}" tabindex="-1" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered modal-xl">
-				<div class="modal-content">
-					<div class="modal-header bg-emerald-gradient text-white">
-						<h5 class="modal-title">{{ material.title }}</h5>
-						<button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
-						        aria-label="Close"></button>
-					</div>
-					<div class="modal-body">
-						<div class="row">
-							<!-- Главное изображение -->
-							<div class="col-lg-8 mb-4">
-								<div class="main-image-container ratio ratio-16x9">
-									{% if material.image %}
-										<img id="mainImage{{ material.id }}" src="{{ material.image.url }}"
-										     alt="{{ material.title }}" class="img-fluid rounded">
-									{% else %}
-										<img id="mainImage{{ material.id }}"
-										     src="{% static 'images/default_material.png' %}" alt="{{ material.title }}"
-										     class="img-fluid rounded">
-									{% endif %}
-								</div>
-							</div>
-
-							<!-- Описание -->
-							<div class="col-lg-4">
-								<h6 class="text-emerald-dark fw-bold">{% trans "Описание" %}</h6>
-								<p class="mb-4">{{ material.description|default:_("Описание отсутствует") }}</p>
-								<div class="material-meta bg-light p-3 rounded mb-4">
-									<p class="mb-2"><i class="fas fa-tag me-2 text-emerald-medium"></i>
-										<strong>{% trans "Категория" %}:</strong> {{ material.category.name }}</p>
-								</div>
-							</div>
-
-							{% if material.additional_images.all %}
-								<div class="col-12 mt-4">
-									<h6 class="text-emerald-dark fw-bold mb-3">{% trans "Дополнительные изображения" %}</h6>
-									<div class="gallery-thumbnails d-flex flex-wrap gap-2">
-										{% for img in material.additional_images.all %}
-											<div class="thumbnail-container"
-											     onclick="changeMainImage('mainImage{{ material.id }}', '{{ img.image.url }}')">
-												<img src="{{ img.image.url }}" alt="{{ material.title }}"
-												     class="img-thumbnail gallery-thumbnail">
-											</div>
-										{% endfor %}
-									</div>
-								</div>
-							{% endif %}
-						</div>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-outline-emerald"
-						        data-bs-dismiss="modal">{% trans "Закрыть" %}</button>
-					</div>
-				</div>
-			</div>
-		</div>
-	{% endfor %}
+{% for material in materials %}
+    {% include 'includes/material_modal.html' with material=material %}
+{% endfor %}
 
 {% endblock %}
 
 {% block extra_js %}
-	<script>
-        function changeMainImage(mainImageId, newSrc) {
-            document.getElementById(mainImageId).src = newSrc;
-        }
+<script>
+    // Функция для смены изображения
+    function changeMainImage(mainImageId, newSrc) {
+        document.getElementById(mainImageId).src = newSrc;
+    }
 
-        document.addEventListener('DOMContentLoaded', function () {
-            const params = new URLSearchParams(window.location.search);
-            const cat = params.get('category');
-            if (cat) {
-                const btn = document.getElementById('tab-' + cat);
-                if (btn) {
-                    const bsTab = new bootstrap.Tab(btn);
-                    bsTab.show();
-                    const section = document.getElementById('materials');
-                    if (section) {
-                        section.scrollIntoView({behavior: 'smooth'});
-                    }
+    // Инициализация табов
+    document.addEventListener('DOMContentLoaded', function () {
+        // Обработка параметра category из URL
+        const params = new URLSearchParams(window.location.search);
+        const cat = params.get('category');
+        if (cat) {
+            const btn = document.getElementById('tab-' + cat);
+            if (btn) {
+                const bsTab = new bootstrap.Tab(btn);
+                bsTab.show();
+                const section = document.getElementById('materials');
+                if (section) {
+                    section.scrollIntoView({behavior: 'smooth'});
                 }
             }
+        }
+
+        // Инициализация всех модалок
+       document.querySelectorAll('[data-bs-toggle="modal"]').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const modalId = this.getAttribute('data-bs-target');
+            const modal = new bootstrap.Modal(document.querySelector(modalId));
+            
+            modal._element.addEventListener('hidden.bs.modal', function() {
+                document.body.classList.remove('modal-open');
+                const backdrops = document.querySelectorAll('.modal-backdrop');
+                backdrops.forEach(backdrop => backdrop.remove());
+            });
+            
+            modal.show();
         });
-	</script>
-{% endblock extra_js %}
+    });
+    });
+</script>
+{% endblock %}
 
 {% block dashboard %}
 {% endblock dashboard %}

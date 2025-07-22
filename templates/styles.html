@@ -28,12 +28,10 @@
 
 			<div class="row">
 				<div class="container-fluid">
-					<div class="position-relative">
-						<!-- Левая стрелка -->
-						<button id="scroll-left" class="scroll-arrow left-arrow" aria-label="{% trans '←' %}">&#10094;
-						</button>
+					<!-- Для больших экранов - горизонтальный скролл с кнопками -->
+					<div class="d-none d-md-block position-relative">
+						<button id="scroll-left" class="scroll-arrow left-arrow" aria-label="{% trans '←' %}">&#10094;</button>
 
-						<!-- Прокручиваемый контейнер -->
 						<div class="d-flex flex-nowrap overflow-auto pb-3" id="style-scroll">
 							{% for style in styles %}
 								<div class="col-10 col-sm-6 col-md-4 col-lg-3 col-xl-2 slide-up mb-3 flex-shrink-0 me-3">
@@ -52,10 +50,28 @@
 							{% endfor %}
 						</div>
 
-						<!-- Правая стрелка -->
-						<button id="scroll-right" class="scroll-arrow right-arrow" aria-label="{% trans '→' %}">
-							&#10095;
-						</button>
+						<button id="scroll-right" class="scroll-arrow right-arrow" aria-label="{% trans '→' %}">&#10095;</button>
+					</div>
+					
+					<!-- Для маленьких экранов - вертикальное расположение -->
+					<div class="d-md-none">
+						<div class="row">
+							{% for style in styles %}
+								<div class="col-12 mb-4 slide-up">
+									<div class="style-card-wrapper">
+										<div class="style-card">
+											<img src="{{ style.image.url }}" alt="{{ style.title }}">
+											<div class="style-overlay">
+												<h4>{{ style.title }}</h4>
+												<a href="{% url 'style_detail' style.pk %}" class="btn btn-view-more">
+													{% trans "Подробнее" %} <i class="fas fa-arrow-right ms-2"></i>
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							{% endfor %}
+						</div>
 					</div>
 				</div>
 			</div>
@@ -88,25 +104,28 @@
 {% block extra_js %}
 	<script>
         window.addEventListener('load', () => {
-            const container = document.getElementById('style-scroll');
-            if (container) {
-                container.scrollBy({left: 140, behavior: 'smooth'});
-                setTimeout(() => {
-                    container.scrollBy({left: -240, behavior: 'smooth'});
-                }, 600);
+            // Инициализация скролла только для больших экранов
+            if (window.innerWidth >= 768) {
+                const container = document.getElementById('style-scroll');
+                if (container) {
+                    container.scrollBy({left: 140, behavior: 'smooth'});
+                    setTimeout(() => {
+                        container.scrollBy({left: -240, behavior: 'smooth'});
+                    }, 600);
+                }
+
+                const scrollContainer = document.getElementById('style-scroll');
+                const scrollLeftBtn = document.getElementById('scroll-left');
+                const scrollRightBtn = document.getElementById('scroll-right');
+
+                scrollLeftBtn.addEventListener('click', () => {
+                    scrollContainer.scrollBy({left: -300, behavior: 'smooth'});
+                });
+
+                scrollRightBtn.addEventListener('click', () => {
+                    scrollContainer.scrollBy({left: 300, behavior: 'smooth'});
+                });
             }
-
-            const scrollContainer = document.getElementById('style-scroll');
-            const scrollLeftBtn = document.getElementById('scroll-left');
-            const scrollRightBtn = document.getElementById('scroll-right');
-
-            scrollLeftBtn.addEventListener('click', () => {
-                scrollContainer.scrollBy({left: -300, behavior: 'smooth'});
-            });
-
-            scrollRightBtn.addEventListener('click', () => {
-                scrollContainer.scrollBy({left: 300, behavior: 'smooth'});
-            });
         });
 	</script>
 {% endblock %}

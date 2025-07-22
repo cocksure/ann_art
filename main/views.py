@@ -1,4 +1,8 @@
+import time
+
 import requests
+from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
+from django.contrib.postgres.search import TrigramSimilarity
 from django.db.models import Q
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
@@ -6,7 +10,6 @@ from django.shortcuts import render
 from django.utils.translation import gettext as _
 from django.views.decorators.csrf import csrf_protect
 from django.views.generic import ListView, DetailView
-import time
 
 from .models import (
     MaterialItem, StyleItem, ProjectItem,
@@ -77,29 +80,28 @@ def site_search(request):
     total = 0
 
     if query:
-        # Поиск по ProjectItem
-        projects = ProjectItem.objects.filter(
-            Q(title__icontains=query) |
-            Q(description__icontains=query)
-        )
+        query_lower = query.lower()
 
-        # Поиск по ServiceItem
-        services = ServiceItem.objects.filter(
-            Q(title__icontains=query) |
-            Q(description__icontains=query)
-        )
+        def search_queryset(model, select_related=None):
+            vector = SearchVector('title', 'description', config='russian')
+            search_query = SearchQuery(query_lower, config='russian')
 
-        # Поиск по StyleItem
-        styles = StyleItem.objects.filter(
-            Q(title__icontains=query) |
-            Q(description__icontains=query)
-        )
+            qs = model.objects.annotate(
+                search=vector,
+                rank=SearchRank(vector, search_query),
+                similarity=TrigramSimilarity('title', query_lower)
+            ).filter(
+                Q(search=search_query) | Q(similarity__gt=0.1)
+            ).order_by('-rank', '-similarity')
 
-        # Поиск по MaterialItem
-        materials = MaterialItem.objects.filter(
-            Q(title__icontains=query) |
-            Q(description__icontains=query)
-        ).select_related('category')
+            if select_related:
+                qs = qs.select_related(*select_related)
+            return qs
+
+        projects = search_queryset(ProjectItem)
+        services = search_queryset(ServiceItem)
+        styles = search_queryset(StyleItem)
+        materials = search_queryset(MaterialItem, select_related=['category'])
 
         results = {
             'projects': projects,
@@ -108,7 +110,7 @@ def site_search(request):
             'materials': materials,
         }
 
-        total = sum(len(qs) for qs in results.values())
+        total = sum(qs.count() for qs in results.values())
 
     return render(request, 'site_search_results.html', {
         'query': query,
