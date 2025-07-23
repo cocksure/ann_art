@@ -1,5 +1,5 @@
 import time
-
+from django.utils.translation import get_language
 import requests
 from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
 from django.contrib.postgres.search import TrigramSimilarity
@@ -74,6 +74,8 @@ def contact_telegram(request):
     return JsonResponse({'ok': True})
 
 
+
+
 def site_search(request):
     query = request.GET.get('q', '').strip()
     results = {}
@@ -81,17 +83,29 @@ def site_search(request):
 
     if query:
         query_lower = query.lower()
+        current_language = get_language()
 
         def search_queryset(model, select_related=None):
-            vector = SearchVector('title', 'description', config='russian')
-            search_query = SearchQuery(query_lower, config='russian')
+            # Для русского языка оставляем как было
+            if current_language == 'ru':
+                vector = SearchVector('title', 'description', config='russian')
+                search_query = SearchQuery(query_lower, config='russian')
+                similarity_field = 'title'
+            # Для других языков используем соответствующие поля
+            else:
+                title_field = f'title_{current_language}'
+                desc_field = f'description_{current_language}'
+                vector = SearchVector(title_field, desc_field, config='simple')
+                search_query = SearchQuery(query_lower, config='simple')
+                similarity_field = title_field
 
             qs = model.objects.annotate(
                 search=vector,
                 rank=SearchRank(vector, search_query),
-                similarity=TrigramSimilarity('title', query_lower)
+                similarity=TrigramSimilarity(similarity_field, query_lower)
             ).filter(
-                Q(search=search_query) | Q(similarity__gt=0.1)
+                Q(search=search_query) |
+                Q(similarity__gt=0.1)
             ).order_by('-rank', '-similarity')
 
             if select_related:
@@ -124,7 +138,6 @@ def site_search(request):
             ('partners', _('Партнеры')),
         ]
     })
-
 
 def home(request):
     return render(request, 'base.html', {

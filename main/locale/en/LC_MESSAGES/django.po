@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-07-18 16:44+0500\n"
+"POT-Creation-Date: 2025-07-23 14:17+0500\n"
 "PO-Revision-Date: 2025-07-15 13:30+0500\n"
 "Last-Translator: Sanjar Mahmudov <your@email.com>\n"
 "Language-Team: English <en@local>\n"
@@ -17,150 +17,150 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: main/models.py:44
+#: main/models.py:45
 msgid "Название категории"
 msgstr "Category name"
 
-#: main/models.py:49 main/models.py:183 main/models.py:237 main/models.py:288
+#: main/models.py:50 main/models.py:184 main/models.py:241 main/models.py:295
 msgid "Описание"
 msgstr "Description"
 
-#: main/models.py:54
+#: main/models.py:55
 msgid "Порядок отображения"
 msgstr "Display order"
 
-#: main/models.py:60
+#: main/models.py:61
 msgid "Фото категории"
 msgstr "Category photo"
 
-#: main/models.py:92
+#: main/models.py:93
 msgid "Категория материала"
 msgstr "Material category"
 
-#: main/models.py:93
+#: main/models.py:94
 msgid "Категории материалов"
 msgstr "Material categories"
 
-#: main/models.py:98 main/models.py:135
+#: main/models.py:99 main/models.py:136
 #, fuzzy
 #| msgid "Название стиля"
 msgid "Название"
 msgstr "Style name"
 
-#: main/models.py:109
+#: main/models.py:110
 #, fuzzy
 #| msgid "Категория материала"
 msgid "Фото материала"
 msgstr "Material category"
 
-#: main/models.py:110
+#: main/models.py:111
 #, fuzzy
 #| msgid "Категории материалов"
 msgid "Фотографии материал"
 msgstr "Material categories"
 
-#: main/models.py:166
+#: main/models.py:167
 #, fuzzy
 #| msgid "Тип проекта"
 msgid "Фото проекта"
 msgstr "Project type"
 
-#: main/models.py:167
+#: main/models.py:168
 #, fuzzy
 #| msgid "Название проекта"
 msgid "Фотографии проекта"
 msgstr "Project name"
 
-#: main/models.py:174
+#: main/models.py:175
 msgid "Категория"
 msgstr "Category"
 
-#: main/models.py:178
+#: main/models.py:179
 msgid "Заголовок"
 msgstr "Title"
 
-#: main/models.py:188 main/models.py:240 main/models.py:293
+#: main/models.py:189 main/models.py:244 main/models.py:300
 msgid "Изображение"
 msgstr "Image"
 
-#: main/models.py:196 main/models.py:244 main/models.py:299 main/models.py:358
+#: main/models.py:197 main/models.py:248 main/models.py:306 main/models.py:368
 msgid "Порядок"
 msgstr "Order"
 
-#: main/models.py:227
+#: main/models.py:231
 msgid "Материал"
 msgstr "Material"
 
-#: main/models.py:228 main/views.py:98
+#: main/models.py:232 main/views.py:137
 msgid "Материалы"
 msgstr "Materials"
 
-#: main/models.py:233
+#: main/models.py:237
 msgid "Название стиля"
 msgstr "Style name"
 
-#: main/models.py:279
+#: main/models.py:286
 msgid "Коммерческие помещения"
 msgstr "Commercial spaces"
 
-#: main/models.py:280
+#: main/models.py:287
 msgid "Жилые помещения"
 msgstr "Residential spaces"
 
-#: main/models.py:281
+#: main/models.py:288
 msgid "Другое"
 msgstr "Other"
 
-#: main/models.py:284
+#: main/models.py:291
 msgid "Название проекта"
 msgstr "Project name"
 
-#: main/models.py:296
+#: main/models.py:303
 #, fuzzy
 #| msgid "Изображение"
 msgid "Доп. изображения"
 msgstr "Image"
 
-#: main/models.py:305
+#: main/models.py:312
 msgid "Тип проекта"
 msgstr "Project type"
 
-#: main/models.py:311
+#: main/models.py:318
 msgid "Площадь (м²)"
 msgstr ""
 
-#: main/models.py:340
+#: main/models.py:350
 msgid "Проект"
 msgstr "Project"
 
-#: main/models.py:341 main/views.py:95
+#: main/models.py:351 main/views.py:134
 msgid "Проекты"
 msgstr "Projects"
 
-#: main/models.py:347
+#: main/models.py:357
 msgid "Название услуги"
 msgstr "Service title"
 
-#: main/models.py:351
+#: main/models.py:361
 msgid "Краткое описание"
 msgstr "Short description"
 
-#: main/models.py:354
+#: main/models.py:364
 msgid "Детали (HTML или Markdown)"
 msgstr "Details (HTML or Markdown)"
 
-#: main/models.py:363
+#: main/models.py:373
 msgid "Услуга"
 msgstr "Service"
 
-#: main/models.py:364 main/views.py:96
+#: main/models.py:374 main/views.py:135
 msgid "Услуги"
 msgstr "Services"
 
-#: main/views.py:97
+#: main/views.py:136
 msgid "Стили"
 msgstr ""
 
-#: main/views.py:99
+#: main/views.py:138
 msgid "Партнеры"
 msgstr ""
