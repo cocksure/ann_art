@@ -1,6 +1,9 @@
 from django.contrib.sitemaps import Sitemap
 from django.urls import reverse
+from django.utils import translation
 from .models import ProjectItem, StyleItem
+
+LANGUAGES = ['ru', 'en', 'uz']
 
 
 class StaticPagesSitemap(Sitemap):
@@ -11,8 +14,19 @@ class StaticPagesSitemap(Sitemap):
     def items(self):
         return ['home', 'projects', 'styles', 'materials_list', 'contacts']
 
-    def location(self, item):
-        return reverse(item)
+    def get_urls(self, site=None, **kwargs):
+        urls = []
+        for lang in LANGUAGES:
+            with translation.override(lang):
+                for item in self.items():
+                    urls.append({
+                        'location': f"{self.protocol}://{site.domain}{reverse(item)}",
+                        'changefreq': self.changefreq,
+                        'priority': self.priority,
+                        'protocol': self.protocol,
+                        'lastmod': None,
+                    })
+        return urls
 
 
 class ProjectItemSitemap(Sitemap):
@@ -23,8 +37,20 @@ class ProjectItemSitemap(Sitemap):
     def items(self):
         return ProjectItem.objects.all()
 
-    def location(self, obj):
-        return reverse('project_detail', args=[obj.pk])
+    def get_urls(self, site=None, **kwargs):
+        urls = []
+        for lang in LANGUAGES:
+            with translation.override(lang):
+                for obj in self.items():
+                    loc = reverse('project_detail', args=[obj.pk])
+                    urls.append({
+                        'location': f"{self.protocol}://{site.domain}{loc}",
+                        'changefreq': self.changefreq,
+                        'priority': self.priority,
+                        'protocol': self.protocol,
+                        'lastmod': None,
+                    })
+        return urls
 
 
 class StyleItemSitemap(Sitemap):
@@ -35,5 +61,17 @@ class StyleItemSitemap(Sitemap):
     def items(self):
         return StyleItem.objects.all()
 
-    def location(self, obj):
-        return reverse('style_detail', args=[obj.pk])
+    def get_urls(self, site=None, **kwargs):
+        urls = []
+        for lang in LANGUAGES:
+            with translation.override(lang):
+                for obj in self.items():
+                    loc = reverse('style_detail', args=[obj.pk])
+                    urls.append({
+                        'location': f"{self.protocol}://{site.domain}{loc}",
+                        'changefreq': self.changefreq,
+                        'priority': self.priority,
+                        'protocol': self.protocol,
+                        'lastmod': None,
+                    })
+        return urls
