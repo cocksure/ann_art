@@ -3,6 +3,9 @@ from django.urls import reverse
 from django.utils import translation
 from .models import ProjectItem, StyleItem
 
+import locale
+locale.setlocale(locale.LC_ALL, 'C')
+
 LANGUAGES = ['ru', 'en', 'uz']
 
 
@@ -22,7 +25,7 @@ class StaticPagesSitemap(Sitemap):
                     urls.append({
                         'location': f"{self.protocol}://{site.domain}{reverse(item)}",
                         'changefreq': self.changefreq,
-                        'priority': self.priority,
+                        'priority': "%.1f" % self.priority,
                         'protocol': self.protocol,
                         'lastmod': None,
                     })
@@ -46,7 +49,7 @@ class ProjectItemSitemap(Sitemap):
                     urls.append({
                         'location': f"{self.protocol}://{site.domain}{loc}",
                         'changefreq': self.changefreq,
-                        'priority': self.priority,
+                        'priority': "%.1f" % self.priority,
                         'protocol': self.protocol,
                         'lastmod': None,
                     })
@@ -70,7 +73,7 @@ class StyleItemSitemap(Sitemap):
                     urls.append({
                         'location': f"{self.protocol}://{site.domain}{loc}",
                         'changefreq': self.changefreq,
-                        'priority': self.priority,
+                        'priority': "%.1f" % self.priority,
                         'protocol': self.protocol,
                         'lastmod': None,
                     })
