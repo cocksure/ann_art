@@ -22,8 +22,7 @@
 		{% endif %}
 	{% endblock %}
 
-	{% get_current_language as LANGUAGE_CODE %}
-	<link rel="canonical" href="https://annart.uz/{{ LANGUAGE_CODE }}/"/>
+	<link rel="canonical" href="https://annart.uz{{ request.get_full_path }}"/>
 
 	<!-- Favicon -->
 	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-touch-icon.png?v=2' %}">

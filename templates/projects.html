@@ -4,14 +4,17 @@
 {% block title %}{% trans "Проекты" %} — AnnArt{% endblock %}
 
 {% block meta_description %}
-  {% get_current_language as LANGUAGE_CODE %}
-  {% if LANGUAGE_CODE == 'ru' %}
-    <meta name="description" content="Смотрите проекты дизайна интерьеров от AnnArt: современные решения, уникальные стили, визуализация.">
-  {% elif LANGUAGE_CODE == 'en' %}
-    <meta name="description" content="Explore AnnArt's interior design projects: modern solutions, unique styles, and visualization.">
-  {% elif LANGUAGE_CODE == 'uz' %}
-    <meta name="description" content="AnnArt dizayn loyihalari: zamonaviy yechimlar, noyob uslublar va vizualizatsiya bilan tanishing.">
-  {% endif %}
+	{% get_current_language as LANGUAGE_CODE %}
+	{% if LANGUAGE_CODE == 'ru' %}
+		<meta name="description"
+		      content="Смотрите проекты дизайна интерьеров от AnnArt: современные решения, уникальные стили, визуализация.">
+	{% elif LANGUAGE_CODE == 'en' %}
+		<meta name="description"
+		      content="Explore AnnArt's interior design projects: modern solutions, unique styles, and visualization.">
+	{% elif LANGUAGE_CODE == 'uz' %}
+		<meta name="description"
+		      content="AnnArt dizayn loyihalari: zamonaviy yechimlar, noyob uslublar va vizualizatsiya bilan tanishing.">
+	{% endif %}
 {% endblock %}
 
 {% block extra_css %}
