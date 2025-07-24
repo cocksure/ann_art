@@ -4,8 +4,17 @@
 {% block title %}{% trans "Стили" %} — AnnArt{% endblock %}
 
 {% block meta_description %}
-	<meta name="description"
-	      content="Коллекция стилей интерьера от AnnArt — современные, классические, минималистичные и другие решения для вашего дома.">
+	{% get_current_language as LANGUAGE_CODE %}
+	{% if LANGUAGE_CODE == 'ru' %}
+		<meta name="description"
+		      content="Коллекция стилей интерьера от AnnArt — современные, классические, минималистичные и другие решения для вашего дома.">
+	{% elif LANGUAGE_CODE == 'en' %}
+		<meta name="description"
+		      content="Explore AnnArt’s interior design styles — modern, classic, minimalist, and more ideas for your home.">
+	{% elif LANGUAGE_CODE == 'uz' %}
+		<meta name="description"
+		      content="AnnArt interyer uslublari to‘plami — zamonaviy, klassik, minimalist va boshqa g‘oyalar sizning uyingiz uchun.">
+	{% endif %}
 {% endblock %}
 
 {% block extra_css %}
@@ -30,7 +39,8 @@
 				<div class="container-fluid">
 					<!-- Для больших экранов - горизонтальный скролл с кнопками -->
 					<div class="d-none d-md-block position-relative">
-						<button id="scroll-left" class="scroll-arrow left-arrow" aria-label="{% trans '←' %}">&#10094;</button>
+						<button id="scroll-left" class="scroll-arrow left-arrow" aria-label="{% trans '←' %}">&#10094;
+						</button>
 
 						<div class="d-flex flex-nowrap overflow-auto pb-3" id="style-scroll">
 							{% for style in styles %}
@@ -50,9 +60,11 @@
 							{% endfor %}
 						</div>
 
-						<button id="scroll-right" class="scroll-arrow right-arrow" aria-label="{% trans '→' %}">&#10095;</button>
+						<button id="scroll-right" class="scroll-arrow right-arrow" aria-label="{% trans '→' %}">
+							&#10095;
+						</button>
 					</div>
-					
+
 					<!-- Для маленьких экранов - вертикальное расположение -->
 					<div class="d-md-none">
 						<div class="row">

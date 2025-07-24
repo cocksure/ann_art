@@ -4,8 +4,17 @@
 {% block title %}{% trans "Материалы" %} — AnnArt{% endblock %}
 
 {% block meta_description %}
-	<meta name="description"
-	      content="Подборка качественных материалов для дизайна интерьеров от студии AnnArt. Смотрите каталог материалов и их описание.">
+	{% get_current_language as LANGUAGE_CODE %}
+	{% if LANGUAGE_CODE == 'ru' %}
+		<meta name="description"
+		      content="Подборка качественных материалов для дизайна интерьеров от студии AnnArt. Смотрите каталог материалов и их описание.">
+	{% elif LANGUAGE_CODE == 'en' %}
+		<meta name="description"
+		      content="A selection of high-quality interior design materials by AnnArt. Browse our catalog and explore the descriptions.">
+	{% elif LANGUAGE_CODE == 'uz' %}
+		<meta name="description"
+		      content="AnnArt studiyasining interyer dizayni uchun yuqori sifatli materiallar to‘plami. Katalogni ko‘ring va tavsiflar bilan tanishing.">
+	{% endif %}
 {% endblock %}
 
 {% block extra_css %}
@@ -116,53 +125,53 @@
 	</section>
 
 	<!-- Modals -->
-{% for material in materials %}
-    {% include 'includes/material_modal.html' with material=material %}
-{% endfor %}
+	{% for material in materials %}
+		{% include 'includes/material_modal.html' with material=material %}
+	{% endfor %}
 
 {% endblock %}
 
 {% block extra_js %}
-<script>
-    // Функция для смены изображения
-    function changeMainImage(mainImageId, newSrc) {
-        document.getElementById(mainImageId).src = newSrc;
-    }
-
-    // Инициализация табов
-    document.addEventListener('DOMContentLoaded', function () {
-        // Обработка параметра category из URL
-        const params = new URLSearchParams(window.location.search);
-        const cat = params.get('category');
-        if (cat) {
-            const btn = document.getElementById('tab-' + cat);
-            if (btn) {
-                const bsTab = new bootstrap.Tab(btn);
-                bsTab.show();
-                const section = document.getElementById('materials');
-                if (section) {
-                    section.scrollIntoView({behavior: 'smooth'});
-                }
-            }
+	<script>
+        // Функция для смены изображения
+        function changeMainImage(mainImageId, newSrc) {
+            document.getElementById(mainImageId).src = newSrc;
         }
 
-        // Инициализация всех модалок
-       document.querySelectorAll('[data-bs-toggle="modal"]').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const modalId = this.getAttribute('data-bs-target');
-            const modal = new bootstrap.Modal(document.querySelector(modalId));
-            
-            modal._element.addEventListener('hidden.bs.modal', function() {
-                document.body.classList.remove('modal-open');
-                const backdrops = document.querySelectorAll('.modal-backdrop');
-                backdrops.forEach(backdrop => backdrop.remove());
+        // Инициализация табов
+        document.addEventListener('DOMContentLoaded', function () {
+            // Обработка параметра category из URL
+            const params = new URLSearchParams(window.location.search);
+            const cat = params.get('category');
+            if (cat) {
+                const btn = document.getElementById('tab-' + cat);
+                if (btn) {
+                    const bsTab = new bootstrap.Tab(btn);
+                    bsTab.show();
+                    const section = document.getElementById('materials');
+                    if (section) {
+                        section.scrollIntoView({behavior: 'smooth'});
+                    }
+                }
+            }
+
+            // Инициализация всех модалок
+            document.querySelectorAll('[data-bs-toggle="modal"]').forEach(btn => {
+                btn.addEventListener('click', function () {
+                    const modalId = this.getAttribute('data-bs-target');
+                    const modal = new bootstrap.Modal(document.querySelector(modalId));
+
+                    modal._element.addEventListener('hidden.bs.modal', function () {
+                        document.body.classList.remove('modal-open');
+                        const backdrops = document.querySelectorAll('.modal-backdrop');
+                        backdrops.forEach(backdrop => backdrop.remove());
+                    });
+
+                    modal.show();
+                });
             });
-            
-            modal.show();
         });
-    });
-    });
-</script>
+	</script>
 {% endblock %}
 
 {% block dashboard %}

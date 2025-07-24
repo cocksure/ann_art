@@ -4,8 +4,17 @@
 {% block title %}{% trans Контакты %} — AnnArt{% endblock %}
 
 {% block meta_description %}
-	<meta name="description"
-	      content="Контакты студии AnnArt — адрес, телефон, форма обратной связи. Свяжитесь с нами для консультации по дизайну интерьера.">
+	{% get_current_language as LANGUAGE_CODE %}
+	{% if LANGUAGE_CODE == 'ru' %}
+		<meta name="description"
+		      content="Контакты студии AnnArt — адрес, телефон, форма обратной связи. Свяжитесь с нами для консультации по дизайну интерьера.">
+	{% elif LANGUAGE_CODE == 'en' %}
+		<meta name="description"
+		      content="AnnArt contact details — address, phone number, and contact form. Get in touch for interior design consultation.">
+	{% elif LANGUAGE_CODE == 'uz' %}
+		<meta name="description"
+		      content="AnnArt studiyasining aloqa ma'lumotlari — manzil, telefon raqami va bogʻlanish shakli. Interyer dizayni boʻyicha maslahat oling.">
+	{% endif %}
 {% endblock %}
 
 {% block content %}

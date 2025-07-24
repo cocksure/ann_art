@@ -168,11 +168,6 @@ class ServicesItemView(ListView):
     context_object_name = 'services'
 
 
-def material_category_list(request):
-    categories = MaterialCategory.objects.all().order_by('order')
-    return render(request, 'material_categories.html', {'material_categories': categories})
-
-
 def projects_view(request):
     commercial = ProjectItem.objects.filter(category='commercial').order_by('order')
     residential = ProjectItem.objects.filter(category='residential').order_by('order')
