@@ -1,5 +1,5 @@
 import time
-from django.utils.translation import get_language
+
 import requests
 from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
 from django.contrib.postgres.search import TrigramSimilarity
@@ -7,6 +7,7 @@ from django.db.models import Q
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from django.shortcuts import render
+from django.utils.translation import get_language
 from django.utils.translation import gettext as _
 from django.views.decorators.csrf import csrf_protect
 from django.views.generic import ListView, DetailView
@@ -74,8 +75,6 @@ def contact_telegram(request):
     return JsonResponse({'ok': True})
 
 
-
-
 def site_search(request):
     query = request.GET.get('q', '').strip()
     results = {}
@@ -138,6 +137,7 @@ def site_search(request):
             ('partners', _('Партнеры')),
         ]
     })
+
 
 def home(request):
     return render(request, 'base.html', {
@@ -208,3 +208,7 @@ def materials_list(request):
         'active_category_id': active_category_id,
     }
     return render(request, 'materials_list.html', context)
+
+
+def custom_404(request, exception):
+    return render(request, '404.html', status=404)
