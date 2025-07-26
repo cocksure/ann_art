@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% load static i18n %}
+
+{% block title %}{% trans "Страница не найдена" %}{% endblock %}
+
+{% block content %}
+<div class="container my-5 py-5 bg-light rounded-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+            <div class="error-template py-5">
+                <h1 class="display-1">500</h1>
+                <h2 class="display-4">{% trans "Страница не найдена" %}</h2>
+                <div class="error-details my-4">
+                    <p class="lead">
+                        {% trans "Извините, запрашиваемая страница не существует или была перемещена." %}
+                    </p>
+                </div>
+                <div class="error-actions mt-5">
+                    <a href="{% url 'home' %}" class="btn btn-custom">
+                        <i class="fas fa-home me-2"></i> {% trans "На главную" %}
+                    </a>
+                    <a href="{% url 'contacts' %}" class="btn btn-outline-secondary btn-lg">
+                        <i class="fas fa-envelope me-2"></i> {% trans "Связаться с нами" %}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block dashboard %}
+{% endblock dashboard %}
+
+{% block extra_css %}
+<style>
+    .error-template {
+        padding: 40px 15px;
+        text-align: center;
+    }
+    .error-actions {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    .error-actions .btn {
+        margin-right: 10px;
+    }
+    .display-1 {
+        font-size: 6rem;
+        font-weight: 700;
+        color: #dc3545;
+    }
+</style>
+{% endblock %}
