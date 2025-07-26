@@ -208,7 +208,3 @@ def materials_list(request):
         'active_category_id': active_category_id,
     }
     return render(request, 'materials_list.html', context)
-
-
-def custom_404(request, exception):
-    return render(request, '404.html', status=404)
