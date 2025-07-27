@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.models import User, Group
 from django.contrib.sites.models import Site
 from modeltranslation.admin import TranslationAdmin
-
+from . import translation
 # "from . import translation " shu turishi shart
 from .models import (
     MaterialItem, StyleItem, ProjectItem,
@@ -13,7 +13,7 @@ from .models import (
 @admin.register(MaterialCategory)
 class MaterialCategoryAdmin(TranslationAdmin):
     list_display = ("name", 'id', 'order', 'description', 'image')
-    list_editable = ('order',)
+    list_editable = ('order', )
     group_fieldsets = True
 
 
@@ -22,7 +22,7 @@ class MaterialItemAdmin(TranslationAdmin):
     list_display = ("title", "order", 'description', 'image')
     ordering = ("order",)
     list_filter = ('category',)
-    list_editable = ('image', 'order',)
+    list_editable = ('image', 'order', )
     group_fieldsets = True
 
 
@@ -52,7 +52,6 @@ class PartnersAdmin(admin.ModelAdmin):
     list_display = ("id", "name", 'image')
     ordering = ("order",)
     list_editable = ('name', 'image')
-
 
 admin.site.register(MaterialImages)
 admin.site.register(ProjectImages)
