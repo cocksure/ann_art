@@ -40,9 +40,10 @@
 
 
 	<!-- Hreflang -->
-	<link rel="alternate" hreflang="ru" href="https://annart.uz/ru/"/>
-	<link rel="alternate" hreflang="en" href="https://annart.uz/en/"/>
-	<link rel="alternate" hreflang="uz" href="https://annart.uz/uz/"/>
+	<link rel="alternate" hreflang="ru" href="https://annart.uz/">
+	<link rel="alternate" hreflang="en" href="https://annart.uz/en/">
+	<link rel="alternate" hreflang="uz" href="https://annart.uz/uz/">
+	<link rel="alternate" hreflang="x-default" href="https://annart.uz/">
 
 	<!-- Open Graph -->
 	<meta property="og:type" content="website">
@@ -148,51 +149,48 @@
 
 				<li class="nav-item dropdown mx-2 no-hover">
 					<a class="nav-link dropdown-toggle no-hover d-flex align-items-center" href="#"
-					   id="languageDropdown" role="button"
-					   data-bs-toggle="dropdown" aria-expanded="false">
+					   id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 						{% get_current_language as LANGUAGE_CODE %}
-						{% if LANGUAGE_CODE == 'ru' %}
-							{% include "includes/ru.svg.html" %} Русский
-						{% elif LANGUAGE_CODE == 'en' %}
-							{% include "includes/en.svg.html" %} English
-						{% elif LANGUAGE_CODE == 'uz' %}
-							{% include "includes/uz.svg.html" %} O‘zbekcha
+						{% if LANGUAGE_CODE == 'ru' %}{% include "includes/ru.svg.html" %} Русский
+							{% elif LANGUAGE_CODE == 'en' %}{% include "includes/en.svg.html" %} English
+							{% elif LANGUAGE_CODE == 'uz' %}{% include "includes/uz.svg.html" %} O‘zbekcha
 						{% endif %}
 					</a>
+
 					<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="languageDropdown">
 						<li>
-							<form action="{% url 'set_language' %}" method="post" class="px-3 py-1">
+							<form action="{% url 'set_language' %}" method="post" class="px-3 py-1 lang-form"
+							      data-lang="ru">
 								{% csrf_token %}
-								<input type="hidden" name="next" value="{{ request.path }}">
-								<button class="dropdown-item lang-switch-btn d-flex align-items-center" type="submit"
-								        name="language" value="ru">
+								<input type="hidden" name="language" value="ru">
+								<input type="hidden" name="next" value="">
+								<button class="dropdown-item lang-switch-btn d-flex align-items-center" type="submit">
 									{% include "includes/ru.svg.html" %} Русский
 								</button>
 							</form>
-						</li>
-						<li>
-							<form action="{% url 'set_language' %}" method="post" class="px-3 py-1">
+
+							<form action="{% url 'set_language' %}" method="post" class="px-3 py-1 lang-form"
+							      data-lang="uz">
 								{% csrf_token %}
-								<input type="hidden" name="next" value="{{ request.path }}">
-								<button class="dropdown-item lang-switch-btn d-flex align-items-center" type="submit"
-								        name="language" value="uz">
+								<input type="hidden" name="language" value="uz">
+								<input type="hidden" name="next" value="">
+								<button class="dropdown-item lang-switch-btn d-flex align-items-center" type="submit">
 									{% include "includes/uz.svg.html" %} O‘zbekcha
 								</button>
 							</form>
-						</li>
-						<li>
-							<form action="{% url 'set_language' %}" method="post" class="px-3 py-1">
+
+							<form action="{% url 'set_language' %}" method="post" class="px-3 py-1 lang-form"
+							      data-lang="en">
 								{% csrf_token %}
-								<input type="hidden" name="next" value="{{ request.path }}">
-								<button class="dropdown-item lang-switch-btn d-flex align-items-center" type="submit"
-								        name="language" value="en">
+								<input type="hidden" name="language" value="en">
+								<input type="hidden" name="next" value="">
+								<button class="dropdown-item lang-switch-btn d-flex align-items-center" type="submit">
 									{% include "includes/en.svg.html" %} English
 								</button>
 							</form>
 						</li>
 					</ul>
 				</li>
-
 				<li class="nav-item mx-2 d-flex align-items-center">
 					{% include 'includes/search_form.html' %}
 				</li>
@@ -486,6 +484,21 @@
 <script src="{% static 'js/main.js' %}"></script>
 
 {% block extra_js %}
+	<script>
+        document.querySelectorAll('.lang-form').forEach(form => {
+            form.addEventListener('submit', function (e) {
+                const targetLang = form.dataset.lang; // 'ru' | 'en' | 'uz'
+                const loc = window.location;
+
+                let path = loc.pathname.replace(/^\/(ru|en|uz)(\/|$)/, '/');
+
+                const nextPath = (targetLang === 'ru' ? '' : '/' + targetLang) + path;
+                const nextUrl = nextPath + (loc.search || '') + (loc.hash || '');
+
+                form.querySelector('input[name="next"]').value = nextUrl || '/';
+            });
+        });
+	</script>
 {% endblock extra_js %}
 </body>
 </html>
