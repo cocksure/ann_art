@@ -26,12 +26,12 @@
 
 	<!-- Favicon -->
 	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-touch-icon.png?v=2' %}">
-	<link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon-32x32.png?v=2' %}">
-	<link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon-16x16.png?v=2' %}">
+	<link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/favicon-32x32.png' %}?v=2">
+	<link rel="icon" type="image/png" sizes="16x16" href="{% static 'images/favicon-16x16.png' %}?v=2">
 	<link rel="icon" type="image/png" sizes="192x192" href="{% static 'images/android-chrome-192x192.png' %}">
 	<link rel="icon" type="image/png" sizes="512x512" href="{% static 'images/android-chrome-512x512.png' %}">
 	<link rel="shortcut icon" href="{% static 'images/favicon.ico?v=2' %}">
-	<link rel="manifest" href="{% static 'images/site.webmanifest?v=2' %}">
+	<link rel="manifest" href="{% static 'images/site.webmanifest' %}?v=2">
 	<meta name="theme-color" content="#ffffff">
 
 	<!-- Windows Tile -->
@@ -164,7 +164,7 @@
 								{% csrf_token %}
 								<input type="hidden" name="language" value="ru">
 								<input type="hidden" name="next" value="">
-								<button class="dropdown-item lang-switch-btn d-flex align-items-center" type="submit">
+								<button class="dropdown-item d-flex align-items-center" type="submit">
 									{% include "includes/ru.svg.html" %} Русский
 								</button>
 							</form>
@@ -174,7 +174,7 @@
 								{% csrf_token %}
 								<input type="hidden" name="language" value="uz">
 								<input type="hidden" name="next" value="">
-								<button class="dropdown-item lang-switch-btn d-flex align-items-center" type="submit">
+								<button class="dropdown-item d-flex align-items-center" type="submit">
 									{% include "includes/uz.svg.html" %} O‘zbekcha
 								</button>
 							</form>
@@ -184,7 +184,7 @@
 								{% csrf_token %}
 								<input type="hidden" name="language" value="en">
 								<input type="hidden" name="next" value="">
-								<button class="dropdown-item lang-switch-btn d-flex align-items-center" type="submit">
+								<button class="dropdown-item d-flex align-items-center" type="submit">
 									{% include "includes/en.svg.html" %} English
 								</button>
 							</form>
@@ -485,19 +485,7 @@
 
 {% block extra_js %}
 	<script>
-        document.querySelectorAll('.lang-form').forEach(form => {
-            form.addEventListener('submit', function (e) {
-                const targetLang = form.dataset.lang; // 'ru' | 'en' | 'uz'
-                const loc = window.location;
 
-                let path = loc.pathname.replace(/^\/(ru|en|uz)(\/|$)/, '/');
-
-                const nextPath = (targetLang === 'ru' ? '' : '/' + targetLang) + path;
-                const nextUrl = nextPath + (loc.search || '') + (loc.hash || '');
-
-                form.querySelector('input[name="next"]').value = nextUrl || '/';
-            });
-        });
 	</script>
 {% endblock extra_js %}
 </body>
