@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.contrib.auth.models import User, Group
 from django.contrib.sites.models import Site
+from import_export.admin import ImportExportModelAdmin
 from modeltranslation.admin import TranslationAdmin
 from . import translation
 # "from . import translation " shu turishi shart
@@ -8,6 +9,7 @@ from .models import (
     MaterialItem, StyleItem, ProjectItem,
     ServiceItem, MaterialCategory, Partners, MaterialImages, ProjectImages
 )
+from .resources import MaterialItemResource
 
 
 @admin.register(MaterialCategory)
@@ -18,7 +20,8 @@ class MaterialCategoryAdmin(TranslationAdmin):
 
 
 @admin.register(MaterialItem)
-class MaterialItemAdmin(TranslationAdmin):
+class MaterialItemAdmin(ImportExportModelAdmin, TranslationAdmin):
+    resource_class = MaterialItemResource
     list_display = ("title", "order", 'description', 'image')
     ordering = ("order",)
     list_filter = ('category',)
