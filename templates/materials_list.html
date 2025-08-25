@@ -155,21 +155,7 @@
                 }
             }
 
-            // Инициализация всех модалок
-            document.querySelectorAll('[data-bs-toggle="modal"]').forEach(btn => {
-                btn.addEventListener('click', function () {
-                    const modalId = this.getAttribute('data-bs-target');
-                    const modal = new bootstrap.Modal(document.querySelector(modalId));
-
-                    modal._element.addEventListener('hidden.bs.modal', function () {
-                        document.body.classList.remove('modal-open');
-                        const backdrops = document.querySelectorAll('.modal-backdrop');
-                        backdrops.forEach(backdrop => backdrop.remove());
-                    });
-
-                    modal.show();
-                });
-            });
+            
         });
 	</script>
 {% endblock %}
