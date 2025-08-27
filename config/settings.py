@@ -9,8 +9,8 @@ env = environ.Env()
 environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 SECRET_KEY = env('SECRET_KEY')
 
-DEBUG = env.bool('DEBUG', default=False)
-# DEBUG = True
+# DEBUG = env.bool('DEBUG', default=False)
+DEBUG = True
 
 ALLOWED_HOSTS = ['annart.uz', 'www.annart.uz', 'localhost', '127.0.0.1', '173.249.29.108']
 

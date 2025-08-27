@@ -412,6 +412,7 @@ class Partners(models.Model):
         default='default_foto.png',
         validators=[FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png', 'webp', 'heic'])]
     )
+    link = models.URLField(max_length=255, null=True, blank=True)
 
     def save(self, *args, **kwargs):
         if self.image:
