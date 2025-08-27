@@ -27,26 +27,26 @@
 
 			<!-- Партнёры -->
 			<div class="partner-logos-wrapper">
-    <div class="partner-logos">
-        {% for partner in partners %}
-            <div class="partner-logo">
-                {% if partner.link %}
-                    <a href="{{ partner.link }}" target="_blank" rel="noopener">
-                        <img src="{{ partner.image.url }}"
-                             alt="{% blocktrans %}Партнёр {{ partner.name }}{% endblocktrans %}">
-                    </a>
-                {% else %}
-                    <img src="{{ partner.image.url }}"
-                         alt="{% blocktrans %}Партнёр {{ partner.name }}{% endblocktrans %}">
-                {% endif %}
-            </div>
-        {% endfor %}
-    </div>
-</div>
+				<div class="partner-logos">
+					{% for partner in partners %}
+						<div class="partner-logo">
+							{% if partner.link %}
+								<a href="{{ partner.link }}" target="_blank" rel="noopener">
+									<img src="{{ partner.image.url }}"
+									     alt="{% blocktrans %}Партнёр {{ partner.name }}{% endblocktrans %}">
+								</a>
+							{% else %}
+								<img src="{{ partner.image.url }}"
+								     alt="{% blocktrans %}Партнёр {{ partner.name }}{% endblocktrans %}">
+							{% endif %}
+						</div>
+					{% endfor %}
+				</div>
+			</div>
 
 			<div class="section-header text-center mb-3">
 				<h2 class="section-title slide-up text-light">
-					{% trans "Каталог материалов — только начало" %}
+					{% trans "Каталог материалов" %}
 				</h2>
 				<p class="section-subtitle text-light mt-2 slide-up">
 					{% trans "Любые интересующие вас решения мы подберём индивидуально." %}
