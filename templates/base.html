@@ -69,6 +69,7 @@
 
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
 	<link rel="stylesheet" href="{% static 'css/service.css' %}">
+	<link rel="stylesheet" href="{% static 'css/loader.css' %}">
 
 	<!-- JSON-LD -->
 	<script type="application/ld+json">
@@ -98,10 +99,20 @@
 </head>
 <body>
 
-<!-- Page Loader -->
-<div id="aa-loader" class="aa-loader" aria-hidden="true">
-  <div class="aa-spinner"></div>
-</div>
+<!-- Улучшенный лоадер -->
+    <div id="aa-loader" class="aa-loader" aria-hidden="true">
+        <div class="loader-container">
+            <div class="spinner-outer"></div>
+            <div class="aa-spinner"></div>
+            <div class="spinner-inner"></div>
+            <div class="spinner-dot"></div>
+        </div>
+        <div class="loader-text">Загрузка</div>
+        <div class="progress-bar">
+            <div class="progress" id="loader-progress"></div>
+        </div>
+        <div class="particles" id="particles"></div>
+    </div>
 
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light sticky-top">
@@ -486,6 +497,7 @@
 
 
 <script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/loader.js' %}"></script>
 
 {% block extra_js %}
 	<script>
