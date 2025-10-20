@@ -3,13 +3,16 @@ import time
 import requests
 from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
 from django.contrib.postgres.search import TrigramSimilarity
+from django.core.cache import cache
 from django.db.models import Q
 from django.http import JsonResponse
 from django.shortcuts import get_object_or_404
 from django.shortcuts import render
 from django.utils.translation import get_language
 from django.utils.translation import gettext as _
+from django.views.decorators.cache import cache_page
 from django.views.decorators.csrf import csrf_protect
+from django.views.decorators.vary import vary_on_cookie
 from django.views.generic import ListView, DetailView
 
 from .models import (
@@ -111,10 +114,10 @@ def site_search(request):
                 qs = qs.select_related(*select_related)
             return qs
 
-        projects = search_queryset(ProjectItem)
+        projects = search_queryset(ProjectItem).prefetch_related('additional_images')
         services = search_queryset(ServiceItem)
         styles = search_queryset(StyleItem)
-        materials = search_queryset(MaterialItem, select_related=['category'])
+        materials = search_queryset(MaterialItem, select_related=['category']).prefetch_related('additional_images')
 
         results = {
             'projects': projects,
@@ -139,9 +142,11 @@ def site_search(request):
     })
 
 
+@cache_page(60 * 15)  # Кеш на 15 минут
+@vary_on_cookie  # Разный кеш для разных языков (cookie)
 def home(request):
     return render(request, 'base.html', {
-        "materials": MaterialItem.objects.order_by("order"),
+        "materials": MaterialItem.objects.select_related('category').order_by("order"),
         "styles": StyleItem.objects.order_by("order"),
         "projects": ProjectItem.objects.order_by("order"),
         "services": ServiceItem.objects.order_by("order"),
@@ -168,6 +173,8 @@ class ServicesItemView(ListView):
     context_object_name = 'services'
 
 
+@cache_page(60 * 10)  # Кеш на 10 минут
+@vary_on_cookie  # Разный кеш для разных языков
 def projects_view(request):
     commercial = ProjectItem.objects.filter(category='commercial').order_by('order')
     residential = ProjectItem.objects.filter(category='residential').order_by('order')
@@ -180,8 +187,10 @@ def projects_view(request):
     })
 
 
+@cache_page(60 * 30)  # Кеш на 30 минут (детали проектов редко меняются)
+@vary_on_cookie
 def project_detail(request, pk):
-    project = get_object_or_404(ProjectItem, pk=pk)
+    project = get_object_or_404(ProjectItem.objects.prefetch_related('additional_images'), pk=pk)
     return render(request, 'project_detail.html', {'project': project})
 
 
@@ -189,9 +198,11 @@ def contacts(request):
     return render(request, 'contacts.html')
 
 
+@cache_page(60 * 10)  # Кеш на 10 минут
+@vary_on_cookie
 def materials_list(request):
     categories = MaterialCategory.objects.all()
-    materials = MaterialItem.objects.select_related('category').all()
+    materials = MaterialItem.objects.select_related('category').prefetch_related('additional_images').all()
 
     # параметр из URL
     active_category_id = request.GET.get('category')

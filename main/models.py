@@ -55,7 +55,8 @@ class MaterialCategory(models.Model):
         _('Порядок отображения'),
         default=0,
         null=True,
-        blank=True
+        blank=True,
+        db_index=True  # Индекс для быстрой сортировки
     )
     image = models.ImageField(
         _('Фото категории'),
@@ -92,6 +93,9 @@ class MaterialCategory(models.Model):
         ordering = ('order',)
         verbose_name = _('Категория материала')
         verbose_name_plural = _('Категории материалов')
+        indexes = [
+            models.Index(fields=['order'], name='mat_cat_order_idx'),
+        ]
 
 
 class MaterialImages(models.Model):
@@ -197,7 +201,8 @@ class MaterialItem(models.Model):
         _('Порядок'),
         default=0,
         null=True,
-        blank=True
+        blank=True,
+        db_index=True  # Индекс для быстрой сортировки
     )
 
     def get_absolute_url(self):
@@ -230,6 +235,9 @@ class MaterialItem(models.Model):
         ordering = ('order',)
         verbose_name = _('Материал')
         verbose_name_plural = _('Материалы')
+        indexes = [
+            models.Index(fields=['order', 'category'], name='mat_item_order_cat_idx'),
+        ]
 
 
 class StyleItem(models.Model):
@@ -246,7 +254,8 @@ class StyleItem(models.Model):
     )
     order = models.PositiveIntegerField(
         _('Порядок'),
-        default=0
+        default=0,
+        db_index=True  # Индекс для быстрой сортировки
     )
 
     def get_absolute_url(self):
@@ -276,6 +285,9 @@ class StyleItem(models.Model):
         ordering = ('order',)
         verbose_name = "Стиль"
         verbose_name_plural = "Стили"
+        indexes = [
+            models.Index(fields=['order'], name='style_order_idx'),
+        ]
 
     def __str__(self):
         return self.title
@@ -306,13 +318,15 @@ class ProjectItem(models.Model):
         _('Порядок'),
         default=0,
         null=True,
-        blank=True
+        blank=True,
+        db_index=True  # Индекс для быстрой сортировки
     )
     category = models.CharField(
         _('Тип проекта'),
         max_length=20,
         choices=ProjectType.choices,
         default=ProjectType.OTHER,
+        db_index=True  # Индекс для фильтрации по категории
     )
     square_meters = models.SmallIntegerField(
         _('Площадь (м²)'),
@@ -350,6 +364,9 @@ class ProjectItem(models.Model):
         verbose_name = _('Проект')
         verbose_name_plural = _('Проекты')
         ordering = ['order']
+        indexes = [
+            models.Index(fields=['category', 'order'], name='proj_cat_order_idx'),
+        ]
 
 
 class ServiceItem(models.Model):
@@ -366,13 +383,17 @@ class ServiceItem(models.Model):
     )
     order = models.PositiveIntegerField(
         _('Порядок'),
-        default=0
+        default=0,
+        db_index=True  # Индекс для быстрой сортировки
     )
 
     class Meta:
         verbose_name = _('Услуга')
         verbose_name_plural = _('Услуги')
         ordering = ['order', 'id']
+        indexes = [
+            models.Index(fields=['order', 'id'], name='service_order_id_idx'),
+        ]
 
     def get_absolute_url(self):
         return reverse('services')
@@ -384,10 +405,16 @@ class ServiceItem(models.Model):
 class GuaranteeItem(models.Model):
     title = models.CharField("Заголовок", max_length=255)
     description = models.TextField("Описание")
-    order = models.PositiveIntegerField("Порядок", default=0)
+    order = models.PositiveIntegerField("Порядок", default=0, db_index=True)
 
     def __str__(self):
         return self.title
+
+    class Meta:
+        ordering = ['order']
+        indexes = [
+            models.Index(fields=['order'], name='guarantee_order_idx'),
+        ]
 
 
 class InstallmentInfo(models.Model):
@@ -404,7 +431,8 @@ class InstallmentInfo(models.Model):
 
 class Partners(models.Model):
     name = models.CharField(max_length=100, unique=True, null=True, blank=True)
-    order = models.PositiveIntegerField(default=0, verbose_name="Порядок отображения", null=True, blank=True)
+    order = models.PositiveIntegerField(default=0, verbose_name="Порядок отображения", null=True, blank=True,
+                                        db_index=True)
     image = models.ImageField(
         upload_to="partners/",
         blank=True,
@@ -441,3 +469,6 @@ class Partners(models.Model):
         ordering = ('order',)
         verbose_name = "Партнер"
         verbose_name_plural = "Партнеры"
+        indexes = [
+            models.Index(fields=['order'], name='partners_order_idx'),
+        ]

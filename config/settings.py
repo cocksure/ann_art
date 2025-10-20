@@ -80,6 +80,28 @@ DATABASES = {
 #     }
 # }
 
+# Cache Configuration
+# Используем database cache для работы с gunicorn (multi-process)
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+        'LOCATION': 'django_cache_table',
+        'OPTIONS': {
+            'MAX_ENTRIES': 1000,  # Максимум 1000 записей в кеше
+            'CULL_FREQUENCY': 3,  # Удалять 1/3 записей при переполнении
+        }
+    }
+}
+
+# Cache timeout settings (в секундах)
+CACHE_MIDDLEWARE_ALIAS = 'default'
+CACHE_MIDDLEWARE_SECONDS = 60 * 15  # 15 минут для целых страниц
+CACHE_MIDDLEWARE_KEY_PREFIX = 'annart'
+
+# Session cache (опционально - храним сессии в кеше для скорости)
+# SESSION_ENGINE = 'django.contrib.sessions.backends.cache'
+# SESSION_CACHE_ALIAS = 'default'
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
