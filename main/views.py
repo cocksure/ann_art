@@ -10,9 +10,7 @@ from django.shortcuts import get_object_or_404
 from django.shortcuts import render
 from django.utils.translation import get_language
 from django.utils.translation import gettext as _
-from django.views.decorators.cache import cache_page
 from django.views.decorators.csrf import csrf_protect
-from django.views.decorators.vary import vary_on_cookie
 from django.views.generic import ListView, DetailView
 
 from .models import (
@@ -142,8 +140,6 @@ def site_search(request):
     })
 
 
-@cache_page(60 * 15)  # Кеш на 15 минут
-@vary_on_cookie  # Разный кеш для разных языков (cookie)
 def home(request):
     return render(request, 'base.html', {
         "materials": MaterialItem.objects.select_related('category').order_by("order"),
@@ -173,8 +169,6 @@ class ServicesItemView(ListView):
     context_object_name = 'services'
 
 
-@cache_page(60 * 10)  # Кеш на 10 минут
-@vary_on_cookie  # Разный кеш для разных языков
 def projects_view(request):
     commercial = ProjectItem.objects.filter(category='commercial').order_by('order')
     residential = ProjectItem.objects.filter(category='residential').order_by('order')
@@ -187,8 +181,6 @@ def projects_view(request):
     })
 
 
-@cache_page(60 * 30)  # Кеш на 30 минут (детали проектов редко меняются)
-@vary_on_cookie
 def project_detail(request, pk):
     project = get_object_or_404(ProjectItem.objects.prefetch_related('additional_images'), pk=pk)
     return render(request, 'project_detail.html', {'project': project})
@@ -198,8 +190,6 @@ def contacts(request):
     return render(request, 'contacts.html')
 
 
-@cache_page(60 * 10)  # Кеш на 10 минут
-@vary_on_cookie
 def materials_list(request):
     categories = MaterialCategory.objects.all()
     materials = MaterialItem.objects.select_related('category').prefetch_related('additional_images').all()
